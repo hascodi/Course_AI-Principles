@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 3 Data | References</title>
+  <meta name="description" content="AI Principles course at the AP University College." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 3 Data | References" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="AI Principles course at the AP University College." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 3 Data | References" />
+  
+  <meta name="twitter:description" content="AI Principles course at the AP University College." />
+  
+
+<meta name="author" content="David D’Haese" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="leren-uit-data.html"/>
+<link rel="next" href="data-exploratie.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/course.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Summary</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html"><i class="fa fa-check"></i><b>1</b> Inleiding tot de cursus</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#in-een-notedop"><i class="fa fa-check"></i><b>1.1</b> In een notedop</a></li>
+<li class="chapter" data-level="1.2" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#leerdoelen"><i class="fa fa-check"></i><b>1.2</b> Leerdoelen</a></li>
+<li class="chapter" data-level="1.3" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#cursus-vorm"><i class="fa fa-check"></i><b>1.3</b> Cursus vorm</a></li>
+<li class="chapter" data-level="1.4" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#bekijken-van-deze-cursus"><i class="fa fa-check"></i><b>1.4</b> Bekijken van deze Cursus</a></li>
+<li class="chapter" data-level="1.5" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#licentie-voor-deze-cursus"><i class="fa fa-check"></i><b>1.5</b> Licentie voor deze cursus</a></li>
+<li class="chapter" data-level="1.6" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#verwijzen-naar-deze-cursus"><i class="fa fa-check"></i><b>1.6</b> Verwijzen naar deze cursus</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="leren-uit-data.html"><a href="leren-uit-data.html"><i class="fa fa-check"></i><b>2</b> Leren uit data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leerproces"><i class="fa fa-check"></i><b>2.1</b> Het leerproces</a></li>
+<li class="chapter" data-level="2.2" data-path="leren-uit-data.html"><a href="leren-uit-data.html#de-evolutie-van-het-machinaal-leren"><i class="fa fa-check"></i><b>2.2</b> De evolutie van het machinaal leren</a></li>
+<li class="chapter" data-level="2.3" data-path="leren-uit-data.html"><a href="leren-uit-data.html#intelligentie"><i class="fa fa-check"></i><b>2.3</b> Intelligentie</a></li>
+<li class="chapter" data-level="2.4" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-model"><i class="fa fa-check"></i><b>2.4</b> Het model</a></li>
+<li class="chapter" data-level="2.5" data-path="leren-uit-data.html"><a href="leren-uit-data.html#doelfunctie"><i class="fa fa-check"></i><b>2.5</b> Doelfunctie</a></li>
+<li class="chapter" data-level="2.6" data-path="leren-uit-data.html"><a href="leren-uit-data.html#mnist-dataset"><i class="fa fa-check"></i><b>2.6</b> MNIST dataset</a></li>
+<li class="chapter" data-level="2.7" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-resultaat-van-mnist-analyse"><i class="fa fa-check"></i><b>2.7</b> Het resultaat van MNIST analyse</a></li>
+<li class="chapter" data-level="2.8" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-mnist-model"><i class="fa fa-check"></i><b>2.8</b> Het MNIST model</a></li>
+<li class="chapter" data-level="2.9" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leerproces-voor-begeleid-ml"><i class="fa fa-check"></i><b>2.9</b> Het leerproces voor begeleid ML</a></li>
+<li class="chapter" data-level="2.10" data-path="leren-uit-data.html"><a href="leren-uit-data.html#de-onderdelen-van-een-model"><i class="fa fa-check"></i><b>2.10</b> De onderdelen van een model</a></li>
+<li class="chapter" data-level="2.11" data-path="leren-uit-data.html"><a href="leren-uit-data.html#hyperparameters"><i class="fa fa-check"></i><b>2.11</b> Hyperparameters</a></li>
+<li class="chapter" data-level="2.12" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leeralgoritme"><i class="fa fa-check"></i><b>2.12</b> Het leeralgoritme</a></li>
+<li class="chapter" data-level="2.13" data-path="leren-uit-data.html"><a href="leren-uit-data.html#model-complexiteit"><i class="fa fa-check"></i><b>2.13</b> Model complexiteit</a></li>
+<li class="chapter" data-level="2.14" data-path="leren-uit-data.html"><a href="leren-uit-data.html#comprimeren-door-middel-van-een-ml-model"><i class="fa fa-check"></i><b>2.14</b> Comprimeren door middel van een ML model</a></li>
+<li class="chapter" data-level="2.15" data-path="leren-uit-data.html"><a href="leren-uit-data.html#leren-versus-ontwerp"><i class="fa fa-check"></i><b>2.15</b> Leren versus ontwerp</a></li>
+<li class="chapter" data-level="2.16" data-path="leren-uit-data.html"><a href="leren-uit-data.html#leren-versus-onthouden-en-inferentie"><i class="fa fa-check"></i><b>2.16</b> Leren versus onthouden en inferentie</a></li>
+<li class="chapter" data-level="2.17" data-path="leren-uit-data.html"><a href="leren-uit-data.html#onbegeleid-ml"><i class="fa fa-check"></i><b>2.17</b> Onbegeleid ML</a></li>
+<li class="chapter" data-level="2.18" data-path="leren-uit-data.html"><a href="leren-uit-data.html#conditionering"><i class="fa fa-check"></i><b>2.18</b> Conditionering</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#data-voor-ml"><i class="fa fa-check"></i><b>3.1</b> Data voor ML</a></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#wat-is-data"><i class="fa fa-check"></i><b>3.2</b> Wat is data</a></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#soorten-data"><i class="fa fa-check"></i><b>3.3</b> Soorten data</a></li>
+<li class="chapter" data-level="3.4" data-path="data.html"><a href="data.html#externe-databronnen"><i class="fa fa-check"></i><b>3.4</b> Externe databronnen</a></li>
+<li class="chapter" data-level="3.5" data-path="data.html"><a href="data.html#data-genereren"><i class="fa fa-check"></i><b>3.5</b> Data Genereren</a></li>
+<li class="chapter" data-level="3.6" data-path="data.html"><a href="data.html#de-analyse-dataset"><i class="fa fa-check"></i><b>3.6</b> De analyse dataset</a></li>
+<li class="chapter" data-level="3.7" data-path="data.html"><a href="data.html#soorten-variabelen"><i class="fa fa-check"></i><b>3.7</b> Soorten variabelen</a></li>
+<li class="chapter" data-level="3.8" data-path="data.html"><a href="data.html#eng-nominal-scale-data"><i class="fa fa-check"></i><b>3.8</b> (Eng) Nominal-Scale Data</a></li>
+<li class="chapter" data-level="3.9" data-path="data.html"><a href="data.html#eng-dummy-variables"><i class="fa fa-check"></i><b>3.9</b> (Eng) Dummy Variables</a></li>
+<li class="chapter" data-level="3.10" data-path="data.html"><a href="data.html#eng-ordinal-scale-data"><i class="fa fa-check"></i><b>3.10</b> (Eng) Ordinal-Scale Data</a></li>
+<li class="chapter" data-level="3.11" data-path="data.html"><a href="data.html#eng-circular-scale"><i class="fa fa-check"></i><b>3.11</b> (Eng) Circular-Scale</a></li>
+<li class="chapter" data-level="3.12" data-path="data.html"><a href="data.html#eng-censoring"><i class="fa fa-check"></i><b>3.12</b> (Eng) Censoring</a></li>
+<li class="chapter" data-level="3.13" data-path="data.html"><a href="data.html#tijd-en-ruimte"><i class="fa fa-check"></i><b>3.13</b> Tijd en ruimte</a></li>
+<li class="chapter" data-level="3.14" data-path="data.html"><a href="data.html#toegang-tot-data"><i class="fa fa-check"></i><b>3.14</b> Toegang tot data</a></li>
+<li class="chapter" data-level="3.15" data-path="data.html"><a href="data.html#het-codeboek"><i class="fa fa-check"></i><b>3.15</b> Het codeboek</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-exploratie.html"><a href="data-exploratie.html"><i class="fa fa-check"></i><b>4</b> Data exploratie</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-exploratie.html"><a href="data-exploratie.html#principes-van-data-exploratie"><i class="fa fa-check"></i><b>4.1</b> Principes van data exploratie</a></li>
+<li class="chapter" data-level="4.2" data-path="data-exploratie.html"><a href="data-exploratie.html#stappen-in-data-exploratie"><i class="fa fa-check"></i><b>4.2</b> Stappen in data exploratie</a></li>
+<li class="chapter" data-level="4.3" data-path="data-exploratie.html"><a href="data-exploratie.html#voorbeeld-data-exploratie"><i class="fa fa-check"></i><b>4.3</b> Voorbeeld data exploratie</a></li>
+<li class="chapter" data-level="4.4" data-path="data-exploratie.html"><a href="data-exploratie.html#univariate-verdelingen"><i class="fa fa-check"></i><b>4.4</b> Univariate verdelingen</a></li>
+<li class="chapter" data-level="4.5" data-path="data-exploratie.html"><a href="data-exploratie.html#correlatie-tussen-twee-variabelen"><i class="fa fa-check"></i><b>4.5</b> Correlatie tussen twee variabelen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html"><i class="fa fa-check"></i><b>5</b> Manipuleren van data</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#kort-overzicht-van-de-manipulaties"><i class="fa fa-check"></i><b>5.1</b> Kort overzicht van de manipulaties</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#filteren-en-versnijden"><i class="fa fa-check"></i><b>5.1.1</b> Filteren en versnijden</a></li>
+<li class="chapter" data-level="5.1.2" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#booleaans-masker"><i class="fa fa-check"></i><b>5.1.2</b> Booleaans masker</a></li>
+<li class="chapter" data-level="5.1.3" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-grouping-and-aggregation"><i class="fa fa-check"></i><b>5.1.3</b> (Eng.) Grouping and Aggregation</a></li>
+<li class="chapter" data-level="5.1.4" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-transforming-text"><i class="fa fa-check"></i><b>5.1.4</b> (Eng.) Transforming text</a></li>
+<li class="chapter" data-level="5.1.5" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-re-scaling-numerical-values"><i class="fa fa-check"></i><b>5.1.5</b> (Eng.) Re-Scaling Numerical Values</a></li>
+<li class="chapter" data-level="5.1.6" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-discretizations"><i class="fa fa-check"></i><b>5.1.6</b> (Eng.) Discretizations</a></li>
+<li class="chapter" data-level="5.1.7" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-information-content"><i class="fa fa-check"></i><b>5.1.7</b> (Eng.) Information Content</a></li>
+<li class="chapter" data-level="5.1.8" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-reformatting-type-conversion-casting-or-coercion"><i class="fa fa-check"></i><b>5.1.8</b> (Eng.) Reformatting, Type Conversion, Casting or Coercion</a></li>
+<li class="chapter" data-level="5.1.9" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-changing-numerical-values"><i class="fa fa-check"></i><b>5.1.9</b> (Eng.) Changing numerical Values</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-changing-category-names"><i class="fa fa-check"></i><b>5.2</b> (Eng.) Changing Category Names</a></li>
+<li class="chapter" data-level="5.3" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-imputation"><i class="fa fa-check"></i><b>5.3</b> (Eng.) Imputation</a></li>
+<li class="chapter" data-level="5.4" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#onbehandeld"><i class="fa fa-check"></i><b>5.4</b> Onbehandeld</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html"><i class="fa fa-check"></i><b>6</b> Trainen en testen</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#leren-leven-met-de-onzekerheid"><i class="fa fa-check"></i><b>6.1</b> Leren leven met de onzekerheid</a></li>
+<li class="chapter" data-level="6.2" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#meten-van-de-prestatie-van-een-model"><i class="fa fa-check"></i><b>6.2</b> Meten van de prestatie van een model</a></li>
+<li class="chapter" data-level="6.3" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#training--validatie--en-test-set"><i class="fa fa-check"></i><b>6.3</b> Training-, validatie- en test-set</a></li>
+<li class="chapter" data-level="6.4" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#cross-validatie"><i class="fa fa-check"></i><b>6.4</b> Cross-validatie</a></li>
+<li class="chapter" data-level="6.5" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#werkstroom-deep-learning"><i class="fa fa-check"></i><b>6.5</b> Werkstroom deep learning</a></li>
+<li class="chapter" data-level="6.6" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#data-lekkage"><i class="fa fa-check"></i><b>6.6</b> Data lekkage</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bronvermelding.html"><a href="bronvermelding.html"><i class="fa fa-check"></i>Bronvermelding</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">References</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data" class="section level1" number="3">
+<h1><span class="header-section-number">Hoofdstuk 3</span> Data</h1>
+<p><img src="img/proces_2.svg" /><!-- --></p>
+<div id="data-voor-ml" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Data voor ML</h2>
+<p>Leeralgoritmen gebruiken data om er een model uit te destilleren. Als er iets fout gaat, dan heeft dit vaak te maken met de staat waarin de data zich bevinden of de manier waarop er met de data wordt omgesprongen.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-7" class="definition"><strong>Stelling 3.1  </strong></span>When it comes to ML, garbage in, garbage out (GIGO).
+</div>
+<p>De datawetenschapper streeft ernaar om de data die hij of zij te zien krijgt zo goed mogelijk te begrijpen. Wiskundig gezien is dat misschien niet zo belangrijk, maar het gaat hier over enerzijds het maken van de juiste keuzes en anderzijds voor de ethische overwegingen. Als je van plan bent om uitspraken te doen op basis van data, ben je ook verantwoordelijk voor het opbouwen van een grondig begrip van wat de data voor staat.</p>
+<div class="figure"><span id="fig:gossip"></span>
+<img src="img/gossip.png" alt="“The gossip” (ned. De roddel) van Norman Rockwell." width="500" />
+<p class="caption">
+Figuur 3.1: “The gossip” (ned. <em>De roddel</em>) van <a href="https://nl.wikipedia.org/wiki/Norman_Rockwell">Norman Rockwell</a>.
+</p>
+</div>
+
+
+<div class="remark">
+ <span class="remark"><em>Opmerking </em></span> Als datawetenschapper heb je, indien de data betrouwbaar is en je voldoende integer bent om je van alle vooroordelen en taboes te ontdoen, toegang tot de ultieme waarheid. Ben je er klaar voor?
+</div>
+</div>
+<div id="wat-is-data" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Wat is data</h2>
+<p>Bij dit principe moeten we tegenwoordig niet erg lang stilstaan. Het is ondertussen voor de meeste mensen duidelijk dat overal waar je kijkt er data zijn. Alles wat je online doet maar ook alles wat je offline doet kan tot data worden omgevormd. Om als invoer te kunnen dienen voor een leeralgoritme, moeten de data in de eerste plaats natuurlijk beschikbaar zijn. En daar wringt het eerste schoentje al. Want ‘beschikbaar’ betekent niet alleen dat je er toegang tot hebt, maar ook dat de data zich in het juiste formaat bevinden om te kunnen gebruiken door het leeralgoritme.</p>
+</div>
+<div id="soorten-data" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Soorten data</h2>
+<p>Ook hier moeten we niet te lang bij blijven stilstaan. We bekijken wel een aantal vaak gebruikte termen.</p>
+<ul>
+<li><em>Interne data</em>: Private data die behoren tot een organisatie.</li>
+<li><em>Externe data</em>: Publieke data of private data van een andere organisatie</li>
+<li><em>Ongestructureerde data</em>: Data die niet in een platte tabel-structuur kan worden weergegeven. Als het gekozen leeralgoritme hier niet mee overweg kan, moet je eerst features extraheren en zelf een platte tabel maken (eng: <em>melting data</em>)</li>
+<li><em>Metadata</em>: Is data over data zoals tijdstip van opname, gebeurtenissen uit logboek, enz…</li>
+</ul>
+</div>
+<div id="externe-databronnen" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Externe databronnen</h2>
+<p>Veel gegevens worden intern bij organisaties bewaard in afzonderlijke, speciaal daarvoor voorziene databanken, bestanden of (zeker als het om historische gegevens gaat) de fysische tegenhangers zoals rekenbladen, werkboeken, documenten, archieven, …. Vaak zijn er echter nog andere bronnen zoals audit-rapporten, usage-statistieken rond het gebruik van websites, logbestanden, videobeelden, … waar men niet onmiddellijk aan denkt. Binnen een bedrijfs-context is het net belangrijk om nieuwe databronnen aan te boren, bronnen waar de concurrentie niet eerder aan dacht.</p>
+<p>Hieronder een collage van een aantal potentiële interessante bronnen van data op het internet (naast de meest vanzelfsprekende zoals sociale media e.d.). Het gaat hier om generieke bronnen met data over meerdere domeinen.</p>
+<ul>
+<li><a href="https://academictorrents.com/browse.php">Academictorrents</a></li>
+<li><a href="http://aws.amazon.com/datasets">Amazon Web Services public datasets</a></li>
+<li><a href="http://data.gov.uk/">Brits open data platform</a></li>
+<li><a href="http://www.data.gc.ca/">Canadese open data site</a></li>
+<li><a href="https://registry.opendata.aws/commoncrawl/">Common Crawl</a></li>
+<li><a href="https://www.dataquest.io/blog/free-datasets-for-projects/">DataQuest</a></li>
+<li><a href="https://data.world/">Data World</a></li>
+<li><a href="http://open-data.europa.eu/en/data/">Europese Open data portaal</a></li>
+<li><a href="https://data.fivethirtyeight.com/">FiveThirtyEight</a></li>
+<li><a href="https://www.forbes.com/sites/bernardmarr/2016/02/12/big-data-35-brilliant-and-free-data-sources-for-2016/#14cabf5bb54d">Forbes</a></li>
+<li><a href="https://www.gapminder.org/data/">Gapminder</a></li>
+<li>Google <a href="https://trends.google.nl/trends/?geo=BE">Trends</a>, <a href="https://scholar.google.be/">Scholar</a>, <a href="https://www.google.com/?tbm=pts">Patents</a>, <a href="https://www.google.com/publicdata/directory">Google Dataset Search lab</a>, …</li>
+<li><a href="https://www.kaggle.com/datasets">Kaggle</a></li>
+<li><a href="https://www.reddit.com/r/datasets/">Reddit</a></li>
+<li><a href="http://www.socrata.com/discover/">Socrata</a></li>
+<li><a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">Standaard datasets</a></li>
+<li><a href="http://mlr.cs.umass.edu/ml/">UCI Machine Learning Repository</a></li>
+<li><a href="http://www.census.gov/data.html">US Census Bureau</a></li>
+<li><a href="http://data.gov">US Open data portal</a></li>
+<li><a href="https://www.quandl.com/search">Quandl</a></li>
+<li><a href="https://www.quantopian.com/">Quantopian</a></li>
+<li><a href="https://www.wunderground.com/weather/api/">Wunderground</a></li>
+<li>enzovoort…</li>
+</ul>
+<p>Hierboven worden een aantal databronnen opgesomd, maar het vergt vaak wel wat meer speurwerk om de ideal dataset te vinden. We gaan hier even een fictief voorbeeld aanhalen van hoe zo een zoektocht zou kunnen verlopen.</p>
+
+<div class="example">
+<p><span id="exm:data-zoeken" class="example"><strong>Voorbeeld 3.1  </strong></span><strong>Op zoek naar data</strong> (<em>hypothetisch</em>): je bent op zoek naar een gratis beschikbare data die een voorspellende waarde heeft voor het transportsnelheid van goederen over de Westerschelde. Je denkt dat windsnelheid misschien een impact kan hebben op de vaarsnelheid. Dit zou je zoektocht naar geschikte data bijvoorbeeld kunnen zijn:</p>
+<ol style="list-style-type: decimal">
+<li>Je zoekt eerst naar een website die historische windsterkte vrijgeeft, liefst via API</li>
+<li>Je vind wel een aantal bronnen maar geen daarvan zijn én gratis én in staat om historische data op te halen</li>
+<li>Dan lees je ergens dat golfslag misschien een betere voorspellende waarde heeft</li>
+<li>Je zoekt op Google naar <code>Wave Measurement</code> en je komt <a href="https://www.researchgate.net/publication/324478225_Outlier_Detection_in_Ocean_Wave_Measurements_by_Using_Unsupervised_Data_Mining_Methods">dit</a> wetenschappelijk artikel tegen</li>
+<li>In dat artikel blijken ze exact te doen wat je naar op zoek bent</li>
+<li>Daarom zoek je in dat artikel naar de ‘Methods’ sectie om te achterhalen waar de auteurs hun data vandaan hebben (een wetenschappelijk artikel moet per definitie reproduceerbaar zijn dus moet het zijn bronnen altijd vermelden)</li>
+<li>Je vind dat ze de data van de organisatie NOAA hebben en je geeft het in op Google</li>
+<li>Op de <a href="https://www.ndbc.noaa.gov/data/">website van de NOAA</a> ontdek je dat ze de gegevens publiek ter beschikking stellen</li>
+<li>Er zijn data voor België beschikbaar, maar de frequentie waarmee ze beschikbaar worden gemaakt is toch teleurstellend</li>
+<li>Je realiseert je plots dat er misschien Belgische sites zijn die ook hun gegevens delen</li>
+<li>Je komt op de website van het <a href="https://meetnetvlaamsebanken.be/Measurement">Meetnet Vlaamse Banken</a> en daar vind je, na inloggen, exact de data die je nodig hebt…
+<img src="img/Zoek_proces.png" alt="Meetnet Vlaamse Banken" />
+</div></li>
+</ol>
+</div>
+<div id="data-genereren" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Data Genereren</h2>
+<p>Natuurlijk is er de optie om zelf data te genereren. In principe is dat iets dat typisch in het domein van de wetenschap valt omdat hierbij strikte deontologische regels te volgen zijn. De regels hebben er eigenlijk allemaal mee te maken dat de waarnemer zeker is (en dat ook kan aantonen) dat de waarnemingen betrouwbaar, accuraat, precies, ethisch verantwoord en relevant zijn. Dit is een niet te onderschatten taak en er is heel wat ervaring nodig om dit te kunnen bereiken. De correcte manier om dat te doen valt buiten het bereik van deze cursus maar geïnteresseerde lezers kunnen hiermee beginnen:</p>
+<p>Carey, S. S. (2011). <a href="https://pdfs.semanticscholar.org/f438/02e46e7f1deadeb53f8f13d9cb78e55eb5ae.pdf">A beginner’s guide to scientific method</a>. Cengage Learning.</p>
+</div>
+<div id="de-analyse-dataset" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> De analyse dataset</h2>
+<p>De data kan allerlei vormen aannemen maar de leeralgoritme kunnen niet zomaar overweg met al die verschillende vormen. Vaak wil de datawetenschapper de data eerst <em>integreren</em> tot een enkel bestand of data-stroom met een ‘platte’ tabel-structuur, dit noem men de analyse dataset.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-9" class="definition"><strong>Stelling 3.2  </strong></span>Een leeralgoritme vereist meestal een analyse-dataset met een ‘platte’ structuur. Dit betekent één tabel met één instantie per rij en één variabele per kolom.
+</div>
+<div class="figure"><span id="fig:dataset-onderdelen"></span>
+<img src="img/dataset-onderdelen.png" alt="De onderdelen van een dataset met ‘platte’ structuur." width="556" />
+<p class="caption">
+Figuur 3.2: De onderdelen van een dataset met ‘platte’ structuur.
+</p>
+</div>
+
+</div>
+<div id="soorten-variabelen" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Soorten variabelen</h2>
+<p>Het gaat hier over de data type van de variabele, bijvoorbeeld of het gaat over een getal of over tekst. Dit lijkt sterk op de verschillende data types die men in een programmeertalen tegenkomt (integer, string, …). Maar die overeenkomst is maar oppervlakkig. Binnen de statistiek is men verplicht om meer data types te onderscheiden die niet hun gelijke kennen binnen de IT. Laten we beginnen met de meest voorkomende data types in een grafiek te zetten:</p>
+<div class="figure"><span id="fig:data-types"></span>
+<img src="img/data-types.svg" alt="Schematische visualisaties voor een aantal veel voorkomende data types Let op de labels op elke grafieken. ze geven telkens een realistisch scenario weer."  />
+<p class="caption">
+Figuur 3.3: Schematische visualisaties voor een aantal veel voorkomende data types Let op de labels op elke grafieken. ze geven telkens een realistisch scenario weer.
+</p>
+</div>
+
+<p>Je kan deze enkelvoudige data types indelen volgens drie dimensies:</p>
+<ul>
+<li><strong>Numeriek vs ordinaal vs nominaal</strong>: Met numerieke data kan je berekeningen maken, met ordinale gegevens kan je enkel <a href="https://nl.wikipedia.org/wiki/Ongelijkheid_(wiskunde)">ongelijkheid</a> testen en met nominale gegevens kan je noch berekenen noch ongelijkheid testen</li>
+<li><strong>Continu vs discreet</strong>: Bij een continue variabele kan je tussen twee willekeurig gekozen waarden oneindig veel andere waarden plaatsen. Bij een discrete variabele kan dat niet. Continue variabelen worden verder onderscheiden van op basis van de <a href="https://nl.wikipedia.org/wiki/Meetschaal">meetschaal</a>. Bij een <em>intervalschaal</em> is er geen betekenisvol nulpunt (zoals bij temperatuur in graden Celcius) bij een getal met <em>ratioschaal</em> is dat wél het geval.</li>
+<li><strong>Circulair vs lineair</strong>: Bij circulaire data is de as op zichzelf teruggeplooid om een cirkel te vormen.</li>
+</ul>
+</div>
+<div id="eng-nominal-scale-data" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> (Eng) Nominal-Scale Data</h2>
+<p>Whenever the data consist of <strong>categories</strong>, typically, we deal with so-called nominal-scale data. Examples are department, blood type, country, …. Whenever there are only two categories, we speak of <strong>binary data</strong> (true/false, yes/no, success/failure, ….).</p>
+</div>
+<div id="eng-dummy-variables" class="section level2" number="3.9">
+<h2><span class="header-section-number">3.9</span> (Eng) Dummy Variables</h2>
+<p>Whenever we encounter a categorical feature, we may have to consider to create a set of dummy variables out of a single categorical variable so as to support statistical analysis in general and ML using a specific learner in particular:</p>
+<div class="figure"><span id="fig:dummy-variables"></span>
+<img src="img/dummy.svg" alt="Demonstration of the use of dummy variables."  />
+<p class="caption">
+Figuur 3.4: Demonstration of the use of dummy variables.
+</p>
+</div>
+
+</div>
+<div id="eng-ordinal-scale-data" class="section level2" number="3.10">
+<h2><span class="header-section-number">3.10</span> (Eng) Ordinal-Scale Data</h2>
+<p>In some cases, the categories in categorical data have some natural ordering such as is the case for ranking or scoring measures (e.g. “good,” “medium,” “bad”). Coding such a variable into a discrete numerical one is not very good from a statistical point of view (because then you assume a ratio scale which may not be realistic) but sometimes understandable from the practical point of view, especially if, for your particular problem, finding an appropriate learner can be hard. There is also the possibility to treat the ordinal-scale variable as a categorical one (and e.g. creating a set of dummy variables) but be aware that you lose information along the way. The same is true for other forms of discretizations, by the way.</p>
+
+<div class="remark">
+ <span class="remark"><em>Opmerking </em></span> One can always convert a variable with a <em>rich</em> data type to one with <em>poor</em> data type. This can benefit practicality be always means losing information.
+</div>
+</div>
+<div id="eng-circular-scale" class="section level2" number="3.11">
+<h2><span class="header-section-number">3.11</span> (Eng) Circular-Scale</h2>
+<p>Whenever there is no maximum or minimum value for a scale, it is said to be <strong>circular-scaled</strong>. Examples of such measurements are time of day, day of week, wind direction, bearing, …. This type of scale can be super-imposed on other scale types and can be both discrete and continuous. For example, direction measured relative to e.g. the magnetic north is a interval-scaled continuous circular measure and the hour of the day follows a discrete circular scale. Mind that circular scale data is very hard to work with as even simple operations such as a mean requires special attention:</p>
+<div class="figure"><span id="fig:circular"></span>
+<img src="img/circular_stats.svg" alt="Circular scale data requires special attention."  />
+<p class="caption">
+Figuur 3.5: Circular scale data requires special attention.
+</p>
+</div>
+
+</div>
+<div id="eng-censoring" class="section level2" number="3.12">
+<h2><span class="header-section-number">3.12</span> (Eng) Censoring</h2>
+<p>Sometimes data is according to a truncated scale. For example, in clinical data sets you frequently encounter situations where as patient is said to survive for at least x years after the treatment, indicated as <code>&gt;x</code> (e.g. <code>&gt;12</code> years). For such a truncation we call the data <strong>right-censored</strong>. Similarly lab measurements are frequently reported to be below a certain limit without knowing the exact number such as <code>&lt;1.03 mmol/L HDL</code>, this is called a <strong>left-censored</strong> datum. In case we have censoring at both ends of the scale, we speak of <strong>interval censoring</strong> (e.g. <code>2 &lt; x &lt; 5 births per day</code>). It remains important to try to understand the reason of the censoring. It could be that the measurement was not sufficiently accurate or maybe it was done accurately but afterwards categorized (placed into bins) during some preprocessing step.</p>
+<p>In case you need to deal with censoring there is a limited number of statistical tools to your disposal. One is the use of <strong>tobit regression</strong>.</p>
+</div>
+<div id="tijd-en-ruimte" class="section level2" number="3.13">
+<h2><span class="header-section-number">3.13</span> Tijd en ruimte</h2>
+<p>Data is een spiegel voor allerlei informatie uit de reële wereld. Toch zijn er twee grootheden die eruit steken. Het gaat om de twee dimensies tijd en ruimte. Andere variabelen zijn vaak secundair aan deze dimensies. Voorbeelden zijn het voorspellen van de toekomstige <em>verkoopcijfers</em> of de verspreiding van een virus tijdens een pandemie. Laten we naar een bekende (maar gedateerde) dataset kijken van de farmareus Johnson &amp; Johnson:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span> (JohnsonJohnson, <span class="at">main =</span> <span class="st">&quot;Kwartaalcijfers J&amp;J&quot;</span>)</span></code></pre></div>
+<p><img src="img/gen-unnamed-chunk-10-1.png" width="672" /></p>
+<p>Het gaat om de kwartaalcijfers van 1960 to 1980. Deze dataset wordt vaak in educatieve werken rond tijdsreeks-analyses gebruikt om het effect van een multiplicatieve seizoensafhankelijke trend (eng: <em>seasonality</em>) weer te geven. <em>Multiplicatief</em> betekent hier gewoon dat het seizoenseffect afhangt van de grootte van de waarde. We voelen meteen aan dat deze tijdsreeksen van een heel andere soort data zijn dan de eerder aangehaalde data. Dat heeft te maken met het feit dat een punt op dit lijndiagram niet onafhankelijk is van een ander punt op dezelfde lijn. We spreken van <em>autocorrelatie</em>. In het algemeen, wanneer men onderzoek doet naar de evolutie van gegevens in de loop van de tijd, spreekt van van <em>trend analyse</em>.</p>
+<p>Hetzelfde kunnen we nu doen voor ruimte. Onderstaande figuur laat zien hoe we bijvoorbeeld aantallen kunnen uitdrukken over een ruimtelijke dimensie (met toestemming van <span class="citation"><a href="bronvermelding.html#ref-Hermans" role="doc-biblioref">Hermans</a> <a href="bronvermelding.html#ref-Hermans" role="doc-biblioref">2019</a></span>).</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># From https://github.com/mhermans/thematic-maps-r</span></span>
+<span id="cb22-2"><a href="data.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Thanks to Maarten Hermans</span></span>
+<span id="cb22-3"><a href="data.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;BelgiumMaps.StatBel&quot;, repos = &quot;http://www.datatailor.be/rcube&quot;, type = &quot;source&quot;)</span></span>
+<span id="cb22-4"><a href="data.html#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="data.html#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BelgiumMaps.StatBel)</span>
+<span id="cb22-6"><a href="data.html#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb22-7"><a href="data.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb22-8"><a href="data.html#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="data.html#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(BE_ADMIN_MUNTY)</span>
+<span id="cb22-10"><a href="data.html#cb22-10" aria-hidden="true" tabindex="-1"></a>munip_map <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(BE_ADMIN_MUNTY)</span>
+<span id="cb22-11"><a href="data.html#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="data.html#cb22-12" aria-hidden="true" tabindex="-1"></a>src <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
+<span id="cb22-13"><a href="data.html#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;https://raw.githubusercontent.com/mhermans/&quot;</span>,</span>
+<span id="cb22-14"><a href="data.html#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;thematic-maps-r/master/data/muni_typology.csv&quot;</span>)</span>
+<span id="cb22-15"><a href="data.html#cb22-15" aria-hidden="true" tabindex="-1"></a>munip_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(src)</span>
+<span id="cb22-16"><a href="data.html#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="data.html#cb22-17" aria-hidden="true" tabindex="-1"></a>munip <span class="ot">&lt;-</span> <span class="fu">merge</span>(munip_map, munip_data,</span>
+<span id="cb22-18"><a href="data.html#cb22-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">by.x =</span> <span class="st">&quot;CD_MUNTY_REFNIS&quot;</span>,</span>
+<span id="cb22-19"><a href="data.html#cb22-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">by.y =</span> <span class="st">&quot;gemeente_nis_code&quot;</span>)</span>
+<span id="cb22-20"><a href="data.html#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="data.html#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="fu">qtm</span>(munip, <span class="at">fill =</span> <span class="st">&quot;hoofdcluster_lbl&quot;</span>, <span class="at">fill.title =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="img/ruimte.png" width="672" /></p>
+<p>Ook bij ruimtelijke variabelen merken we een autocorrelatie op, waarbij de waarde op één plaats niet onafhankelijk is van de waarde op een naburige plaats.</p>
+</div>
+<div id="toegang-tot-data" class="section level2" number="3.14">
+<h2><span class="header-section-number">3.14</span> Toegang tot data</h2>
+<p>Je moet natuurlijk zien toegang te krijgen tot de data. Als datawetenschapper moet je alvorens een opdracht te aanvaarden eerst <strong>dé vraag</strong> stellen. Net als <a href="https://youtu.be/1-mOKMq19zU">Jerry Maguire</a> moet je de vraag durven stellen:</p>
+<p><q>Show me the data!</q></p>
+<p>Soms zijn de data publiek toegankelijk en is het gewoon een kwestie om tijd te nemen om door de data te lopen, i.e. aan exploratie te doen. Soms moeten de data nog verzameld worden. Dan wil de datawetenschapper ook inspraak hebben in het verzamelen en de eventuele verwerking van de gegevens. Het kan natuurlijk voorkomen dat men enkel toegang verschaft nadat er een akkoord is om een ML project op te starten. Het advies is hier om er alles aan te doen om toch op zijn minst een glimp te kunnen opvangen van de data. Soms zijn de data te koop en krijg je geen data te zien alvorens je betaalt? Wel, indien je op voorhand geen toegang krijgt tot zelfs een klein representatief deel van de gegevensberg of -stroom, dan kan je nog altijd een samenvatting opvragen, het zogenaamd <em>codeboek</em>. Je kan de opdrachtgever belagen met vragen:</p>
+<p><q>Hoeveel tabellen zijn er?</q></p>
+<p><q>Voor elke tabel, hoeveel rijen en kolommen zijn er?</q></p>
+<p><q>Hoeveel data ontbreekt er?</q></p>
+<p><q>Wat is het formaat van de gegevens?</q></p>
+<p>enz…</p>
+</div>
+<div id="het-codeboek" class="section level2" number="3.15">
+<h2><span class="header-section-number">3.15</span> Het codeboek</h2>
+<p>Het eerste contact met een dataset verloopt normaal gezien via het codeboek. Het codeboek bevat de sleutel tot het begrijpen van de data zonder de data zelf te moeten inkijken. Hier is een voorbeeld in <a href="https://nl.wikipedia.org/wiki/JSON">JSON formaat</a>:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb23-1"><a href="data.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb23-2"><a href="data.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Occupancy Detection Data Set&quot;</span><span class="fu">,</span></span>
+<span id="cb23-3"><a href="data.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Experimental data used for binary classification (room</span></span>
+<span id="cb23-4"><a href="data.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="st">    occupancy) from Temperature, Humidity, Light and CO2. Ground-truth</span></span>
+<span id="cb23-5"><a href="data.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="st">    occupancy was obtained from time stamped pictures that were taken</span></span>
+<span id="cb23-6"><a href="data.html#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="st">    every minute.&quot;</span><span class="fu">,</span></span>
+<span id="cb23-7"><a href="data.html#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;data_set_type&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;Multivariate&quot;</span><span class="ot">,</span> <span class="st">&quot;Time-Series&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb23-8"><a href="data.html#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;instances_count&quot;</span><span class="fu">:</span> <span class="dv">20560</span><span class="fu">,</span></span>
+<span id="cb23-9"><a href="data.html#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;publication_date&quot;</span><span class="fu">:</span> <span class="st">&quot;2016-02-29&quot;</span><span class="fu">,</span></span>
+<span id="cb23-10"><a href="data.html#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;origin_contact_email&quot;</span><span class="fu">:</span> <span class="st">&quot;Luis Candanedo &lt;luismiguel.candanedoibarra@umons.ac.be&gt;&quot;</span><span class="fu">,</span></span>
+<span id="cb23-11"><a href="data.html#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;outcome&quot;</span><span class="fu">:</span> <span class="st">&quot;Occupancy&quot;</span><span class="fu">,</span></span>
+<span id="cb23-12"><a href="data.html#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;outcome_type&quot;</span><span class="fu">:</span> <span class="st">&quot;Binary&quot;</span><span class="fu">,</span></span>
+<span id="cb23-13"><a href="data.html#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;feature_type&quot;</span><span class="fu">:</span> <span class="st">&quot;Real&quot;</span><span class="fu">,</span></span>
+<span id="cb23-14"><a href="data.html#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;feature_count&quot;</span><span class="fu">:</span> <span class="dv">7</span><span class="fu">,</span></span>
+<span id="cb23-15"><a href="data.html#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;variable_descriptions&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb23-16"><a href="data.html#cb23-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;Time&quot;</span><span class="fu">:</span> <span class="st">&quot;Time of measurement&quot;</span><span class="fu">,</span></span>
+<span id="cb23-17"><a href="data.html#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;Temperature&quot;</span><span class="fu">:</span> <span class="st">&quot;Temperature in Celsius&quot;</span><span class="fu">,</span></span>
+<span id="cb23-18"><a href="data.html#cb23-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;Humidity&quot;</span><span class="fu">:</span> <span class="st">&quot;Relative air humidity in %&quot;</span><span class="fu">,</span></span>
+<span id="cb23-19"><a href="data.html#cb23-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;Light&quot;</span><span class="fu">:</span> <span class="st">&quot;Light intensity in Lux&quot;</span><span class="fu">,</span></span>
+<span id="cb23-20"><a href="data.html#cb23-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;CO2&quot;</span><span class="fu">:</span> <span class="st">&quot;CO2 concentration in ppm&quot;</span><span class="fu">,</span></span>
+<span id="cb23-21"><a href="data.html#cb23-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;Humidity_Ratio&quot;</span><span class="fu">:</span> <span class="st">&quot;Derived quantity from temperature and relative</span></span>
+<span id="cb23-22"><a href="data.html#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="st">        humidity, in kg[water-vapor]/kg[air]&quot;</span><span class="fu">,</span></span>
+<span id="cb23-23"><a href="data.html#cb23-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;Occupancy&quot;</span><span class="fu">:</span> <span class="st">&quot;0 or 1, 0 for not occupied, 1 for occupied status&quot;</span></span>
+<span id="cb23-24"><a href="data.html#cb23-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb23-25"><a href="data.html#cb23-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;references&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb23-26"><a href="data.html#cb23-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Candanedo, L. M., &amp; Feldheim, V. (2016). Accurate occupancy detection</span></span>
+<span id="cb23-27"><a href="data.html#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="st">        of an office room from light, temperature, humidity and CO2</span></span>
+<span id="cb23-28"><a href="data.html#cb23-28" aria-hidden="true" tabindex="-1"></a><span class="st">        measurements using statistical learning models. Energy and</span></span>
+<span id="cb23-29"><a href="data.html#cb23-29" aria-hidden="true" tabindex="-1"></a><span class="st">        Buildings, 112, 28-39.&quot;</span></span>
+<span id="cb23-30"><a href="data.html#cb23-30" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb23-31"><a href="data.html#cb23-31" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p>Dit voorbeeld van een codeboek is oorspronkelijk afkomstig van de <a href="https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+">UCI repository</a>. Het is daarna nog hier en daar aangepast om als voorbeeld te kunnen dienen. Dat het in JSON formaat staat is niet onbelangrijk. Soms gaat het over complexe datasets met duizenden kolommen. Zo bestaat de <em>learning</em> databank, onderliggend aan onze Digitap omgeving, uit 4992 kolommen! Als je dan op zoek moet naar de exacte eenheid waarin een variabele beschreven staat of wat een variabele nu weer precies betekent is dat niet werkbaar.</p>
+<p>Uit de het bovenstaande codeboek lezen we dat het gaat over sensordata in een ruimte om te proberen voorspellen of er iemand in de ruimte aanwezig is of niet. We zien dat er 20 560 <em>instanties</em> zijn, waarbij op elke instantie gegevens verzameld worden van de verscheidene sensoren. Dat is zeker niet slecht. Om aan statistiek te doen (ML behoort voor 100% tot de statistiek) moet je voldoende gegevens hebben en als de patronen in de gegevens maar amper ‘boven de ruis’ uitsteken, dan heb je méér data nodig.</p>
+<p>Daaronder lezen we dat de data publiek zijn gemaakt op <code>2016-02-29</code>. Dit strookt met wat we later zouden ontdekken, namelijk dat de datums in de dataset vóór deze datum liggen (<code>2015-02-02 14:19</code>, …). Het wetenschappelijk artikel werd gepubliceerd in 2016, dus dat kan ook kloppen. Door op deze wijze een soort reconstructie te doen van de feiten kan een datawetenschapper soms achterhalen of de data nog wel hedendaags zijn of dat er bijvoorbeeld iets niet pluis is.</p>
+<p>Dit kom je niet vaak tegen, maar idealiter is het goed om, zoals hier, over de <em>contactgegevens</em> te beschikken voor in geval er toch nog vragen opduiken. Er wordt dus ook verwezen naar het wetenschappelijk artikel en daar vind je normaal gezien een detail-beschrijving van de methodologie. Zo vind je daar terug dat één van de gebruikte sensoren een vochtigheid- en temperatuur-sensor is van het type <code>DHT22</code>, informatie die van pas kan komen indien deze data anomalieën zouden vertonen.</p>
+<p>Tenslotte vinden we natuurlijk in het codeboek ook een beschrijving van de variabelen. Deze beschrijving omvat idealiter de volgende elementen:</p>
+<ul>
+<li>een beschrijving van de variabele</li>
+<li>de eventuele eenheden waarmee de grootheden geassocieerd dienen te worden</li>
+<li>of de variabele het gevolg is van een rechtstreekst meting (bijv. output van een sensor) of achteraf berekend werd uit andere variabelen zoals hier het geval is voor <code>Humidity_Ratio</code></li>
+<li>een overzicht van de <em>waarde ruimte</em>, de set van mogelijke waarden die de variabele <em>kan</em> aannemen (<span class="math inline">\(\mathbb{R}\)</span>, <span class="math inline">\(\mathbb{Z}^+\)</span>, {0, 1}, datum-veld met resolutie van 1 minuut, …)</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="leren-uit-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-exploratie.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

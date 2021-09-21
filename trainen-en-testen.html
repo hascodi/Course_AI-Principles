@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 6 Trainen en testen | References</title>
+  <meta name="description" content="AI Principles course at the AP University College." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 6 Trainen en testen | References" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="AI Principles course at the AP University College." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 6 Trainen en testen | References" />
+  
+  <meta name="twitter:description" content="AI Principles course at the AP University College." />
+  
+
+<meta name="author" content="David D’Haese" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="manipuleren-van-data.html"/>
+<link rel="next" href="bronvermelding.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/course.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Summary</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html"><i class="fa fa-check"></i><b>1</b> Inleiding tot de cursus</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#in-een-notedop"><i class="fa fa-check"></i><b>1.1</b> In een notedop</a></li>
+<li class="chapter" data-level="1.2" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#leerdoelen"><i class="fa fa-check"></i><b>1.2</b> Leerdoelen</a></li>
+<li class="chapter" data-level="1.3" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#cursus-vorm"><i class="fa fa-check"></i><b>1.3</b> Cursus vorm</a></li>
+<li class="chapter" data-level="1.4" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#bekijken-van-deze-cursus"><i class="fa fa-check"></i><b>1.4</b> Bekijken van deze Cursus</a></li>
+<li class="chapter" data-level="1.5" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#licentie-voor-deze-cursus"><i class="fa fa-check"></i><b>1.5</b> Licentie voor deze cursus</a></li>
+<li class="chapter" data-level="1.6" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#verwijzen-naar-deze-cursus"><i class="fa fa-check"></i><b>1.6</b> Verwijzen naar deze cursus</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="leren-uit-data.html"><a href="leren-uit-data.html"><i class="fa fa-check"></i><b>2</b> Leren uit data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leerproces"><i class="fa fa-check"></i><b>2.1</b> Het leerproces</a></li>
+<li class="chapter" data-level="2.2" data-path="leren-uit-data.html"><a href="leren-uit-data.html#de-evolutie-van-het-machinaal-leren"><i class="fa fa-check"></i><b>2.2</b> De evolutie van het machinaal leren</a></li>
+<li class="chapter" data-level="2.3" data-path="leren-uit-data.html"><a href="leren-uit-data.html#intelligentie"><i class="fa fa-check"></i><b>2.3</b> Intelligentie</a></li>
+<li class="chapter" data-level="2.4" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-model"><i class="fa fa-check"></i><b>2.4</b> Het model</a></li>
+<li class="chapter" data-level="2.5" data-path="leren-uit-data.html"><a href="leren-uit-data.html#doelfunctie"><i class="fa fa-check"></i><b>2.5</b> Doelfunctie</a></li>
+<li class="chapter" data-level="2.6" data-path="leren-uit-data.html"><a href="leren-uit-data.html#mnist-dataset"><i class="fa fa-check"></i><b>2.6</b> MNIST dataset</a></li>
+<li class="chapter" data-level="2.7" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-resultaat-van-mnist-analyse"><i class="fa fa-check"></i><b>2.7</b> Het resultaat van MNIST analyse</a></li>
+<li class="chapter" data-level="2.8" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-mnist-model"><i class="fa fa-check"></i><b>2.8</b> Het MNIST model</a></li>
+<li class="chapter" data-level="2.9" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leerproces-voor-begeleid-ml"><i class="fa fa-check"></i><b>2.9</b> Het leerproces voor begeleid ML</a></li>
+<li class="chapter" data-level="2.10" data-path="leren-uit-data.html"><a href="leren-uit-data.html#de-onderdelen-van-een-model"><i class="fa fa-check"></i><b>2.10</b> De onderdelen van een model</a></li>
+<li class="chapter" data-level="2.11" data-path="leren-uit-data.html"><a href="leren-uit-data.html#hyperparameters"><i class="fa fa-check"></i><b>2.11</b> Hyperparameters</a></li>
+<li class="chapter" data-level="2.12" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leeralgoritme"><i class="fa fa-check"></i><b>2.12</b> Het leeralgoritme</a></li>
+<li class="chapter" data-level="2.13" data-path="leren-uit-data.html"><a href="leren-uit-data.html#model-complexiteit"><i class="fa fa-check"></i><b>2.13</b> Model complexiteit</a></li>
+<li class="chapter" data-level="2.14" data-path="leren-uit-data.html"><a href="leren-uit-data.html#comprimeren-door-middel-van-een-ml-model"><i class="fa fa-check"></i><b>2.14</b> Comprimeren door middel van een ML model</a></li>
+<li class="chapter" data-level="2.15" data-path="leren-uit-data.html"><a href="leren-uit-data.html#leren-versus-ontwerp"><i class="fa fa-check"></i><b>2.15</b> Leren versus ontwerp</a></li>
+<li class="chapter" data-level="2.16" data-path="leren-uit-data.html"><a href="leren-uit-data.html#leren-versus-onthouden-en-inferentie"><i class="fa fa-check"></i><b>2.16</b> Leren versus onthouden en inferentie</a></li>
+<li class="chapter" data-level="2.17" data-path="leren-uit-data.html"><a href="leren-uit-data.html#onbegeleid-ml"><i class="fa fa-check"></i><b>2.17</b> Onbegeleid ML</a></li>
+<li class="chapter" data-level="2.18" data-path="leren-uit-data.html"><a href="leren-uit-data.html#conditionering"><i class="fa fa-check"></i><b>2.18</b> Conditionering</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#data-voor-ml"><i class="fa fa-check"></i><b>3.1</b> Data voor ML</a></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#wat-is-data"><i class="fa fa-check"></i><b>3.2</b> Wat is data</a></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#soorten-data"><i class="fa fa-check"></i><b>3.3</b> Soorten data</a></li>
+<li class="chapter" data-level="3.4" data-path="data.html"><a href="data.html#externe-databronnen"><i class="fa fa-check"></i><b>3.4</b> Externe databronnen</a></li>
+<li class="chapter" data-level="3.5" data-path="data.html"><a href="data.html#data-genereren"><i class="fa fa-check"></i><b>3.5</b> Data Genereren</a></li>
+<li class="chapter" data-level="3.6" data-path="data.html"><a href="data.html#de-analyse-dataset"><i class="fa fa-check"></i><b>3.6</b> De analyse dataset</a></li>
+<li class="chapter" data-level="3.7" data-path="data.html"><a href="data.html#soorten-variabelen"><i class="fa fa-check"></i><b>3.7</b> Soorten variabelen</a></li>
+<li class="chapter" data-level="3.8" data-path="data.html"><a href="data.html#eng-nominal-scale-data"><i class="fa fa-check"></i><b>3.8</b> (Eng) Nominal-Scale Data</a></li>
+<li class="chapter" data-level="3.9" data-path="data.html"><a href="data.html#eng-dummy-variables"><i class="fa fa-check"></i><b>3.9</b> (Eng) Dummy Variables</a></li>
+<li class="chapter" data-level="3.10" data-path="data.html"><a href="data.html#eng-ordinal-scale-data"><i class="fa fa-check"></i><b>3.10</b> (Eng) Ordinal-Scale Data</a></li>
+<li class="chapter" data-level="3.11" data-path="data.html"><a href="data.html#eng-circular-scale"><i class="fa fa-check"></i><b>3.11</b> (Eng) Circular-Scale</a></li>
+<li class="chapter" data-level="3.12" data-path="data.html"><a href="data.html#eng-censoring"><i class="fa fa-check"></i><b>3.12</b> (Eng) Censoring</a></li>
+<li class="chapter" data-level="3.13" data-path="data.html"><a href="data.html#tijd-en-ruimte"><i class="fa fa-check"></i><b>3.13</b> Tijd en ruimte</a></li>
+<li class="chapter" data-level="3.14" data-path="data.html"><a href="data.html#toegang-tot-data"><i class="fa fa-check"></i><b>3.14</b> Toegang tot data</a></li>
+<li class="chapter" data-level="3.15" data-path="data.html"><a href="data.html#het-codeboek"><i class="fa fa-check"></i><b>3.15</b> Het codeboek</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-exploratie.html"><a href="data-exploratie.html"><i class="fa fa-check"></i><b>4</b> Data exploratie</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-exploratie.html"><a href="data-exploratie.html#principes-van-data-exploratie"><i class="fa fa-check"></i><b>4.1</b> Principes van data exploratie</a></li>
+<li class="chapter" data-level="4.2" data-path="data-exploratie.html"><a href="data-exploratie.html#stappen-in-data-exploratie"><i class="fa fa-check"></i><b>4.2</b> Stappen in data exploratie</a></li>
+<li class="chapter" data-level="4.3" data-path="data-exploratie.html"><a href="data-exploratie.html#voorbeeld-data-exploratie"><i class="fa fa-check"></i><b>4.3</b> Voorbeeld data exploratie</a></li>
+<li class="chapter" data-level="4.4" data-path="data-exploratie.html"><a href="data-exploratie.html#univariate-verdelingen"><i class="fa fa-check"></i><b>4.4</b> Univariate verdelingen</a></li>
+<li class="chapter" data-level="4.5" data-path="data-exploratie.html"><a href="data-exploratie.html#correlatie-tussen-twee-variabelen"><i class="fa fa-check"></i><b>4.5</b> Correlatie tussen twee variabelen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html"><i class="fa fa-check"></i><b>5</b> Manipuleren van data</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#kort-overzicht-van-de-manipulaties"><i class="fa fa-check"></i><b>5.1</b> Kort overzicht van de manipulaties</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#filteren-en-versnijden"><i class="fa fa-check"></i><b>5.1.1</b> Filteren en versnijden</a></li>
+<li class="chapter" data-level="5.1.2" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#booleaans-masker"><i class="fa fa-check"></i><b>5.1.2</b> Booleaans masker</a></li>
+<li class="chapter" data-level="5.1.3" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-grouping-and-aggregation"><i class="fa fa-check"></i><b>5.1.3</b> (Eng.) Grouping and Aggregation</a></li>
+<li class="chapter" data-level="5.1.4" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-transforming-text"><i class="fa fa-check"></i><b>5.1.4</b> (Eng.) Transforming text</a></li>
+<li class="chapter" data-level="5.1.5" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-re-scaling-numerical-values"><i class="fa fa-check"></i><b>5.1.5</b> (Eng.) Re-Scaling Numerical Values</a></li>
+<li class="chapter" data-level="5.1.6" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-discretizations"><i class="fa fa-check"></i><b>5.1.6</b> (Eng.) Discretizations</a></li>
+<li class="chapter" data-level="5.1.7" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-information-content"><i class="fa fa-check"></i><b>5.1.7</b> (Eng.) Information Content</a></li>
+<li class="chapter" data-level="5.1.8" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-reformatting-type-conversion-casting-or-coercion"><i class="fa fa-check"></i><b>5.1.8</b> (Eng.) Reformatting, Type Conversion, Casting or Coercion</a></li>
+<li class="chapter" data-level="5.1.9" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-changing-numerical-values"><i class="fa fa-check"></i><b>5.1.9</b> (Eng.) Changing numerical Values</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-changing-category-names"><i class="fa fa-check"></i><b>5.2</b> (Eng.) Changing Category Names</a></li>
+<li class="chapter" data-level="5.3" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-imputation"><i class="fa fa-check"></i><b>5.3</b> (Eng.) Imputation</a></li>
+<li class="chapter" data-level="5.4" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#onbehandeld"><i class="fa fa-check"></i><b>5.4</b> Onbehandeld</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html"><i class="fa fa-check"></i><b>6</b> Trainen en testen</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#leren-leven-met-de-onzekerheid"><i class="fa fa-check"></i><b>6.1</b> Leren leven met de onzekerheid</a></li>
+<li class="chapter" data-level="6.2" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#meten-van-de-prestatie-van-een-model"><i class="fa fa-check"></i><b>6.2</b> Meten van de prestatie van een model</a></li>
+<li class="chapter" data-level="6.3" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#training--validatie--en-test-set"><i class="fa fa-check"></i><b>6.3</b> Training-, validatie- en test-set</a></li>
+<li class="chapter" data-level="6.4" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#cross-validatie"><i class="fa fa-check"></i><b>6.4</b> Cross-validatie</a></li>
+<li class="chapter" data-level="6.5" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#werkstroom-deep-learning"><i class="fa fa-check"></i><b>6.5</b> Werkstroom deep learning</a></li>
+<li class="chapter" data-level="6.6" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#data-lekkage"><i class="fa fa-check"></i><b>6.6</b> Data lekkage</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bronvermelding.html"><a href="bronvermelding.html"><i class="fa fa-check"></i>Bronvermelding</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">References</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="trainen-en-testen" class="section level1" number="6">
+<h1><span class="header-section-number">Hoofdstuk 6</span> Trainen en testen</h1>
+
+<div class="lemma">
+<span id="lem:cross-validatie-lemma" class="lemma"><strong>Leerdoel 6.1  </strong></span>Onderkent de basisprincipes van data training &amp; Cross-validatie (<a href="inleiding-tot-de-cursus.html#leerdoelen"><em>EA_LD754</em></a>).
+</div>
+
+<div class="lemma">
+<span id="lem:risicos" class="lemma"><strong>Leerdoel 6.2  </strong></span>Herkent de risico’s van onvolledige en inaccurate data (<a href="inleiding-tot-de-cursus.html#leerdoelen"><em>EA_LD759</em></a>).
+</div>
+
+<div class="lemma">
+<span id="lem:diagnose" class="lemma"><strong>Leerdoel 6.3  </strong></span>Gebruikt een diagnostische toolset om de performantie van ML modellen te meten (<a href="inleiding-tot-de-cursus.html#leerdoelen"><em>EA_LD760</em></a>).
+</div>
+
+<div class="lemma">
+<span id="lem:performantie" class="lemma"><strong>Leerdoel 6.4  </strong></span>Evalueert op gepaste wijze de performantie van een algoritme. (<a href="inleiding-tot-de-cursus.html#leerdoelen"><em>EA_LD762</em></a>).
+</div>
+<div id="leren-leven-met-de-onzekerheid" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Leren leven met de onzekerheid</h2>
+<p>Misschien wel het belangrijkste aspect van ML is dat er nooit een garantie dat het gaat lukken. Vele mensen schijnen het hier erg moeilijk mee te hebben. Men zegt zegt al te vaak:</p>
+<p><q>We will be able to predict…</q></p>
+<p>Waar voorzichtigheid hier op zijn plaats is:</p>
+<p><q>We hope to able to predict…</q></p>
+<p>Dat betekent nog niet dat voorspellen onmogelijk is. We gaan ons best doen om, als er een patroon in de data verborgen zit, deze er ook uit te krijgen.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-34" class="definition"><strong>Stelling 6.1  </strong></span>ML is geen toverkunst. Je kan <strong>nooit</strong> garanderen dat je een correcte voorspelling kan maken van iets wat nog niet geweten is.
+</div>
+</div>
+<div id="meten-van-de-prestatie-van-een-model" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Meten van de prestatie van een model</h2>
+<p>Omdat we nooit zeker zijn dat ons model goed zal voorspellen, moeten we dus ons best doen om de prestaties zo hoog mogelijk te houden. En dat begint daar weer bij het meten van de prestaties. Maar hoe meet men de prestatie van een model? Uit de paragraaf <a href="#leren-versus-onthouden">Leren versus onthouden</a> leerden we wat overfit is en wat het verschil is tussen regressie en ML. Hieruit volgt de Stelling <a href="trainen-en-testen.html#def:prestatie-principe">6.2</a>.</p>
+
+<div class="definition">
+<span id="def:prestatie-principe" class="definition"><strong>Stelling 6.2  </strong></span>De prestatie van een model wordt niet zomaar gemeten op basis van hoe goed het iets kan voorspellen. De prestatie van een model wordt in principe gemeten op basis van hoe goed het uitkomsten kan voorspellen gebruik maken van test-data, i.e. invoerdata waar noch het model, noch het leeralgoritme noch de datawetenschapper eerder mee in aanraking kwamen.
+</div>
+</div>
+<div id="training--validatie--en-test-set" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Training-, validatie- en test-set</h2>
+<p>We begrijpen nu dat het trainen van een model en het testen van een model dient de gebeuren op afzonderlijke subsets van de data. Dus de oplossing is het opsplitsen van de data. De belangrijkste opsplitsing van data is die tussen de <em>training-set</em> en de <em>test-set</em>. De training set is de set van <em>instanties</em> (zie hoofdstuk over <a href="data.html#data">data</a> als je deze term niet kent) waarmee het leeralgoritme getraind zal worden. De test-set krijgt het leeralgoritme niet te zien tot op het laatste, wanneer de prestaties van het model getest worden. Ook de datawetenschapper mag de test-set in principe niet zien en in professionele omgevingen wordt dit ook letterlijk genomen en is er een tussenpersoon tussen data leverancier en datawetenschapper die voor de opsplitsing zorgt.</p>
+<p>Er zijn verschillende manieren om de opsplitsing te verwezenlijken. Meestal krijgt men te maken met een <em>randomisatie</em>, dat is een opsplitsing op willekeurige basis, maar waarbij enkel de relatieve grootte van de training- en test-set worden meegegeven.</p>
+<p>In R:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="trainen-en-testen.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb55-2"><a href="trainen-en-testen.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="trainen-en-testen.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb55-4"><a href="trainen-en-testen.html#cb55-4" aria-hidden="true" tabindex="-1"></a>trn_msk <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="fu">nrow</span>(mtcars)) <span class="sc">&lt;</span> .<span class="dv">75</span></span>
+<span id="cb55-5"><a href="trainen-en-testen.html#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="trainen-en-testen.html#cb55-6" aria-hidden="true" tabindex="-1"></a>trn <span class="ot">&lt;-</span> mtcars[trn_msk, ]</span>
+<span id="cb55-7"><a href="trainen-en-testen.html#cb55-7" aria-hidden="true" tabindex="-1"></a>tst <span class="ot">&lt;-</span> mtcars[<span class="sc">!</span>trn_msk, ]</span>
+<span id="cb55-8"><a href="trainen-en-testen.html#cb55-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-9"><a href="trainen-en-testen.html#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;mtcars: &quot;</span>, mtcars <span class="sc">%&gt;%</span> dim <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="at">collapse =</span> <span class="st">&quot; × &quot;</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb55-10"><a href="trainen-en-testen.html#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;trn: &quot;</span>, trn <span class="sc">%&gt;%</span> dim <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="at">collapse =</span> <span class="st">&quot; × &quot;</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb55-11"><a href="trainen-en-testen.html#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;tst: &quot;</span>, tst <span class="sc">%&gt;%</span> dim <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="at">collapse =</span> <span class="st">&quot; × &quot;</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<p>De variabele <code>trn_msk</code> heet zo omdat het om een Booleaanse <em>masker</em> (eng: <em>mask</em>; zie § <a href="manipuleren-van-data.html#booleaans-masker">Booleaans masker</a>) gaat.</p>
+<p>In Python worden de features en de uitkomst (cfr. <a href="data.html#data">data</a>) meestal gescheiden gehouden (om dan vaak terug samen te brengen met <code>zip</code> :-)) en wordt er een helper-functie uit de <code>sklearn</code> bibliotheek aangeroepen:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="trainen-en-testen.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb56-2"><a href="trainen-en-testen.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_wine</span>
+<span id="cb56-3"><a href="trainen-en-testen.html#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="trainen-en-testen.html#cb56-4" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> load_wine(return_X_y<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb56-5"><a href="trainen-en-testen.html#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="trainen-en-testen.html#cb56-6" aria-hidden="true" tabindex="-1"></a>X_trn, X_tst, y_trn, y_tst <span class="op">=</span> train_test_split(</span>
+<span id="cb56-7"><a href="trainen-en-testen.html#cb56-7" aria-hidden="true" tabindex="-1"></a>  X, y, test_size <span class="op">=</span> <span class="fl">0.25</span>, random_state <span class="op">=</span> <span class="dv">42</span>)</span>
+<span id="cb56-8"><a href="trainen-en-testen.html#cb56-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-9"><a href="trainen-en-testen.html#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;X: </span><span class="sc">{X.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<pre><code>## X: (178, 13)</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="trainen-en-testen.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;y: </span><span class="sc">{y.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<pre><code>## y: (178,)</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="trainen-en-testen.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;X_trn: </span><span class="sc">{</span>X_trn<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<pre><code>## X_trn: (133, 13)</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="trainen-en-testen.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;X_tst: </span><span class="sc">{</span>X_tst<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<pre><code>## X_tst: (45, 13)</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="trainen-en-testen.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;X_trn: </span><span class="sc">{</span>y_trn<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<pre><code>## X_trn: (133,)</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="trainen-en-testen.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;X_tst: </span><span class="sc">{</span>y_tst<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<pre><code>## X_tst: (45,)</code></pre>
+<p>Het argument <code>random_state</code> in Python en de <code>set.seed</code> functie in R dienen om dit proces, dat inherent willekeurig is, toch reproduceerbaar te maken (zie § rond <a href="#reproduceerbare-willekeur">reproduceerbaarheid</a>). Zie dit <a href="https://en.wikipedia.org/wiki/Random_seed">Wikipedia artikel</a> om hier meer over te leren.</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-37" class="definition"><strong>Stelling 6.3  </strong></span>Regels rond de test set:</p>
+<ul>
+<li>De test-set blijft <em>altijd</em> verborgen voor het leeralgoritme</li>
+<li>De test-set blijft verborgen voor de datawetenschapper en het model tot helemaal op het einde wanneer de prestatie van het model word gemeten</li>
+<li>De test-set mag slechts één keer gebruikt worden, daarna is het gewoon data en mag het wel als training data gebruikt worden, maar mag het niet langer dienen om de prestatie van het model te meten
+</div></li>
+</ul>
+<p>Voor tijdsreeksen en geografische data wordt er zelden van randomisatie gebruik gemaakt. Dat heeft te maken van de autocorrelatie (zie § <a href="data.html#tijd-en-ruimte">Tijd en ruimte</a>). In plaats daarvan worden hier ofwel een bepaald gebied of bepaalde tijdspanne als test-set uitgekozen. Bijvoorbeeld, voor een tijdsreeks:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="trainen-en-testen.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
+<span id="cb68-2"><a href="trainen-en-testen.html#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-3"><a href="trainen-en-testen.html#cb68-3" aria-hidden="true" tabindex="-1"></a>USAccDeaths <span class="sc">%&gt;%</span> ets <span class="sc">%&gt;%</span> <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">48</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb68-4"><a href="trainen-en-testen.html#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">ylab =</span> <span class="st">&quot;Monthly totals of accidental deaths in USA&quot;</span>)</span>
+<span id="cb68-5"><a href="trainen-en-testen.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">1979</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:usadeaths"></span>
+<img src="img/gen-usadeaths-1.png" alt="Voorspelling van aantal Amerikaanse slachtoffers na 1979 (stippellijn). De grillige gekleurde lijn links van de stippellijn geeft het werkelijke aantal weer. De tegenhanger rechts van de stippellijn geeft de best mogelijke voorspelling weer na 1979. Het donkergrijze gebied geeft de 80%-predictie-interval weer en het lichtgrijze gebied de 90%-predictie interval. Dit type voorspelling-algoritmes (eng: forecasting algorythms) onderscheidt eerst de ruis (eng: error) van de trend en de periodiciteit (eng: seasonality), vandaar de naam ETS. (ANA) staat voor respectievelijk aan additieve ruis, geen trend (N van ‘No’) en een additieve periodiciteit." width="672" />
+<p class="caption">
+Figuur 6.1: Voorspelling van aantal Amerikaanse slachtoffers na 1979 (stippellijn). De grillige gekleurde lijn links van de stippellijn geeft het werkelijke aantal weer. De tegenhanger rechts van de stippellijn geeft de best mogelijke voorspelling weer na 1979. Het donkergrijze gebied geeft de 80%-predictie-interval weer en het lichtgrijze gebied de 90%-predictie interval. Dit type voorspelling-algoritmes (eng: <em>forecasting algorythms</em>) onderscheidt eerst de ruis (eng: <em>error</em>) van de trend en de periodiciteit (eng: <em>seasonality</em>), vandaar de naam ETS. (ANA) staat voor respectievelijk aan additieve ruis, geen trend (N van ‘No’) en een additieve periodiciteit.
+</p>
+</div>
+
+<p>Naast een training-set en een test set, bestaat er nog zoiets als een <em>validatie set</em>. In <a href="leren-uit-data.html#hyperparameters">één van de latere paragrafen binnen dit hoofdstuk</a> gaan we zien dat er zoiets als hyperparameters bestaan die het verloop van het ML proces mee helpen bepalen. Vaak moeten die hyperparaneters ook nog eerst geoptimaliseerd worden en hiervoor wordt soms een afzonderlijke set, namelijk de <em>validatie set</em> aangewend. Een andere reden om de validatie-set te gebruiken in gewoon om dienst te doen als tijdelijke test-set (omdat we de echte test-set naturlijk maar één keer kunnen aanwenden). Let wel: die opsplitsing in verscheidene subsets zijn niet in steen gebeiteld en kunnen geval-per-geval bekeken worden op basis van de hoeveelheid beschikbare data, het type algoritme, enz….</p>
+<p>Het zelfde geldt trouwens voor hoeveel percent van de data naar welke subset moet gaan. Er wordt soms de ‘gulden regel’ ⅔:⅓ gebruikt voor de verdeling tussen training- en test-set, maar ook dit hoeft niet vast te liggen. Hoe meer data wordt vrijgehouden om te testen hoe dichter de gemeten prestatie bij de werkelijke prestatie (op een grotere groep nieuwe data, wanneer het algoritme in productie staat) zal aanleunen. Maar hoe meer test-data, hoe minder training-data en wat is het nut om super-precies te prestatie te kunnen meten van een barslecht model.</p>
+</div>
+<div id="cross-validatie" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Cross-validatie</h2>
+<p>Dit ideale scenario kan niet altijd gehanteerd worden en daarom laat men een aantal vormen van contact met de test data toe:</p>
+
+<div class="definition">
+<span id="def:cross-validatie" class="definition"><strong>Stelling 6.4  </strong></span>Alvorens de finale bekendmaking van de prestatie van het model kan men ‘doen alsof’ we met <em>ongeziene data</em> werken door middel van <a href="trainen-en-testen.html#cross-validatie">cross-validatie</a>.
+</div>
+<p>Het principe is eenvoudig, telkens laat je een deel van de training-set (<em>test-fold</em>) weg en train je een model op het overblijvend deel (<em>training fold</em>). Je kan nu de prestatie <span class="math inline">\(\varepsilon_i\)</span> meten om het weggelaten deel te voorspellen. Daarna voeg je de test-fold weer bij de rest en ga je voort met het volgende deel (<a href="trainen-en-testen.html#fig:cv-voorbeeld">6.2</a>). In het voorbeeld worden de scores van de folds uitgemiddeld, maar je kan hier ook kiezen om de beste te nemen (bijvoorbeeld met de kleinste fout) of nog een andere vorm van aggregatie toepassen.</p>
+<div class="figure"><span id="fig:cv-voorbeeld"></span>
+<img src="img/cv_example.svg" alt="cross-validatie voorbeeld. Een dataset met dimensies \(9\times3\) wordt eerst op gesplitst in een training set van \(\frac23\) en een test set van \(\frac13\). Van de training set wordt telkens \(\frac16\) opzij gehouden als test fold. De resultaten van de validaties van elke fold \(\varepsilon_i\) worden geaggregeerd in \(\varepsilon_{cv}\) door het gemiddelde te nemen. Pas op het einde van dit proces wordt eenmalig de finale prestatie \(\varepsilon_{final}\) berekend."  />
+<p class="caption">
+Figuur 6.2: )cross-validatie voorbeeld. Een dataset met dimensies <span class="math inline">\(9\times3\)</span> wordt eerst op gesplitst in een training set van <span class="math inline">\(\frac23\)</span> en een test set van <span class="math inline">\(\frac13\)</span>. Van de training set wordt telkens <span class="math inline">\(\frac16\)</span> opzij gehouden als test fold. De resultaten van de validaties van elke fold <span class="math inline">\(\varepsilon_i\)</span> worden geaggregeerd in <span class="math inline">\(\varepsilon_{cv}\)</span> door het gemiddelde te nemen. Pas op het einde van dit proces wordt eenmalig de finale prestatie <span class="math inline">\(\varepsilon_{final}\)</span> berekend.
+</p>
+</div>
+
+<div class="figure"><span id="fig:cv-strategie"></span>
+<img src="img/cv_strategy.svg" alt="Een model voorbeeld van hoe een cross-validatie strategie past binnen een begeleid ML proces." width="300px" />
+<p class="caption">
+Figuur 6.3: )Een model voorbeeld van hoe een cross-validatie strategie past binnen een begeleid ML proces.
+</p>
+</div>
+
+</div>
+<div id="werkstroom-deep-learning" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Werkstroom deep learning</h2>
+<p>Figuur <a href="trainen-en-testen.html#fig:deep-learning-workflow">6.4</a> vat samen hoe de werkstroom van een ANN eruit ziet. Het is een complex schema maar desalniettemin erg belangrijk. Dankzij deze werkstroom weten we hoe lang we moeten blijven trainen, i.e. hoeveel epoch we moeten doorlopen alvorens we kunnen stoppen.</p>
+<p>Het begint met het verzamelen van gegevens. Op basis van de <em>structuur van de gegevens</em> ontwerpen we de architectuur van ons neuraal netwerk. De data wordt ondertussen gesplitst in een training-, validatie- en test-set (zie <a href="#training--validatie-en-test-set">betrokken paragraaf</a> voor meer info). We gaan eerst aan de slag met met de training-set. Na de eerste epoch eindigen we met een tijdelijke versie van het ANN model. Indien de restterm verkleint controleren we of dit tijdelijk model ook beter presteert op de validatie-set. Indien zo is, gaan we naar de volgende epoch. Deze lus houden we aan totdat de prestatie van het tijdelijk model niet meer verbetert.</p>
+<p>Er gaat een punt komen waarop de prestatie nog wél verbetert voor de training-set, maar niet voor de validatie-set. Dat is het punt waarop het tijdelijk model begint te <em>overfitten</em>. Als dat gebeurt, moet de architectuur van het ANN worden aangepast om de overfitting tegen te werken. Dit kan onder andere gebeuren door een aantal minder belangrijke verbindingen tussen de neuronen te verbreken (zie later).</p>
+<p>Op een gegeven ogenblik zal natuurlijk ook de fit op de training set niet verbeterd kunnen worden, je kan natuurlijk niet oneindig lang verbeteren. Dit is het punt waarop men niet enkel naar de relatieve prestatie moet kijken (beter versus slechter), maar ook naar de absolute prestatie van het tijdelijk model. Pas wanneer het tijdelijk model op de training-set slaagt voor een aantal voorgedefinieerde criteria, mag er finaal (en dus slechts eenmalig) getest worden op de test-set.</p>
+<p>In normale omstandigheden worden de criteria op de test-set (mede-)gestuurd door uitwendige factoren (zie paragraaf rond <a href="#uitwendige-invloed">Uitwendige invloed</a>). Slaagt het model niet, dan zit er niets anders op om nieuwe data te zoeken. De test-set is nu a.h.w. gecompromitteerd (eng: <em>compromised</em>) en mag niet meer in die hoedanigheid functioneren.</p>
+<div class="figure"><span id="fig:deep-learning-workflow"></span>
+<img src="img/deep-learning-workflow.svg" alt="De typische werkstroom voor het afhandelen van deep-learning ANN. Meer uitleg in de tekst. Gebaseerd op de werkstroom in figuur 2-14 van Buduma and Locascio 2017."  />
+<p class="caption">
+Figuur 6.4: De typische werkstroom voor het afhandelen van deep-learning ANN. Meer uitleg in de tekst. Gebaseerd op de werkstroom in figuur 2-14 van <span class="citation"><a href="bronvermelding.html#ref-buduma" role="doc-biblioref">Buduma and Locascio</a> <a href="bronvermelding.html#ref-buduma" role="doc-biblioref">2017</a></span>.
+</p>
+</div>
+
+</div>
+<div id="data-lekkage" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> Data lekkage</h2>
+<p>In de paragraaf <a href="leren-uit-data.html#leren-versus-onthouden-en-inferentie">Leren versus onthouden en inferentie</a> zagen we dat leren per definitie betekent dat er <em>iets nieuw</em> wordt aangeleerd. Een van de vele gevaren van ML is dan ook dat er iets wordt aangeleerd wat je al wist. Data lekkage (eng: <em>data leackage</em>) is een ernstig probleem dat soms ongezien zijn weg baant in een ML algoritme en dat voor onrealistisch hoge performantie leidt.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-38" class="definition"><strong>Stelling 6.5  </strong></span>Data lekkage wordt veroorzaakt wanneer informatie afkomstig van de test data gebruikt wordt om het leeralgoritme mee te trainen.
+</div>
+<p>We gaan het probleem onderzoeken aan de hand van twee voorbeelden:</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-39" class="example"><strong>Voorbeeld 6.1  </strong></span><strong>Voorspellen van slaagcijfers</strong>: stel dat je gevraagd wordt om, op basis van onderstaande data, de slaagcijfers van de studenten te voorspellen. Welke variabelen mag je dan, gegeven bovenstaande definitie, wel gebruiken voor de voorspelling te doen en welke niet.
+</div>
+<table>
+<thead>
+<tr class="header">
+<th>Student</th>
+<th>Year</th>
+<th>Semester</th>
+<th>Course</th>
+<th>Study_Time_Std</th>
+<th>Exam_Feedback_Length</th>
+<th>Exam_Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>2018</td>
+<td>1</td>
+<td>Statistics</td>
+<td>.342</td>
+<td>213</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>2018</td>
+<td>2</td>
+<td>Informatics</td>
+<td>.612</td>
+<td>76</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>2018</td>
+<td>1</td>
+<td>Statistics</td>
+<td>.771</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="manipuleren-van-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bronvermelding.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

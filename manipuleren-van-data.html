@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 5 Manipuleren van data | References</title>
+  <meta name="description" content="AI Principles course at the AP University College." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 5 Manipuleren van data | References" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="AI Principles course at the AP University College." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 5 Manipuleren van data | References" />
+  
+  <meta name="twitter:description" content="AI Principles course at the AP University College." />
+  
+
+<meta name="author" content="David D’Haese" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="data-exploratie.html"/>
+<link rel="next" href="trainen-en-testen.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/course.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Summary</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html"><i class="fa fa-check"></i><b>1</b> Inleiding tot de cursus</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#in-een-notedop"><i class="fa fa-check"></i><b>1.1</b> In een notedop</a></li>
+<li class="chapter" data-level="1.2" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#leerdoelen"><i class="fa fa-check"></i><b>1.2</b> Leerdoelen</a></li>
+<li class="chapter" data-level="1.3" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#cursus-vorm"><i class="fa fa-check"></i><b>1.3</b> Cursus vorm</a></li>
+<li class="chapter" data-level="1.4" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#bekijken-van-deze-cursus"><i class="fa fa-check"></i><b>1.4</b> Bekijken van deze Cursus</a></li>
+<li class="chapter" data-level="1.5" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#licentie-voor-deze-cursus"><i class="fa fa-check"></i><b>1.5</b> Licentie voor deze cursus</a></li>
+<li class="chapter" data-level="1.6" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#verwijzen-naar-deze-cursus"><i class="fa fa-check"></i><b>1.6</b> Verwijzen naar deze cursus</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="leren-uit-data.html"><a href="leren-uit-data.html"><i class="fa fa-check"></i><b>2</b> Leren uit data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leerproces"><i class="fa fa-check"></i><b>2.1</b> Het leerproces</a></li>
+<li class="chapter" data-level="2.2" data-path="leren-uit-data.html"><a href="leren-uit-data.html#de-evolutie-van-het-machinaal-leren"><i class="fa fa-check"></i><b>2.2</b> De evolutie van het machinaal leren</a></li>
+<li class="chapter" data-level="2.3" data-path="leren-uit-data.html"><a href="leren-uit-data.html#intelligentie"><i class="fa fa-check"></i><b>2.3</b> Intelligentie</a></li>
+<li class="chapter" data-level="2.4" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-model"><i class="fa fa-check"></i><b>2.4</b> Het model</a></li>
+<li class="chapter" data-level="2.5" data-path="leren-uit-data.html"><a href="leren-uit-data.html#doelfunctie"><i class="fa fa-check"></i><b>2.5</b> Doelfunctie</a></li>
+<li class="chapter" data-level="2.6" data-path="leren-uit-data.html"><a href="leren-uit-data.html#mnist-dataset"><i class="fa fa-check"></i><b>2.6</b> MNIST dataset</a></li>
+<li class="chapter" data-level="2.7" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-resultaat-van-mnist-analyse"><i class="fa fa-check"></i><b>2.7</b> Het resultaat van MNIST analyse</a></li>
+<li class="chapter" data-level="2.8" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-mnist-model"><i class="fa fa-check"></i><b>2.8</b> Het MNIST model</a></li>
+<li class="chapter" data-level="2.9" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leerproces-voor-begeleid-ml"><i class="fa fa-check"></i><b>2.9</b> Het leerproces voor begeleid ML</a></li>
+<li class="chapter" data-level="2.10" data-path="leren-uit-data.html"><a href="leren-uit-data.html#de-onderdelen-van-een-model"><i class="fa fa-check"></i><b>2.10</b> De onderdelen van een model</a></li>
+<li class="chapter" data-level="2.11" data-path="leren-uit-data.html"><a href="leren-uit-data.html#hyperparameters"><i class="fa fa-check"></i><b>2.11</b> Hyperparameters</a></li>
+<li class="chapter" data-level="2.12" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leeralgoritme"><i class="fa fa-check"></i><b>2.12</b> Het leeralgoritme</a></li>
+<li class="chapter" data-level="2.13" data-path="leren-uit-data.html"><a href="leren-uit-data.html#model-complexiteit"><i class="fa fa-check"></i><b>2.13</b> Model complexiteit</a></li>
+<li class="chapter" data-level="2.14" data-path="leren-uit-data.html"><a href="leren-uit-data.html#comprimeren-door-middel-van-een-ml-model"><i class="fa fa-check"></i><b>2.14</b> Comprimeren door middel van een ML model</a></li>
+<li class="chapter" data-level="2.15" data-path="leren-uit-data.html"><a href="leren-uit-data.html#leren-versus-ontwerp"><i class="fa fa-check"></i><b>2.15</b> Leren versus ontwerp</a></li>
+<li class="chapter" data-level="2.16" data-path="leren-uit-data.html"><a href="leren-uit-data.html#leren-versus-onthouden-en-inferentie"><i class="fa fa-check"></i><b>2.16</b> Leren versus onthouden en inferentie</a></li>
+<li class="chapter" data-level="2.17" data-path="leren-uit-data.html"><a href="leren-uit-data.html#onbegeleid-ml"><i class="fa fa-check"></i><b>2.17</b> Onbegeleid ML</a></li>
+<li class="chapter" data-level="2.18" data-path="leren-uit-data.html"><a href="leren-uit-data.html#conditionering"><i class="fa fa-check"></i><b>2.18</b> Conditionering</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#data-voor-ml"><i class="fa fa-check"></i><b>3.1</b> Data voor ML</a></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#wat-is-data"><i class="fa fa-check"></i><b>3.2</b> Wat is data</a></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#soorten-data"><i class="fa fa-check"></i><b>3.3</b> Soorten data</a></li>
+<li class="chapter" data-level="3.4" data-path="data.html"><a href="data.html#externe-databronnen"><i class="fa fa-check"></i><b>3.4</b> Externe databronnen</a></li>
+<li class="chapter" data-level="3.5" data-path="data.html"><a href="data.html#data-genereren"><i class="fa fa-check"></i><b>3.5</b> Data Genereren</a></li>
+<li class="chapter" data-level="3.6" data-path="data.html"><a href="data.html#de-analyse-dataset"><i class="fa fa-check"></i><b>3.6</b> De analyse dataset</a></li>
+<li class="chapter" data-level="3.7" data-path="data.html"><a href="data.html#soorten-variabelen"><i class="fa fa-check"></i><b>3.7</b> Soorten variabelen</a></li>
+<li class="chapter" data-level="3.8" data-path="data.html"><a href="data.html#eng-nominal-scale-data"><i class="fa fa-check"></i><b>3.8</b> (Eng) Nominal-Scale Data</a></li>
+<li class="chapter" data-level="3.9" data-path="data.html"><a href="data.html#eng-dummy-variables"><i class="fa fa-check"></i><b>3.9</b> (Eng) Dummy Variables</a></li>
+<li class="chapter" data-level="3.10" data-path="data.html"><a href="data.html#eng-ordinal-scale-data"><i class="fa fa-check"></i><b>3.10</b> (Eng) Ordinal-Scale Data</a></li>
+<li class="chapter" data-level="3.11" data-path="data.html"><a href="data.html#eng-circular-scale"><i class="fa fa-check"></i><b>3.11</b> (Eng) Circular-Scale</a></li>
+<li class="chapter" data-level="3.12" data-path="data.html"><a href="data.html#eng-censoring"><i class="fa fa-check"></i><b>3.12</b> (Eng) Censoring</a></li>
+<li class="chapter" data-level="3.13" data-path="data.html"><a href="data.html#tijd-en-ruimte"><i class="fa fa-check"></i><b>3.13</b> Tijd en ruimte</a></li>
+<li class="chapter" data-level="3.14" data-path="data.html"><a href="data.html#toegang-tot-data"><i class="fa fa-check"></i><b>3.14</b> Toegang tot data</a></li>
+<li class="chapter" data-level="3.15" data-path="data.html"><a href="data.html#het-codeboek"><i class="fa fa-check"></i><b>3.15</b> Het codeboek</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-exploratie.html"><a href="data-exploratie.html"><i class="fa fa-check"></i><b>4</b> Data exploratie</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-exploratie.html"><a href="data-exploratie.html#principes-van-data-exploratie"><i class="fa fa-check"></i><b>4.1</b> Principes van data exploratie</a></li>
+<li class="chapter" data-level="4.2" data-path="data-exploratie.html"><a href="data-exploratie.html#stappen-in-data-exploratie"><i class="fa fa-check"></i><b>4.2</b> Stappen in data exploratie</a></li>
+<li class="chapter" data-level="4.3" data-path="data-exploratie.html"><a href="data-exploratie.html#voorbeeld-data-exploratie"><i class="fa fa-check"></i><b>4.3</b> Voorbeeld data exploratie</a></li>
+<li class="chapter" data-level="4.4" data-path="data-exploratie.html"><a href="data-exploratie.html#univariate-verdelingen"><i class="fa fa-check"></i><b>4.4</b> Univariate verdelingen</a></li>
+<li class="chapter" data-level="4.5" data-path="data-exploratie.html"><a href="data-exploratie.html#correlatie-tussen-twee-variabelen"><i class="fa fa-check"></i><b>4.5</b> Correlatie tussen twee variabelen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html"><i class="fa fa-check"></i><b>5</b> Manipuleren van data</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#kort-overzicht-van-de-manipulaties"><i class="fa fa-check"></i><b>5.1</b> Kort overzicht van de manipulaties</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#filteren-en-versnijden"><i class="fa fa-check"></i><b>5.1.1</b> Filteren en versnijden</a></li>
+<li class="chapter" data-level="5.1.2" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#booleaans-masker"><i class="fa fa-check"></i><b>5.1.2</b> Booleaans masker</a></li>
+<li class="chapter" data-level="5.1.3" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-grouping-and-aggregation"><i class="fa fa-check"></i><b>5.1.3</b> (Eng.) Grouping and Aggregation</a></li>
+<li class="chapter" data-level="5.1.4" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-transforming-text"><i class="fa fa-check"></i><b>5.1.4</b> (Eng.) Transforming text</a></li>
+<li class="chapter" data-level="5.1.5" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-re-scaling-numerical-values"><i class="fa fa-check"></i><b>5.1.5</b> (Eng.) Re-Scaling Numerical Values</a></li>
+<li class="chapter" data-level="5.1.6" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-discretizations"><i class="fa fa-check"></i><b>5.1.6</b> (Eng.) Discretizations</a></li>
+<li class="chapter" data-level="5.1.7" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-information-content"><i class="fa fa-check"></i><b>5.1.7</b> (Eng.) Information Content</a></li>
+<li class="chapter" data-level="5.1.8" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-reformatting-type-conversion-casting-or-coercion"><i class="fa fa-check"></i><b>5.1.8</b> (Eng.) Reformatting, Type Conversion, Casting or Coercion</a></li>
+<li class="chapter" data-level="5.1.9" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-changing-numerical-values"><i class="fa fa-check"></i><b>5.1.9</b> (Eng.) Changing numerical Values</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-changing-category-names"><i class="fa fa-check"></i><b>5.2</b> (Eng.) Changing Category Names</a></li>
+<li class="chapter" data-level="5.3" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-imputation"><i class="fa fa-check"></i><b>5.3</b> (Eng.) Imputation</a></li>
+<li class="chapter" data-level="5.4" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#onbehandeld"><i class="fa fa-check"></i><b>5.4</b> Onbehandeld</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html"><i class="fa fa-check"></i><b>6</b> Trainen en testen</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#leren-leven-met-de-onzekerheid"><i class="fa fa-check"></i><b>6.1</b> Leren leven met de onzekerheid</a></li>
+<li class="chapter" data-level="6.2" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#meten-van-de-prestatie-van-een-model"><i class="fa fa-check"></i><b>6.2</b> Meten van de prestatie van een model</a></li>
+<li class="chapter" data-level="6.3" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#training--validatie--en-test-set"><i class="fa fa-check"></i><b>6.3</b> Training-, validatie- en test-set</a></li>
+<li class="chapter" data-level="6.4" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#cross-validatie"><i class="fa fa-check"></i><b>6.4</b> Cross-validatie</a></li>
+<li class="chapter" data-level="6.5" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#werkstroom-deep-learning"><i class="fa fa-check"></i><b>6.5</b> Werkstroom deep learning</a></li>
+<li class="chapter" data-level="6.6" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#data-lekkage"><i class="fa fa-check"></i><b>6.6</b> Data lekkage</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bronvermelding.html"><a href="bronvermelding.html"><i class="fa fa-check"></i>Bronvermelding</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">References</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="manipuleren-van-data" class="section level1" number="5">
+<h1><span class="header-section-number">Hoofdstuk 5</span> Manipuleren van data</h1>
+
+<div class="lemma">
+<span id="lem:data-exploratie-2" class="lemma"><strong>Leerdoel 5.1  </strong></span>Past de juiste principes toe tijdens het exploreren, hanteren en opkuisen van data (<a href="inleiding-tot-de-cursus.html#leerdoelen"><em>EA_LD758</em></a>).
+</div>
+<p>Hieronder volgt een korte samenvatting van een aantal vaak gebruikte transformaties. Waarom zou je data willen transformeren. Hier staan een aantal redenen opgesomd:</p>
+<ul>
+<li>Om duidelijkheid te scheppen en de data leesbaarder te maken voor mensen</li>
+<li>Om de data voor te bereiden voor statische analyse</li>
+<li>Om nieuwe variabelen te creëren (eng: <em>feature engineering</em>)</li>
+<li>Om eenvoudiger <a href="https://nl.wikipedia.org/wiki/Gedistribueerd_programmeren">gedistribueerd en parallel</a> te kunnen programmeren</li>
+<li>Om de data te standaardiseren volgens CDMs (<em>common data models</em>) van het bedrijf (zoals voor een EDM Enterprise Data Model) of van een discipline (zoals <a href="https://www.cdisc.org/standards">CDISC standaarden</a> in de klinische wereld)</li>
+<li>Om de data te onderworpen aan de regels van een bepaalde type opslag software. Wil je bijvoorbeeld de analyse dataset bewaren in een relationele databank, dan zal je rekening moeten houden met de regels rond primary, surrogate en foreign keys.</li>
+</ul>
+<div id="kort-overzicht-van-de-manipulaties" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Kort overzicht van de manipulaties</h2>
+<div id="filteren-en-versnijden" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Filteren en versnijden</h3>
+<p>Het versnijden (eng: <em>slicing</em>) is hier te interpreteren in de betekenis van <em>aan stukken van een bepaalde vorm snijden</em> en niet bijvoorbeeld in de betekenis van <em>aanmengen met iets van mindere kwaliteit</em>. Het komt er op neer dat er een selectie van variabelen en instanties gemaakt wordt.</p>
+<div class="figure"><span id="fig:versnijden"></span>
+<img src="img/subsetting.svg" alt="Schematisch overzicht van het versnijden van een dataset."  />
+<p class="caption">
+Figuur 5.1: Schematisch overzicht van het versnijden van een dataset.
+</p>
+</div>
+
+<p>Denk eraan dat het selecteren van van variabelen een courante activiteit is, terwijl het selecteren van instanties eerder zeldzaam is.</p>
+
+<div class="definition">
+<span id="def:outliers" class="definition"><strong>Stelling 5.1  </strong></span>Het achterhouden of selecteren van variabelen, maar voornamelijke van instanties, kan vertrekkende gevolgen hebben. De datawetenschapper moet in het algemeen alle manipulaties maar filter-operaties in het bijzonder zoals het versnijden volledig en transparant rapporteren.
+</div>
+<p>Dus voorzichtig heid geboden. Maar in sommige gevallen is het verantwoord om ook instanties uit de dataset te filteren (eng: <em>subsetting</em>):</p>
+<ul>
+<li>De data bevat uitlopers die verantwoord kunnen worden of die zonder twijfel veroorzaakt worden door een foutieve invoer</li>
+<li>De combinatie van sommige variabelen voor een bepaalde instantie is heel waarschijnlijk foutief en is niet het gevolg van structurele maar eerder van eenmalig fouten in de dataset of het invoer-proces</li>
+<li>Een instantie bevat een combinatie van variabele waarden die de privacy van één of meerdere personen in het gedrang brengt</li>
+</ul>
+
+<div class="example">
+<span id="exm:vb-versnijden" class="example"><strong>Voorbeeld 5.1  (Versnijden van data)  </strong></span>De wijn kwaliteit dataset bevat mogelijk outliers in de suikerwaarden, laten we dat eens nader bekijken.
+</div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="manipuleren-van-data.html#cb51-1" aria-hidden="true" tabindex="-1"></a>rode_wijn <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv&quot;</span>)</span>
+<span id="cb51-2"><a href="manipuleren-van-data.html#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="manipuleren-van-data.html#cb51-3" aria-hidden="true" tabindex="-1"></a>rode_wijn[, <span class="st">`</span><span class="at">residual sugar</span><span class="st">`</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb51-4"><a href="manipuleren-van-data.html#cb51-4" aria-hidden="true" tabindex="-1"></a>  density <span class="sc">%&gt;%</span></span>
+<span id="cb51-5"><a href="manipuleren-van-data.html#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span> (<span class="at">main=</span><span class="st">&quot;Residual sugar (g/L)&quot;</span>)</span></code></pre></div>
+<p><img src="img/gen-oef-versnijden-1-1.png" width="672" /></p>
+<p>Stel dat rode wijn met een suikergehalte boven de 10g/L wordt afgedaan als fruitsap, dan zou je er van uit mogen gaan dat er een aantal uitlopers zijn, zo halen we ze eruit:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="manipuleren-van-data.html#cb52-1" aria-hidden="true" tabindex="-1"></a>aantal_uitlopers <span class="ot">&lt;-</span> rode_wijn[<span class="st">`</span><span class="at">residual sugar</span><span class="st">`</span> <span class="sc">&gt;</span> <span class="dv">10</span>, .N]</span>
+<span id="cb52-2"><a href="manipuleren-van-data.html#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="manipuleren-van-data.html#cb52-3" aria-hidden="true" tabindex="-1"></a>rode_wijn_echt <span class="ot">&lt;-</span> rode_wijn[<span class="st">`</span><span class="at">residual sugar</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="dv">10</span>]</span>
+<span id="cb52-4"><a href="manipuleren-van-data.html#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-5"><a href="manipuleren-van-data.html#cb52-5" aria-hidden="true" tabindex="-1"></a>rode_wijn_echt<span class="sc">$</span><span class="st">`</span><span class="at">residual sugar</span><span class="st">`</span> <span class="sc">%&gt;%</span></span>
+<span id="cb52-6"><a href="manipuleren-van-data.html#cb52-6" aria-hidden="true" tabindex="-1"></a>  density <span class="sc">%&gt;%</span></span>
+<span id="cb52-7"><a href="manipuleren-van-data.html#cb52-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span> (<span class="at">main=</span><span class="st">&quot;Residual sugar (g/L)&quot;</span>,</span>
+<span id="cb52-8"><a href="manipuleren-van-data.html#cb52-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">sub =</span> <span class="fu">paste</span>(<span class="st">&quot;Excluding&quot;</span>, aantal_uitlopers,</span>
+<span id="cb52-9"><a href="manipuleren-van-data.html#cb52-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;&#39;outliers&#39; above 10g/L&quot;</span>))</span></code></pre></div>
+<p><img src="img/gen-oef-versnijden-2-1.png" width="672" /></p>
+</div>
+<div id="booleaans-masker" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Booleaans masker</h3>
+<p>Een booleaans masker is gewoon een vector of lijst van booleaanse waarden die gebruikt kunnen worden om uit data frames en data tables die rijen te selecteren die overeenkomen met <code>TRUE</code> in het masker.</p>
+<p><img src="img/masker.svg" /><!-- --></p>
+<p>In het Voorbeeld <a href="manipuleren-van-data.html#exm:vb-versnijden">5.1</a> werd er reeds van een masker gebruik gemaakt:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="manipuleren-van-data.html#cb53-1" aria-hidden="true" tabindex="-1"></a>rode_wijn[,<span class="st">`</span><span class="at">residual sugar</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="dv">10</span>] <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">50</span>)</span></code></pre></div>
+<pre><code>##  [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [15]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [29]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [43]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+</div>
+<div id="eng.-grouping-and-aggregation" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> (Eng.) Grouping and Aggregation</h3>
+<p>Upon Grouping the data table according to one or more features, the other variables need to be aggregated en this can be done using:</p>
+<ul>
+<li>Selection (first, last, second value, …)</li>
+<li>Measures of central tendency (mean, median, …)</li>
+<li>Measures of dispersion (variance, range, standard deviation, IQR, …)</li>
+<li>Extremes (min, max)</li>
+<li>Counts (Count, unique count, sum, majority vote, counts of missing values, …)</li>
+</ul>
+</div>
+<div id="eng.-transforming-text" class="section level3" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> (Eng.) Transforming text</h3>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Transformation</th>
+<th>Example</th>
+<th>Possible justification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Change Encoding</td>
+<td><code>UTF16</code> → <code>UTF8</code></td>
+<td>Avoid software incompatibilities</td>
+</tr>
+<tr class="even">
+<td>Change Casing</td>
+<td><code>"tfr523"</code> → <code>"TFR523"</code></td>
+<td>Avoid confusing and allow for proper comparison</td>
+</tr>
+<tr class="odd">
+<td>Trim</td>
+<td><code>" TFR523"</code> → <code>" TFR523"</code></td>
+<td>Ensure proper identification &amp; comparison</td>
+</tr>
+<tr class="even">
+<td>Add Leading zeroes</td>
+<td><code>"653"</code>, <code>"61"</code>, … → <code>"0653"</code>, <code>"0061"</code>, …</td>
+<td>Avoid str/num confusion by humans and machines</td>
+</tr>
+<tr class="odd">
+<td>Add prefix</td>
+<td><code>"0653"</code> → <code>"UHR0653"</code></td>
+<td>Avoid confusion with other IDs</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="eng.-re-scaling-numerical-values" class="section level3" number="5.1.5">
+<h3><span class="header-section-number">5.1.5</span> (Eng.) Re-Scaling Numerical Values</h3>
+<p>Here are some of the countless different types of re-scaling:</p>
+<ul>
+<li><a href="https://www.medcalc.org/manual/_help/images/logtransformation.png">Logarithm</a></li>
+<li><a href="https://miro.medium.com/max/1244/1*vEiAxU_mVmFIOvf-xzTolw.png">Logit-transform</a></li>
+<li>Normalization to a fixed maximum value</li>
+<li>Standardization (to a mean of 0 and a variance of 1)</li>
+<li>Division by another field (e.g. <code>Quantity_By_Month / Days_Per_Month</code>, <code>Revenue_By_Store / Sold_By_Store</code>, <code>Quantity / Weight_Per_Unit</code>, …)</li>
+<li>Multiplication (e.g. <code>Quantity x Unit_Price</code>, <code>Quantity x Unit_Cost</code>)</li>
+<li>Subtraction (e.g. <code>Sales_value – Sales_cost</code>)</li>
+</ul>
+</div>
+<div id="eng.-discretizations" class="section level3" number="5.1.6">
+<h3><span class="header-section-number">5.1.6</span> (Eng.) Discretizations</h3>
+<p>Is going from continuous data to more discrete data. Here are some examples:</p>
+<ul>
+<li>Rounding ([2.25, 2.35] → [2.2, 2.4])</li>
+<li>Binning (<a href="https://docs.tibco.com/pub/sfire-bauthor/7.5.0/doc/html/en-US/GUID-DE9E9072-F026-4E05-BB89-6AB803917351-display.png">here</a> and <a href="https://blogs.sas.com/content/iml/files/2013/07/bin2d2.png">here</a>)</li>
+</ul>
+<p>Mind that discretization always leads to loss of information.</p>
+</div>
+<div id="eng.-information-content" class="section level3" number="5.1.7">
+<h3><span class="header-section-number">5.1.7</span> (Eng.) Information Content</h3>
+<p>The information of a feature or an entire data set can be measured using indices such as the Shannon Entropy or the limiting density of discrete points.</p>
+</div>
+<div id="eng.-reformatting-type-conversion-casting-or-coercion" class="section level3" number="5.1.8">
+<h3><span class="header-section-number">5.1.8</span> (Eng.) Reformatting, Type Conversion, Casting or Coercion</h3>
+<p>Examples:</p>
+<ul>
+<li>String to Integer or vice versa</li>
+<li>Reformatting date to ISO-8601 (<code>"07/04/2008</code> → <code>"2007-07-04" (YYYY-MM-DD)</code>)</li>
+</ul>
+</div>
+<div id="eng.-changing-numerical-values" class="section level3" number="5.1.9">
+<h3><span class="header-section-number">5.1.9</span> (Eng.) Changing numerical Values</h3>
+<p>Far more invasive then re-scaling is when the data is changed based on some custom algorithm. An example hereof is the removal of a drift in the data (de-trending). Similarly, seasonal effects in time series data can be compensated away. Such changes can obviously impact the outcome of the analysis significantly and needs thorough justification.</p>
+</div>
+</div>
+<div id="eng.-changing-category-names" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> (Eng.) Changing Category Names</h2>
+<p>This is sometimes called <strong>recoding</strong> or <strong>refactorization</strong> and only affects nominal features. It serves to adhere to EDM, to the standards of the DWH and to ensure compatibility across data sets. Alternatively, it simply ensures that misspelled category names are being corrected and alternative spellings are being merged.</p>
+</div>
+<div id="eng.-imputation" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> (Eng.) Imputation</h2>
+<p>Imputation is the completion of missing data. Depending of the patterns the ‘holes’ in the data display or on prior knowledge, separate techniques exist to fill in the blanks.</p>
+</div>
+<div id="onbehandeld" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Onbehandeld</h2>
+<p>De volgende onderwerpen werden niet behandeld, ik hoor het graag als jullie individueel of als groep hier meer over willen leren:</p>
+<ul>
+<li>Anonimiseren en pseudonimiseren</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-exploratie.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="trainen-en-testen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

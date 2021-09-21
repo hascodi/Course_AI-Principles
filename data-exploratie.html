@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 4 Data exploratie | References</title>
+  <meta name="description" content="AI Principles course at the AP University College." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 4 Data exploratie | References" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="AI Principles course at the AP University College." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 4 Data exploratie | References" />
+  
+  <meta name="twitter:description" content="AI Principles course at the AP University College." />
+  
+
+<meta name="author" content="David D’Haese" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="data.html"/>
+<link rel="next" href="manipuleren-van-data.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/course.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Summary</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html"><i class="fa fa-check"></i><b>1</b> Inleiding tot de cursus</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#in-een-notedop"><i class="fa fa-check"></i><b>1.1</b> In een notedop</a></li>
+<li class="chapter" data-level="1.2" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#leerdoelen"><i class="fa fa-check"></i><b>1.2</b> Leerdoelen</a></li>
+<li class="chapter" data-level="1.3" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#cursus-vorm"><i class="fa fa-check"></i><b>1.3</b> Cursus vorm</a></li>
+<li class="chapter" data-level="1.4" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#bekijken-van-deze-cursus"><i class="fa fa-check"></i><b>1.4</b> Bekijken van deze Cursus</a></li>
+<li class="chapter" data-level="1.5" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#licentie-voor-deze-cursus"><i class="fa fa-check"></i><b>1.5</b> Licentie voor deze cursus</a></li>
+<li class="chapter" data-level="1.6" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#verwijzen-naar-deze-cursus"><i class="fa fa-check"></i><b>1.6</b> Verwijzen naar deze cursus</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="leren-uit-data.html"><a href="leren-uit-data.html"><i class="fa fa-check"></i><b>2</b> Leren uit data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leerproces"><i class="fa fa-check"></i><b>2.1</b> Het leerproces</a></li>
+<li class="chapter" data-level="2.2" data-path="leren-uit-data.html"><a href="leren-uit-data.html#de-evolutie-van-het-machinaal-leren"><i class="fa fa-check"></i><b>2.2</b> De evolutie van het machinaal leren</a></li>
+<li class="chapter" data-level="2.3" data-path="leren-uit-data.html"><a href="leren-uit-data.html#intelligentie"><i class="fa fa-check"></i><b>2.3</b> Intelligentie</a></li>
+<li class="chapter" data-level="2.4" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-model"><i class="fa fa-check"></i><b>2.4</b> Het model</a></li>
+<li class="chapter" data-level="2.5" data-path="leren-uit-data.html"><a href="leren-uit-data.html#doelfunctie"><i class="fa fa-check"></i><b>2.5</b> Doelfunctie</a></li>
+<li class="chapter" data-level="2.6" data-path="leren-uit-data.html"><a href="leren-uit-data.html#mnist-dataset"><i class="fa fa-check"></i><b>2.6</b> MNIST dataset</a></li>
+<li class="chapter" data-level="2.7" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-resultaat-van-mnist-analyse"><i class="fa fa-check"></i><b>2.7</b> Het resultaat van MNIST analyse</a></li>
+<li class="chapter" data-level="2.8" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-mnist-model"><i class="fa fa-check"></i><b>2.8</b> Het MNIST model</a></li>
+<li class="chapter" data-level="2.9" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leerproces-voor-begeleid-ml"><i class="fa fa-check"></i><b>2.9</b> Het leerproces voor begeleid ML</a></li>
+<li class="chapter" data-level="2.10" data-path="leren-uit-data.html"><a href="leren-uit-data.html#de-onderdelen-van-een-model"><i class="fa fa-check"></i><b>2.10</b> De onderdelen van een model</a></li>
+<li class="chapter" data-level="2.11" data-path="leren-uit-data.html"><a href="leren-uit-data.html#hyperparameters"><i class="fa fa-check"></i><b>2.11</b> Hyperparameters</a></li>
+<li class="chapter" data-level="2.12" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leeralgoritme"><i class="fa fa-check"></i><b>2.12</b> Het leeralgoritme</a></li>
+<li class="chapter" data-level="2.13" data-path="leren-uit-data.html"><a href="leren-uit-data.html#model-complexiteit"><i class="fa fa-check"></i><b>2.13</b> Model complexiteit</a></li>
+<li class="chapter" data-level="2.14" data-path="leren-uit-data.html"><a href="leren-uit-data.html#comprimeren-door-middel-van-een-ml-model"><i class="fa fa-check"></i><b>2.14</b> Comprimeren door middel van een ML model</a></li>
+<li class="chapter" data-level="2.15" data-path="leren-uit-data.html"><a href="leren-uit-data.html#leren-versus-ontwerp"><i class="fa fa-check"></i><b>2.15</b> Leren versus ontwerp</a></li>
+<li class="chapter" data-level="2.16" data-path="leren-uit-data.html"><a href="leren-uit-data.html#leren-versus-onthouden-en-inferentie"><i class="fa fa-check"></i><b>2.16</b> Leren versus onthouden en inferentie</a></li>
+<li class="chapter" data-level="2.17" data-path="leren-uit-data.html"><a href="leren-uit-data.html#onbegeleid-ml"><i class="fa fa-check"></i><b>2.17</b> Onbegeleid ML</a></li>
+<li class="chapter" data-level="2.18" data-path="leren-uit-data.html"><a href="leren-uit-data.html#conditionering"><i class="fa fa-check"></i><b>2.18</b> Conditionering</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#data-voor-ml"><i class="fa fa-check"></i><b>3.1</b> Data voor ML</a></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#wat-is-data"><i class="fa fa-check"></i><b>3.2</b> Wat is data</a></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#soorten-data"><i class="fa fa-check"></i><b>3.3</b> Soorten data</a></li>
+<li class="chapter" data-level="3.4" data-path="data.html"><a href="data.html#externe-databronnen"><i class="fa fa-check"></i><b>3.4</b> Externe databronnen</a></li>
+<li class="chapter" data-level="3.5" data-path="data.html"><a href="data.html#data-genereren"><i class="fa fa-check"></i><b>3.5</b> Data Genereren</a></li>
+<li class="chapter" data-level="3.6" data-path="data.html"><a href="data.html#de-analyse-dataset"><i class="fa fa-check"></i><b>3.6</b> De analyse dataset</a></li>
+<li class="chapter" data-level="3.7" data-path="data.html"><a href="data.html#soorten-variabelen"><i class="fa fa-check"></i><b>3.7</b> Soorten variabelen</a></li>
+<li class="chapter" data-level="3.8" data-path="data.html"><a href="data.html#eng-nominal-scale-data"><i class="fa fa-check"></i><b>3.8</b> (Eng) Nominal-Scale Data</a></li>
+<li class="chapter" data-level="3.9" data-path="data.html"><a href="data.html#eng-dummy-variables"><i class="fa fa-check"></i><b>3.9</b> (Eng) Dummy Variables</a></li>
+<li class="chapter" data-level="3.10" data-path="data.html"><a href="data.html#eng-ordinal-scale-data"><i class="fa fa-check"></i><b>3.10</b> (Eng) Ordinal-Scale Data</a></li>
+<li class="chapter" data-level="3.11" data-path="data.html"><a href="data.html#eng-circular-scale"><i class="fa fa-check"></i><b>3.11</b> (Eng) Circular-Scale</a></li>
+<li class="chapter" data-level="3.12" data-path="data.html"><a href="data.html#eng-censoring"><i class="fa fa-check"></i><b>3.12</b> (Eng) Censoring</a></li>
+<li class="chapter" data-level="3.13" data-path="data.html"><a href="data.html#tijd-en-ruimte"><i class="fa fa-check"></i><b>3.13</b> Tijd en ruimte</a></li>
+<li class="chapter" data-level="3.14" data-path="data.html"><a href="data.html#toegang-tot-data"><i class="fa fa-check"></i><b>3.14</b> Toegang tot data</a></li>
+<li class="chapter" data-level="3.15" data-path="data.html"><a href="data.html#het-codeboek"><i class="fa fa-check"></i><b>3.15</b> Het codeboek</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-exploratie.html"><a href="data-exploratie.html"><i class="fa fa-check"></i><b>4</b> Data exploratie</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-exploratie.html"><a href="data-exploratie.html#principes-van-data-exploratie"><i class="fa fa-check"></i><b>4.1</b> Principes van data exploratie</a></li>
+<li class="chapter" data-level="4.2" data-path="data-exploratie.html"><a href="data-exploratie.html#stappen-in-data-exploratie"><i class="fa fa-check"></i><b>4.2</b> Stappen in data exploratie</a></li>
+<li class="chapter" data-level="4.3" data-path="data-exploratie.html"><a href="data-exploratie.html#voorbeeld-data-exploratie"><i class="fa fa-check"></i><b>4.3</b> Voorbeeld data exploratie</a></li>
+<li class="chapter" data-level="4.4" data-path="data-exploratie.html"><a href="data-exploratie.html#univariate-verdelingen"><i class="fa fa-check"></i><b>4.4</b> Univariate verdelingen</a></li>
+<li class="chapter" data-level="4.5" data-path="data-exploratie.html"><a href="data-exploratie.html#correlatie-tussen-twee-variabelen"><i class="fa fa-check"></i><b>4.5</b> Correlatie tussen twee variabelen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html"><i class="fa fa-check"></i><b>5</b> Manipuleren van data</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#kort-overzicht-van-de-manipulaties"><i class="fa fa-check"></i><b>5.1</b> Kort overzicht van de manipulaties</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#filteren-en-versnijden"><i class="fa fa-check"></i><b>5.1.1</b> Filteren en versnijden</a></li>
+<li class="chapter" data-level="5.1.2" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#booleaans-masker"><i class="fa fa-check"></i><b>5.1.2</b> Booleaans masker</a></li>
+<li class="chapter" data-level="5.1.3" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-grouping-and-aggregation"><i class="fa fa-check"></i><b>5.1.3</b> (Eng.) Grouping and Aggregation</a></li>
+<li class="chapter" data-level="5.1.4" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-transforming-text"><i class="fa fa-check"></i><b>5.1.4</b> (Eng.) Transforming text</a></li>
+<li class="chapter" data-level="5.1.5" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-re-scaling-numerical-values"><i class="fa fa-check"></i><b>5.1.5</b> (Eng.) Re-Scaling Numerical Values</a></li>
+<li class="chapter" data-level="5.1.6" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-discretizations"><i class="fa fa-check"></i><b>5.1.6</b> (Eng.) Discretizations</a></li>
+<li class="chapter" data-level="5.1.7" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-information-content"><i class="fa fa-check"></i><b>5.1.7</b> (Eng.) Information Content</a></li>
+<li class="chapter" data-level="5.1.8" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-reformatting-type-conversion-casting-or-coercion"><i class="fa fa-check"></i><b>5.1.8</b> (Eng.) Reformatting, Type Conversion, Casting or Coercion</a></li>
+<li class="chapter" data-level="5.1.9" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-changing-numerical-values"><i class="fa fa-check"></i><b>5.1.9</b> (Eng.) Changing numerical Values</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-changing-category-names"><i class="fa fa-check"></i><b>5.2</b> (Eng.) Changing Category Names</a></li>
+<li class="chapter" data-level="5.3" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-imputation"><i class="fa fa-check"></i><b>5.3</b> (Eng.) Imputation</a></li>
+<li class="chapter" data-level="5.4" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#onbehandeld"><i class="fa fa-check"></i><b>5.4</b> Onbehandeld</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html"><i class="fa fa-check"></i><b>6</b> Trainen en testen</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#leren-leven-met-de-onzekerheid"><i class="fa fa-check"></i><b>6.1</b> Leren leven met de onzekerheid</a></li>
+<li class="chapter" data-level="6.2" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#meten-van-de-prestatie-van-een-model"><i class="fa fa-check"></i><b>6.2</b> Meten van de prestatie van een model</a></li>
+<li class="chapter" data-level="6.3" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#training--validatie--en-test-set"><i class="fa fa-check"></i><b>6.3</b> Training-, validatie- en test-set</a></li>
+<li class="chapter" data-level="6.4" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#cross-validatie"><i class="fa fa-check"></i><b>6.4</b> Cross-validatie</a></li>
+<li class="chapter" data-level="6.5" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#werkstroom-deep-learning"><i class="fa fa-check"></i><b>6.5</b> Werkstroom deep learning</a></li>
+<li class="chapter" data-level="6.6" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#data-lekkage"><i class="fa fa-check"></i><b>6.6</b> Data lekkage</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bronvermelding.html"><a href="bronvermelding.html"><i class="fa fa-check"></i>Bronvermelding</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">References</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-exploratie" class="section level1" number="4">
+<h1><span class="header-section-number">Hoofdstuk 4</span> Data exploratie</h1>
+
+<div class="lemma">
+<span id="lem:data-exploratie" class="lemma"><strong>Leerdoel 4.1  </strong></span>Past de juiste principes toe tijdens het exploreren, hanteren en opkuisen van data (<a href="inleiding-tot-de-cursus.html#leerdoelen"><em>EA_LD758</em></a>).
+</div>
+
+<div class="lemma">
+<span id="lem:visualisatie" class="lemma"><strong>Leerdoel 4.2  </strong></span>Beeld complexe data uit door middel van hedendaagse visualisatie tools (<a href="inleiding-tot-de-cursus.html#leerdoelen"><em>EA_LD761</em></a>).
+</div>
+<div id="principes-van-data-exploratie" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Principes van data exploratie</h2>
+<p>Exploratieve Data Analyse (eng: <em>Exploratory Data Analysis</em>; EDA) zal de datawetenschapper helpen om twee hoofddoelen te bereiken</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-13" class="definition"><strong>Stelling 4.1  </strong></span>De twee hoofddoelen die de datawetenschapper voor ogen heeft tijden het exploreren van data zijn</p>
+<ul>
+<li><strong>Begrijpen</strong> van de data én van processen die tot de data geleid hebben</li>
+<li><strong>Controleren</strong> dat de dataset in zijn geheel maar ook elke variabele afzonderlijk aan een aantal eisen voldoet
+</div></li>
+</ul>
+<p>De datawetenschapper wil tijdens het controleren van een variabele de volgende eigenschappen onderzoeken:</p>
+<details>
+<summary>
+<strong>D</strong> uidelijkheid
+</summary>
+Kan de betekenis van de variabele achterhaald worden? Zo niet, dan is het vaak veiliger de variabele niet te gebruiken.
+</details>
+<details>
+<summary>
+<strong>I</strong> nformatief
+</summary>
+Is de informatie inhoud voldoende groot. Bijvoorbeeld, is het erg repetitieve data, dan is het misschien niet erg bruikbaar. Wordt mede bepaald door voorradigheid (zie hieronder).
+</details>
+<details>
+<summary>
+<strong>P</strong> rivacy
+</summary>
+Loop je met de betrokken variabele het risico om de privacy van de eindgebruiker te schenden volgens de opgestelde Privacy Impact Assessment (PIA) of volgens de Vlaamse of Federale wetgeving, dan mag je deze variabele simpelweg niet ontsluiten.
+</details>
+<details>
+<summary>
+<strong>K</strong> waliteit
+</summary>
+Zijn er technische redenen om de data niet te kunnen gebruiken? Zijn de data moeilijk om te onttrekken (bij bijv. vrije tekst), is er onvoldoende resolutie (bij metingen of afbeeldingen), gaat het om een té complex data type (bijv. circulaire), …
+</details>
+<details>
+<summary>
+<strong>E</strong> thiek
+</summary>
+Het trainen met tendentieuze data leidt tot een tendentieus algoritme. Om dit te voorkomen, laat je best variabelen weg die mogelijk wel een zeker voorspellend vermogen hebben en privacy-gewijs perfect toelaatbaar zijn, maar die de vooringenomenheid uit het verleden zou bevestigen.
+</details>
+<details>
+<summary>
+<strong>V</strong> oorradig
+</summary>
+Ontbreekt er méér dan ±30% van de waarden voor een bepaalde variabele (NULL, NA, "", -1, …), dan kunnen vele leeralgortimen de data niet gebruiken.
+</details>
+<details>
+<summary>
+<strong>E</strong> chtheid
+</summary>
+Het kan voorkomen dat de data weinig betrouwbaar lijken in de zin dat ze vermoedelijk geen goede weerspiegeling zijn van de realiteit, i.e. ofwel vermoedelijk inaccurate data of niet representatief (bijv. slechts geldig voor beperkte subset).
+</details>
+<details>
+<summary>
+<strong>R</strong> elevantie
+</summary>
+Gegeven de doelstelling van het onderzoek is het goed om je af te vragen of er wel een goede verantwoording (technisch noch functioneel) gevonden kan worden waarom deze variabele zou worden opgenomen. Hou hier best rekeneing met alle belanghebben zoals opdrachtgevers en eindgebruikers.
+</details>
+<p><img src="img/dipkever.png" width="50" style="display: block; margin: auto;" /></p>
+</div>
+<div id="stappen-in-data-exploratie" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Stappen in data exploratie</h2>
+<p>Elke exploratie is anders en iedereen heeft zo zijn eigen methode, maar als leidraad kan je deze stappen volgen:</p>
+<ol style="list-style-type: decimal">
+<li>Zorg eerst dat je zo veel mogelijk begrijpt van de data nog vóór je in detail in de variabelen begint te duiken. Lees het codeboek of andere omschrijvingen. Vraag indien mogelijk hulp van iemand die al wel op de hoogte is</li>
+<li>Controleer of er tabellen, rijen of kolommen zijn die je niet nodig hebt voor jouw analyse en filter de overbodige data desgevallend weg zodat je hier ook geen tijd mee hoeft in te steken</li>
+<li>Begrijp wat één instantie (rij) hier precies voor staat en controleer of het aantal rijen dan ook logisch is</li>
+<li>Controleer nu pas de overblijvende data variabele-per-variabele
+<ol style="list-style-type: lower-alpha">
+<li>Lees de omschrijving van de variabele en kijk naar een samenvatting of een willekeurige steekproef van de variabele</li>
+<li>Loop de DIPKEVER criteria één voor één af</li>
+<li>Beslis op basis hiervan of je de variabele wenst te houden (eng: <em>keep</em>) of te verwerpen (eng: <em>drop</em>)</li>
+<li>Maak korte notities</li>
+</ol></li>
+<li>Kijk naar de paarsgewijze correlaties (eng: <em>pair-wise correlations</em>) onder de variabelen</li>
+</ol>
+</div>
+<div id="voorbeeld-data-exploratie" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Voorbeeld data exploratie</h2>
+<p>We gaan dit doen aan de hand van een voorbeeld (in R).</p>
+
+<div class="example">
+<span id="exm:terrorism" class="example"><strong>Voorbeeld 4.1  </strong></span><strong>Vraag</strong>: Sommige mensen zeggen dat er steeds méér terrorisme is in de wereld. Andere zeggen dat er altijd al terrorisme heeft bestaan. Wie heeft er gelijk?
+</div>
+<p><strong>Antwoord</strong>: Via de <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">bovenstaande link</a> naar de standaard datasets vinden we twee datasets met het woordje “terrorism” in de titel. Ééntje heeft 206 rijen (<code>nkill.byCountryYr</code>), laten we die eens van naderbij bekijken:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-exploratie.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Ecdat)</span>
+<span id="cb24-2"><a href="data-exploratie.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-exploratie.html#cb25-1" aria-hidden="true" tabindex="-1"></a>?terrorism</span></code></pre></div>
+<p>Zorg er eerst voor dat je deze pakketten installeert (eenmalig) via <code>install.packages</code> of via de Packages-tab in RStudio. Als alles goed verlopen is, krijg je de documentatie te zien:</p>
+<p><img src="img/terrorism-help.png" width="925" /></p>
+<p>We onderzoeken nu de documentatie en vinden dat de databank wel erg relevant en professioneel lijkt, maar niet zo up-to-date (1970 - 2015). Toch beslissen we om door te gaan met deze dataset. We lezen dat er eigenlijk drie datasets zijn, telkens met hun eigen structuur:</p>
+<p><code>terrorism</code>: Jaartal × {verscheidene aantallen per type aanslag, locatie (wereld versus VS) en type slachtoffers}</p>
+<p><code>incidents.byCountryYr</code>: Aantal aanslagen per {Land × Jaartal}</p>
+<p><code>nkill.byCountryYr</code>: Aantal slachtoffers per {Land × Jaartal}</p>
+<p>Hierop lanceren we de vraag:</p>
+<p><strong>Vraag terug</strong>: met ‘méér terrorisme,’ bedoel je méér aanslagen of méér slachtoffers</p>
+<p>Stel dat de opdrachtgever het volgende antwoord geeft:</p>
+<p><strong>Antwoord terug</strong>: méér aanslagen</p>
+<p>We kunnen nu zowel de eerste als de tweede gebruiken. We kiezen de eerste omdat daarin meer informatie vervat zit. We hebben die extra informatie nu niet nodig, maar misschien later wel. Één instantie (een rij) komt overeen met een jaartal. We zien onmiddellijk dat we de volgende variabelen nodig hebben uit de <code>terrorism</code> dataset:</p>
+<ul>
+<li><code>year</code>: het jaar waarin de aanslag werd gepleegd, als natuurlijk getal, uniek voor elke rij</li>
+<li><code>incidents</code>: het aantal aanslagen voor dat jaar wereldwijd</li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-exploratie.html#cb26-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> terrorism <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="data-exploratie.html#cb26-2" aria-hidden="true" tabindex="-1"></a>    as.data.table <span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="data-exploratie.html#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">extract</span>(, .(year, incidents))</span></code></pre></div>
+<p>We overlopen de DIPKEVER criteria. De data zijn duidelijk en informatief. Ze lijken de privacy van niemand te schenden omdat het om geaggregeerde gegevens gaat, wereldwijd en telkens samengevat voor een heel kalenderjaar.</p>
+<p>Kwaliteit. We beginnen met de controle dat het jaartal en de incidenten als natuurlijke getallen worden behandeld.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-exploratie.html#cb27-1" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">apply</span>(<span class="dv">2</span>, class)</span></code></pre></div>
+<pre><code>##      year incidents 
+## &quot;numeric&quot; &quot;numeric&quot;</code></pre>
+<p><code>numeric</code> datatype in R stellen de reële getallen voor, niet natuurlijke getallen. Dat is geen ramp, natuurlijk, omdat <span class="math inline">\(\mathbb{N}\subset\mathbb{R}\)</span> maar kan soms problemen geven, laten we dit rechtzetten:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-exploratie.html#cb29-1" aria-hidden="true" tabindex="-1"></a>dat[, year <span class="sc">:</span><span class="er">=</span> year <span class="sc">%&gt;%</span> as.integer]</span>
+<span id="cb29-2"><a href="data-exploratie.html#cb29-2" aria-hidden="true" tabindex="-1"></a>dat[, incidents <span class="sc">:</span><span class="er">=</span> incidents <span class="sc">%&gt;%</span> as.integer]</span>
+<span id="cb29-3"><a href="data-exploratie.html#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="data-exploratie.html#cb29-4" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">apply</span>(<span class="dv">2</span>, class)</span></code></pre></div>
+<pre><code>##      year incidents 
+## &quot;integer&quot; &quot;integer&quot;</code></pre>
+<p>Nu controleren we of het jaartal inderdaad loopt van 1970 tot en met 2015:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-exploratie.html#cb31-1" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>year <span class="sc">%&gt;%</span> summary</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    1970    1981    1992    1992    2004    2015</code></pre>
+<p>en we kunnen ook nakijken of het jaartal uniek is:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data-exploratie.html#cb33-1" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>year <span class="sc">%&gt;%</span> duplicated <span class="sc">%&gt;%</span> any</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>De incidenten zijn ook natuurlijke getallen, maar van een andere soort dan het jaartal. De incidenten zijn namelijk ook aantallen en dit heeft heel wat statistische consequenties. Het betekent onder meer dat we voor deze variabele een histogram kunnen genereren:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-exploratie.html#cb35-1" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>incidents <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="data-exploratie.html#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(<span class="at">main =</span> <span class="st">&quot;Verdeling aantal aanslagen&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;# aanslagen per jaar&quot;</span>,</span>
+<span id="cb35-3"><a href="data-exploratie.html#cb35-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Frequentie&quot;</span>)</span></code></pre></div>
+<p><img src="img/gen-unnamed-chunk-19-1.png" width="318px" /></p>
+<p>Hierin zien we dat er in het totaal meer dan 30 jaren zijn met minder dan 5000 aanslagen per jaar wereldwijd en dat er 3 jaren zijn met meer dan 10 000 aanslagen.</p>
+<p>Dit was de K van DIPKEVER, we zetten onze tocht voort. Over ethiek: voor velen is dit natuurlijk een gevoelig onderwerp maar het weergeven van de aantallen aanslagen kan moeilijk als aanstootgevend worden gezien. Bovendien worden hier nog geen voorspellingen gemaakt, dus dat lijkt in orde. Er ontbreken geen data (dus voorradig). Het consortium rond de Studie van Terrorisme en Responsen op Terrorisme (START) is verantwoordelijk voor de data en gezien hun staat van dienst en academische publicaties waaronder sommige in gerenommeerde tijdschriften, lijken ze op het eerste gezicht betrouwbaar (cfr. Echtheid). Tenslotte zijn de data ongetwijfeld relevant en daarmee slagen ze voor de volledige DIPKEVER test. Het onderlinge correleren van beide variabelen biedt hier geen meerwaarde.</p>
+<p>De exploratiefase is voorbij. Het volstaat ons nu om een grafiek op stellen waarbij het aantal aanslagen in de tijd wordt gevolgd:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-exploratie.html#cb36-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat[<span class="fu">order</span>(year)]</span>
+<span id="cb36-2"><a href="data-exploratie.html#cb36-2" aria-hidden="true" tabindex="-1"></a>void <span class="ot">&lt;-</span> dat[, <span class="fu">plot</span>(incidents <span class="sc">~</span> year, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb36-3"><a href="data-exploratie.html#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Verloop aantal aanslagen wereldwijd&quot;</span>,</span>
+<span id="cb36-4"><a href="data-exploratie.html#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Kalenderjaar&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Aantal aanslagen per jaar&quot;</span>)]</span></code></pre></div>
+<p><img src="img/gen-unnamed-chunk-20-1.png" width="672" /></p>
+<p><strong>Conclusie</strong>: Ja, het aantal gerapporteerde terroristische aanslagen lijkt volgens de START (<span class="citation"><a href="bronvermelding.html#ref-pape2014" role="doc-biblioref">Pape et al.</a> <a href="bronvermelding.html#ref-pape2014" role="doc-biblioref">2014</a></span>) toegenomen te zijn in de periode 2010 - 2015 ten opzichte van de periode 1970 - 2010.</p>
+</div>
+<div id="univariate-verdelingen" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Univariate verdelingen</h2>
+<p>We zagen net hoe je met een eenvoudige opdracht een histogram kunt opstellen voor een variabele. Het histogram, geïntroduceerd in de paragraaf rond <a href="data.html#soorten-variabelen">Soorten variabelen</a>, geeft de verdeling weer van de waarden van één variabele (<em>univariaat</em>, eng: <em>univariate</em>) langsheen de meetschaal van de variabele. Dat is cruciale informatie. Één blik op de verdeling geeft antwoord op de volgende vragen:</p>
+<ul>
+<li>Wat is het datatype?</li>
+<li>Lijkt het een gekende <em>theoretische verdeling</em> te volgen?</li>
+<li>Heeft een duidelijke modus, meerdere modi?</li>
+<li>Lijkt het erop dat de data een natuurlijke oorsprong kennen of is de data mogelijk gemanipuleerd?</li>
+<li>Wat is de resolutie van de meting?</li>
+<li>Lijken er limieten te zijn waartussen de waarden zich bevinden</li>
+</ul>
+
+<div class="example">
+<span id="exm:unnamed-chunk-21" class="example"><strong>Voorbeeld 4.2  </strong></span>Laten we de dataset rhDNase van naderbij onderzoeken met als doel om uitsluitend naar de verdelingen te kijken.
+</div>
+<p>We beginnen met het laden van de dataset en het tonen van de interne structuur (<code>str</code>) van het object dat de data bevat</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-exploratie.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survival)</span>
+<span id="cb37-2"><a href="data-exploratie.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="data-exploratie.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(rhDNase)</span>
+<span id="cb37-4"><a href="data-exploratie.html#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="data-exploratie.html#cb37-5" aria-hidden="true" tabindex="-1"></a>rhDNase <span class="sc">%&gt;%</span> str</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    767 obs. of  8 variables:
+##  $ id      : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ inst    : int  1 1 1 1 1 1 1 1 2 2 ...
+##  $ trt     : int  1 1 0 1 0 1 0 0 1 0 ...
+##  $ entry.dt: Date, format: &quot;1992-03-20&quot; &quot;1992-03-24&quot; ...
+##  $ end.dt  : Date, format: &quot;1992-09-04&quot; &quot;1992-09-09&quot; ...
+##  $ fev     : num  28.8 64 67.2 57.6 57.6 25.6 86.4 32 86.4 28.8 ...
+##  $ ivstart : num  NA NA 65 NA NA NA NA 90 NA 8 ...
+##  $ ivstop  : num  NA NA 75 NA NA NA NA 104 NA 22 ...</code></pre>
+<p>We gaan nu één voor één de variabelen af:</p>
+<ul>
+<li><p><code>id</code>: <em>subject id</em>. Is de identiteit en het heeft geen nut om hier een verdeling van de trekken.</p></li>
+<li><p><code>inst</code>: <em>enrolling institution</em>. Dit is een <code>integer</code>, dus dat lijkt niet te kloppen, want we verwachten een organisatie hier. We behandelen het dan ook als categorische (nominale) variabele (<code>factor</code> in R) en maken een staafdiagram (eng: <em>bar plot</em>). Er is geen betekenisvolle sortering mogelijk bij categorische variabelen, maar het is een goed gewoonte om te toch even van frequent naar minder frequent te sorteren om een zicht te krijgen op de curve die zo ontstaat.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-exploratie.html#cb39-1" aria-hidden="true" tabindex="-1"></a>rhDNase <span class="ot">&lt;-</span> rhDNase <span class="sc">%&gt;%</span> as.data.table</span>
+<span id="cb39-2"><a href="data-exploratie.html#cb39-2" aria-hidden="true" tabindex="-1"></a>rhDNase[, inst <span class="sc">:</span><span class="er">=</span> inst <span class="sc">%&gt;%</span> factor]</span>
+<span id="cb39-3"><a href="data-exploratie.html#cb39-3" aria-hidden="true" tabindex="-1"></a>rhDNase<span class="sc">$</span>inst <span class="sc">%&gt;%</span> table <span class="sc">%&gt;%</span> sort <span class="sc">%&gt;%</span> rev <span class="sc">%&gt;%</span> </span>
+<span id="cb39-4"><a href="data-exploratie.html#cb39-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">barplot</span>(<span class="at">xlab =</span> <span class="st">&quot;Enrolling institution&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;# of instances&quot;</span>,</span>
+<span id="cb39-5"><a href="data-exploratie.html#cb39-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Distribution of the institutions&quot;</span>, <span class="at">cex.names =</span> .<span class="dv">6</span>, <span class="at">las =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="img/gen-unnamed-chunk-23-1.png" width="672" /></p>
+<p>Er zijn wel een aantal dominantere instituten maar die dominantie lijkt niet te extreem er blijft een goede verdeling tussen de verschillende instituten van grofweg 10-15 instanties per instituut.</p></li>
+<li><p><code>trt</code> <em>treatment arm: 0=placebo, 1= rhDNase</em> Een arm betekent hier een vertakking van de beslissingsboom die gebruikt wordt om patiënten in een bepaalde categorie te plaatsen. Zulke een binaire kan je evengoed met een staafdiagram voorstellen, maar hier heb je duidelijk een controle experiment (de placebo-arm) en volstaat het om de verhouding behandeld/placebo mee te geven omdat alle informatie van de verdeling hierin vervat zit:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-exploratie.html#cb40-1" aria-hidden="true" tabindex="-1"></a>rhDNase<span class="sc">$</span>trt <span class="sc">%&gt;%</span> sum <span class="sc">%&gt;%</span> <span class="fu">divide_by</span>(rhDNase <span class="sc">%&gt;%</span> nrow) <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="data-exploratie.html#cb40-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">multiply_by</span>(<span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-3"><a href="data-exploratie.html#cb40-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">sprintf</span>(<span class="st">&quot;%.1f%%&quot;</span>, .)</span></code></pre></div>
+<pre><code>## [1] &quot;48.8%&quot;</code></pre>
+<p>Dit ligt héél dicht bij 50% en we kunnen dus zeggen dat de groepen mooi <em>gebalanceerd</em> zijn zoals het hoort</p></li>
+<li><p><code>entry.dt</code>: <em>date of entry into the study</em>. Uit de structuur zagen we al dat het formaat correct in ingesteld als datum. Een datum is <em>in theorie</em> een continue variabele omdat er tussen twee willekeurig gekozen tijdstippen oneindig veel nieuwe tijdstippen liggen. Bovendien heeft een datum geen betekenisvol nulpunt. Voor een continue variabele is een densiteit-diagram beter geschikt dan een histogram:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-exploratie.html#cb42-1" aria-hidden="true" tabindex="-1"></a>rhDNase[, entry.dt.num <span class="sc">:</span><span class="er">=</span> entry.dt <span class="sc">%&gt;%</span> as.numeric]</span>
+<span id="cb42-2"><a href="data-exploratie.html#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="data-exploratie.html#cb42-3" aria-hidden="true" tabindex="-1"></a>rhDNase<span class="sc">$</span>entry.dt.num <span class="sc">%&gt;%</span> density <span class="sc">%&gt;%</span></span>
+<span id="cb42-4"><a href="data-exploratie.html#cb42-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">plot</span>(<span class="at">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Distribution of start dates &quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb42-5"><a href="data-exploratie.html#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="data-exploratie.html#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">las =</span> <span class="dv">2</span>, <span class="at">cex =</span> .<span class="dv">8</span>,</span>
+<span id="cb42-7"><a href="data-exploratie.html#cb42-7" aria-hidden="true" tabindex="-1"></a> <span class="at">at =</span> rhDNase<span class="sc">$</span>entry.dt <span class="sc">%&gt;%</span> pretty,</span>
+<span id="cb42-8"><a href="data-exploratie.html#cb42-8" aria-hidden="true" tabindex="-1"></a> <span class="at">labels =</span> rhDNase<span class="sc">$</span>entry.dt <span class="sc">%&gt;%</span> pretty)</span>
+<span id="cb42-9"><a href="data-exploratie.html#cb42-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-10"><a href="data-exploratie.html#cb42-10" aria-hidden="true" tabindex="-1"></a>rhDNase<span class="sc">$</span>entry.dt.num <span class="sc">%&gt;%</span> rug</span></code></pre></div>
+<p><img src="img/gen-unnamed-chunk-25-1.png" width="672" /></p>
+<p>Hier zien we dat de rekrutering van deelnemers voor de klinische studie na één maand op een laag pitje te hebben gestaan pas goed op gang is gekomen. De densiteit laat twee pieken zien (modi), we spreken van een <em>bimodale verdeling</em>.</p></li>
+<li><p><code>end.dt</code>: <em>date of last follow-up</em>. Is sterk gelijkend op het vorige. Laten we deze feature gebruiken om de loopduur van elke instantie te berekenen en de distributie hiervan in grafiek te zetten (zie Oefening <a href="data-exploratie.html#exr:distributie-loopduur">4.1</a>).</p>
+<p></p>
+<div class="exercise">
+<span id="exr:distributie-loopduur" class="exercise"><strong>Oefening 4.1  (Distributie-loopduur)  </strong></span>Probeer de distributie voor de loopduur per instantie in beeld te brengen en te beschrijven wat je ziet.
+</div></li>
+<li><p><code>ivstart</code> en <code>ivstop</code><em>days from enrollment to the start of IV antibiotics</em> en <em>days from enrollment to the cessation of IV antibiotics</em> (IV staat voor intraveneus) Deze laatste twee variabelen zijn weer verschillend: het gaat om discrete aantallen (<span class="math inline">\(\subset \mathbb{N}\)</span>), dus geen kommagetallen, maar, tegen de verwachting, wél negatief kunnen zijn. Bovendien zijn er erg veel ontbrekende waarden:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data-exploratie.html#cb43-1" aria-hidden="true" tabindex="-1"></a>rhDNase<span class="sc">$</span>ivstart <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">32</span>)</span></code></pre></div>
+<pre><code>##  [1]  NA  NA  65  NA  NA  NA  NA  90  NA   8  63  60  83  50  NA  99  35  71  NA   8  NA
+## [22]  NA  NA  20  62  85  NA  13  51 166  37  65</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="data-exploratie.html#cb45-1" aria-hidden="true" tabindex="-1"></a>rhDNase<span class="sc">$</span>ivstart <span class="sc">%&gt;%</span> is.na <span class="sc">%&gt;%</span> table</span></code></pre></div>
+<pre><code>## .
+## FALSE  TRUE 
+##   367   400</code></pre>
+<p>We kunnen zelfs zeggen dat er voor <code>ivstart</code> meer gaten zijn dan kaas. We kunnen alsnog de verdeling onderzoeken van de overblijvende waarden:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-exploratie.html#cb47-1" aria-hidden="true" tabindex="-1"></a>rhDNase<span class="sc">$</span>ivstart <span class="sc">%&gt;%</span> <span class="fu">hist</span>(</span>
+<span id="cb47-2"><a href="data-exploratie.html#cb47-2" aria-hidden="true" tabindex="-1"></a> <span class="at">main =</span> <span class="st">&quot;Verdeling wachttijd voor behandeling&quot;</span>,</span>
+<span id="cb47-3"><a href="data-exploratie.html#cb47-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span>  <span class="st">&quot;wachttijd&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;# instanties&quot;</span>)</span>
+<span id="cb47-4"><a href="data-exploratie.html#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="img/gen-unnamed-chunk-28-1.png" width="672" /></p>
+<p>We zien een verdeling die eerder uniform is dan wel normaal. Ook hier kunnen we nu de verdeling van de behandelingsduur in grafiek zetten:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-exploratie.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span>
+<span id="cb48-2"><a href="data-exploratie.html#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="data-exploratie.html#cb48-3" aria-hidden="true" tabindex="-1"></a>rhDNase[, ivstop <span class="sc">-</span> ivstart] <span class="sc">%&gt;%</span></span>
+<span id="cb48-4"><a href="data-exploratie.html#cb48-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">hist</span> (<span class="at">main =</span> <span class="st">&quot;Behandelingsduur&quot;</span>)</span>
+<span id="cb48-5"><a href="data-exploratie.html#cb48-5" aria-hidden="true" tabindex="-1"></a>rhDNase[, ivstop <span class="sc">-</span> ivstart] <span class="sc">%&gt;%</span> log <span class="sc">%&gt;%</span></span>
+<span id="cb48-6"><a href="data-exploratie.html#cb48-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">hist</span>(<span class="at">main =</span> <span class="st">&quot;ln(Behandelingsduur)&quot;</span>)</span></code></pre></div>
+<p><img src="img/gen-unnamed-chunk-29-1.png" width="672" /></p>
+<p>De eerste grafiek laat zien dat de behandelingsduur nogal <a href="https://nl.wikipedia.org/wiki/Scheefheid">rechtsscheef</a> verdeeld is. De transformatie door middel van de natuurlijke logaritme (<span class="math inline">\(ln(x)=\,^elog(x)\)</span>) veranderd de verdeling in iets wat normaler lijkt. We zeggen dat de behandelingsduur <em>lognormaal</em> verdeeld lijkt te zijn. Laten we de theoretische curve erbij zetten om de afwijkingen tussen werkelijk en theoretisch te visualiseren:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-exploratie.html#cb49-1" aria-hidden="true" tabindex="-1"></a>bduur_log <span class="ot">&lt;-</span> rhDNase[,  <span class="fu">log</span>(ivstop <span class="sc">-</span> ivstart)]</span>
+<span id="cb49-2"><a href="data-exploratie.html#cb49-2" aria-hidden="true" tabindex="-1"></a>bduur_log <span class="ot">&lt;-</span> bduur_log[<span class="sc">!</span><span class="fu">is.na</span>(bduur_log) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.infinite</span>(bduur_log)]</span>
+<span id="cb49-3"><a href="data-exploratie.html#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="data-exploratie.html#cb49-4" aria-hidden="true" tabindex="-1"></a>bduur_log <span class="sc">%&gt;%</span> <span class="fu">hist</span>(<span class="at">main =</span> <span class="st">&quot;ln(Behandelingsduur)&quot;</span>, <span class="at">freq =</span> <span class="cn">FALSE</span>, <span class="at">n =</span> <span class="dv">20</span>)</span>
+<span id="cb49-5"><a href="data-exploratie.html#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="data-exploratie.html#cb49-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span> <span class="sc">/</span> <span class="dv">10</span>)</span>
+<span id="cb49-7"><a href="data-exploratie.html#cb49-7" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> <span class="fu">dnorm</span>(</span>
+<span id="cb49-8"><a href="data-exploratie.html#cb49-8" aria-hidden="true" tabindex="-1"></a> <span class="at">mean =</span> bduur_log <span class="sc">%&gt;%</span> mean,</span>
+<span id="cb49-9"><a href="data-exploratie.html#cb49-9" aria-hidden="true" tabindex="-1"></a> <span class="at">sd =</span> bduur_log <span class="sc">%&gt;%</span> sd)</span>
+<span id="cb49-10"><a href="data-exploratie.html#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-11"><a href="data-exploratie.html#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, y , <span class="at">col =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="img/gen-unnamed-chunk-30-1.png" width="672" /></p></li>
+</ul>
+<p>We kunnen verdelingen ook met andere grafiek-types in beeld brengen. De meest populaire zijn de <a href="https://nl.wikipedia.org/wiki/Boxplot">boxplot</a>, de {dot plot}(<a href="https://en.wikipedia.org/wiki/Dot_plot_(statistics)" class="uri">https://en.wikipedia.org/wiki/Dot_plot_(statistics)</a>), de <a href="https://www.r-statistics.com/2011/03/beeswarm-boxplot-and-plotting-it-with-r/#:~:text=A%20bee%20swarm%20plot%20is,controlling%20the%20characters%20and%20colors.">beeswarm plot</a> en de <a href="https://en.wikipedia.org/wiki/Violin_plot">violin plot</a>.</p>
+
+<div class="exercise">
+<p><span id="exr:grafieftypes" class="exercise"><strong>Oefening 4.2  (Verdeling)  </strong></span>Tracht de verdeling van de logaritmisch geschaalde behandelingsduur te visualiseren door middel van de functies <code>base::dotchart</code>, <code>base::boxplot</code>, <code>beeswarm::beeswarm</code> en <code>vioplot::vioplot</code>. De oplossing moet er zo uit zien:</p>
+<div class="figure">
+<img src="img/eindresultaat-grafieftypes.png" alt="" />
+<p class="caption">Eindresultaat grafieftypes</p>
+</div>
+<blockquote>
+<p>Tip: Als je meer dan 300 karakters nodig hebt voor heel deze oefening, weet je dat je te ver aan het zoeken bent.</p>
+</blockquote>
+<blockquote>
+Opgelet: de variabele <code>bduur_log</code> wordt voor deze oefening verwacht in scope te zijn.
+</div>
+</blockquote>
+</div>
+<div id="correlatie-tussen-twee-variabelen" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Correlatie tussen twee variabelen</h2>
+<p>Om correlatie te begrijpen simuleren we een <a href="https://en.wikipedia.org/wiki/Joint_probability_distribution">bivariate verdeling</a> met verschillende covariantie-matrices (zie figuur <a href="data-exploratie.html#fig:correl-demo">4.1</a>).</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-exploratie.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb50-2"><a href="data-exploratie.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(latex2exp)</span>
+<span id="cb50-3"><a href="data-exploratie.html#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="data-exploratie.html#cb50-4" aria-hidden="true" tabindex="-1"></a>copula <span class="ot">&lt;-</span> <span class="cf">function</span>(n, rho, mu1, mu2, sd1, sd2){</span>
+<span id="cb50-5"><a href="data-exploratie.html#cb50-5" aria-hidden="true" tabindex="-1"></a>  mu <span class="ot">&lt;-</span> <span class="fu">c</span>(mu1,mu2)</span>
+<span id="cb50-6"><a href="data-exploratie.html#cb50-6" aria-hidden="true" tabindex="-1"></a>  sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(sd1 <span class="sc">^</span> <span class="dv">2</span>, sd1 <span class="sc">*</span> sd2 <span class="sc">*</span> rho, sd1 <span class="sc">*</span> sd2 <span class="sc">*</span> rho, sd2 <span class="sc">^</span> <span class="dv">2</span>),<span class="dv">2</span>)</span>
+<span id="cb50-7"><a href="data-exploratie.html#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mvrnorm</span>(n, mu, sigma) <span class="sc">%&gt;%</span> as.data.table</span>
+<span id="cb50-8"><a href="data-exploratie.html#cb50-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb50-9"><a href="data-exploratie.html#cb50-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-10"><a href="data-exploratie.html#cb50-10" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>))</span>
+<span id="cb50-11"><a href="data-exploratie.html#cb50-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-12"><a href="data-exploratie.html#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(rho <span class="cf">in</span> <span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">33</span>, .<span class="dv">66</span>, .<span class="dv">95</span>)){</span>
+<span id="cb50-13"><a href="data-exploratie.html#cb50-13" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> <span class="fu">copula</span>(<span class="dv">1000</span>, rho, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb50-14"><a href="data-exploratie.html#cb50-14" aria-hidden="true" tabindex="-1"></a>    dat <span class="sc">%&gt;%</span> <span class="fu">plot</span> (<span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> .<span class="dv">7</span>,</span>
+<span id="cb50-15"><a href="data-exploratie.html#cb50-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>))</span>
+<span id="cb50-16"><a href="data-exploratie.html#cb50-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">text</span>(<span class="sc">-</span><span class="fl">2.5</span>, <span class="fl">2.7</span>, <span class="fu">TeX</span>(<span class="fu">sprintf</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">rho = %.2f$&quot;</span>, rho)))</span>
+<span id="cb50-17"><a href="data-exploratie.html#cb50-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb50-18"><a href="data-exploratie.html#cb50-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">text</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="fl">2.7</span>, <span class="fu">TeX</span>(<span class="fu">sprintf</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">hat{</span><span class="sc">\\</span><span class="st">rho} = %.4f$&quot;</span>,</span>
+<span id="cb50-19"><a href="data-exploratie.html#cb50-19" aria-hidden="true" tabindex="-1"></a>        dat <span class="sc">%&gt;%</span> cor <span class="sc">%&gt;%</span> <span class="fu">extract</span>(<span class="dv">1</span>, <span class="dv">2</span>))))</span>
+<span id="cb50-20"><a href="data-exploratie.html#cb50-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="figure"><span id="fig:correl-demo"></span>
+<img src="img/gen-correl-demo-1.png" alt="Demonstratie van de correlatie tussen twee variabelen. Merk op hoe de geschatte correlatie coëfficiënt de werkelijke benaderd. De covariantie matrix komt overeen met (\(\rho\) is de correlatiecoëfficiënt) \[\begin{bmatrix}1 &amp; \rho\\\rho &amp; 1\end{bmatrix}\]" width="672" />
+<p class="caption">
+Figuur 4.1: Demonstratie van de correlatie tussen twee variabelen. Merk op hoe de geschatte correlatie coëfficiënt de werkelijke benaderd. De covariantie matrix komt overeen met (<span class="math inline">\(\rho\)</span> is de correlatiecoëfficiënt) <span class="math display">\[\begin{bmatrix}1 &amp; \rho\\\rho &amp; 1\end{bmatrix}\]</span>
+</p>
+</div>
+
+
+<div class="remark">
+<p> <span class="remark"><em>Opmerking </em></span> <strong>Opgelet</strong>: een correlatie tussen twee variabelen is geen garantie voor een causaal verband. Bekijk deze kennis-clip om te begrijpen hoe je wel een causaal verband kan onderzoeken:</p>
+<iframe width="566" height="318" src="https://www.youtube.com/embed/HUti6vGctQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+
+<div class="exercise">
+<p><span id="exr:when-to-correlate" class="exercise"><strong>Oefening 4.3  (Wanneer corelleer)  </strong></span>Gegeven de volgende combinaties van verschillende soorten variabelen, wanneer mag je wél correleren:</p>
+<ul>
+<li>Nominaal vs numeriek discreet lineair</li>
+<li>Numeriek continu lineair vs Numeriek continu lineair</li>
+<li>Nominaal vs numeriek continu circulair</li>
+<li>Numeriek continu lineair vs numeriek continu circulair</li>
+<li>Numeriek continu lineair vs ordinaal
+</div></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="manipuleren-van-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

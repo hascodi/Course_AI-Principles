@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 2 Leren uit data | References</title>
+  <meta name="description" content="AI Principles course at the AP University College." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 2 Leren uit data | References" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="AI Principles course at the AP University College." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 2 Leren uit data | References" />
+  
+  <meta name="twitter:description" content="AI Principles course at the AP University College." />
+  
+
+<meta name="author" content="David D’Haese" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="inleiding-tot-de-cursus.html"/>
+<link rel="next" href="data.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/course.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Summary</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html"><i class="fa fa-check"></i><b>1</b> Inleiding tot de cursus</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#in-een-notedop"><i class="fa fa-check"></i><b>1.1</b> In een notedop</a></li>
+<li class="chapter" data-level="1.2" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#leerdoelen"><i class="fa fa-check"></i><b>1.2</b> Leerdoelen</a></li>
+<li class="chapter" data-level="1.3" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#cursus-vorm"><i class="fa fa-check"></i><b>1.3</b> Cursus vorm</a></li>
+<li class="chapter" data-level="1.4" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#bekijken-van-deze-cursus"><i class="fa fa-check"></i><b>1.4</b> Bekijken van deze Cursus</a></li>
+<li class="chapter" data-level="1.5" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#licentie-voor-deze-cursus"><i class="fa fa-check"></i><b>1.5</b> Licentie voor deze cursus</a></li>
+<li class="chapter" data-level="1.6" data-path="inleiding-tot-de-cursus.html"><a href="inleiding-tot-de-cursus.html#verwijzen-naar-deze-cursus"><i class="fa fa-check"></i><b>1.6</b> Verwijzen naar deze cursus</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="leren-uit-data.html"><a href="leren-uit-data.html"><i class="fa fa-check"></i><b>2</b> Leren uit data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leerproces"><i class="fa fa-check"></i><b>2.1</b> Het leerproces</a></li>
+<li class="chapter" data-level="2.2" data-path="leren-uit-data.html"><a href="leren-uit-data.html#de-evolutie-van-het-machinaal-leren"><i class="fa fa-check"></i><b>2.2</b> De evolutie van het machinaal leren</a></li>
+<li class="chapter" data-level="2.3" data-path="leren-uit-data.html"><a href="leren-uit-data.html#intelligentie"><i class="fa fa-check"></i><b>2.3</b> Intelligentie</a></li>
+<li class="chapter" data-level="2.4" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-model"><i class="fa fa-check"></i><b>2.4</b> Het model</a></li>
+<li class="chapter" data-level="2.5" data-path="leren-uit-data.html"><a href="leren-uit-data.html#doelfunctie"><i class="fa fa-check"></i><b>2.5</b> Doelfunctie</a></li>
+<li class="chapter" data-level="2.6" data-path="leren-uit-data.html"><a href="leren-uit-data.html#mnist-dataset"><i class="fa fa-check"></i><b>2.6</b> MNIST dataset</a></li>
+<li class="chapter" data-level="2.7" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-resultaat-van-mnist-analyse"><i class="fa fa-check"></i><b>2.7</b> Het resultaat van MNIST analyse</a></li>
+<li class="chapter" data-level="2.8" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-mnist-model"><i class="fa fa-check"></i><b>2.8</b> Het MNIST model</a></li>
+<li class="chapter" data-level="2.9" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leerproces-voor-begeleid-ml"><i class="fa fa-check"></i><b>2.9</b> Het leerproces voor begeleid ML</a></li>
+<li class="chapter" data-level="2.10" data-path="leren-uit-data.html"><a href="leren-uit-data.html#de-onderdelen-van-een-model"><i class="fa fa-check"></i><b>2.10</b> De onderdelen van een model</a></li>
+<li class="chapter" data-level="2.11" data-path="leren-uit-data.html"><a href="leren-uit-data.html#hyperparameters"><i class="fa fa-check"></i><b>2.11</b> Hyperparameters</a></li>
+<li class="chapter" data-level="2.12" data-path="leren-uit-data.html"><a href="leren-uit-data.html#het-leeralgoritme"><i class="fa fa-check"></i><b>2.12</b> Het leeralgoritme</a></li>
+<li class="chapter" data-level="2.13" data-path="leren-uit-data.html"><a href="leren-uit-data.html#model-complexiteit"><i class="fa fa-check"></i><b>2.13</b> Model complexiteit</a></li>
+<li class="chapter" data-level="2.14" data-path="leren-uit-data.html"><a href="leren-uit-data.html#comprimeren-door-middel-van-een-ml-model"><i class="fa fa-check"></i><b>2.14</b> Comprimeren door middel van een ML model</a></li>
+<li class="chapter" data-level="2.15" data-path="leren-uit-data.html"><a href="leren-uit-data.html#leren-versus-ontwerp"><i class="fa fa-check"></i><b>2.15</b> Leren versus ontwerp</a></li>
+<li class="chapter" data-level="2.16" data-path="leren-uit-data.html"><a href="leren-uit-data.html#leren-versus-onthouden-en-inferentie"><i class="fa fa-check"></i><b>2.16</b> Leren versus onthouden en inferentie</a></li>
+<li class="chapter" data-level="2.17" data-path="leren-uit-data.html"><a href="leren-uit-data.html#onbegeleid-ml"><i class="fa fa-check"></i><b>2.17</b> Onbegeleid ML</a></li>
+<li class="chapter" data-level="2.18" data-path="leren-uit-data.html"><a href="leren-uit-data.html#conditionering"><i class="fa fa-check"></i><b>2.18</b> Conditionering</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#data-voor-ml"><i class="fa fa-check"></i><b>3.1</b> Data voor ML</a></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#wat-is-data"><i class="fa fa-check"></i><b>3.2</b> Wat is data</a></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#soorten-data"><i class="fa fa-check"></i><b>3.3</b> Soorten data</a></li>
+<li class="chapter" data-level="3.4" data-path="data.html"><a href="data.html#externe-databronnen"><i class="fa fa-check"></i><b>3.4</b> Externe databronnen</a></li>
+<li class="chapter" data-level="3.5" data-path="data.html"><a href="data.html#data-genereren"><i class="fa fa-check"></i><b>3.5</b> Data Genereren</a></li>
+<li class="chapter" data-level="3.6" data-path="data.html"><a href="data.html#de-analyse-dataset"><i class="fa fa-check"></i><b>3.6</b> De analyse dataset</a></li>
+<li class="chapter" data-level="3.7" data-path="data.html"><a href="data.html#soorten-variabelen"><i class="fa fa-check"></i><b>3.7</b> Soorten variabelen</a></li>
+<li class="chapter" data-level="3.8" data-path="data.html"><a href="data.html#eng-nominal-scale-data"><i class="fa fa-check"></i><b>3.8</b> (Eng) Nominal-Scale Data</a></li>
+<li class="chapter" data-level="3.9" data-path="data.html"><a href="data.html#eng-dummy-variables"><i class="fa fa-check"></i><b>3.9</b> (Eng) Dummy Variables</a></li>
+<li class="chapter" data-level="3.10" data-path="data.html"><a href="data.html#eng-ordinal-scale-data"><i class="fa fa-check"></i><b>3.10</b> (Eng) Ordinal-Scale Data</a></li>
+<li class="chapter" data-level="3.11" data-path="data.html"><a href="data.html#eng-circular-scale"><i class="fa fa-check"></i><b>3.11</b> (Eng) Circular-Scale</a></li>
+<li class="chapter" data-level="3.12" data-path="data.html"><a href="data.html#eng-censoring"><i class="fa fa-check"></i><b>3.12</b> (Eng) Censoring</a></li>
+<li class="chapter" data-level="3.13" data-path="data.html"><a href="data.html#tijd-en-ruimte"><i class="fa fa-check"></i><b>3.13</b> Tijd en ruimte</a></li>
+<li class="chapter" data-level="3.14" data-path="data.html"><a href="data.html#toegang-tot-data"><i class="fa fa-check"></i><b>3.14</b> Toegang tot data</a></li>
+<li class="chapter" data-level="3.15" data-path="data.html"><a href="data.html#het-codeboek"><i class="fa fa-check"></i><b>3.15</b> Het codeboek</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-exploratie.html"><a href="data-exploratie.html"><i class="fa fa-check"></i><b>4</b> Data exploratie</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-exploratie.html"><a href="data-exploratie.html#principes-van-data-exploratie"><i class="fa fa-check"></i><b>4.1</b> Principes van data exploratie</a></li>
+<li class="chapter" data-level="4.2" data-path="data-exploratie.html"><a href="data-exploratie.html#stappen-in-data-exploratie"><i class="fa fa-check"></i><b>4.2</b> Stappen in data exploratie</a></li>
+<li class="chapter" data-level="4.3" data-path="data-exploratie.html"><a href="data-exploratie.html#voorbeeld-data-exploratie"><i class="fa fa-check"></i><b>4.3</b> Voorbeeld data exploratie</a></li>
+<li class="chapter" data-level="4.4" data-path="data-exploratie.html"><a href="data-exploratie.html#univariate-verdelingen"><i class="fa fa-check"></i><b>4.4</b> Univariate verdelingen</a></li>
+<li class="chapter" data-level="4.5" data-path="data-exploratie.html"><a href="data-exploratie.html#correlatie-tussen-twee-variabelen"><i class="fa fa-check"></i><b>4.5</b> Correlatie tussen twee variabelen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html"><i class="fa fa-check"></i><b>5</b> Manipuleren van data</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#kort-overzicht-van-de-manipulaties"><i class="fa fa-check"></i><b>5.1</b> Kort overzicht van de manipulaties</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#filteren-en-versnijden"><i class="fa fa-check"></i><b>5.1.1</b> Filteren en versnijden</a></li>
+<li class="chapter" data-level="5.1.2" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#booleaans-masker"><i class="fa fa-check"></i><b>5.1.2</b> Booleaans masker</a></li>
+<li class="chapter" data-level="5.1.3" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-grouping-and-aggregation"><i class="fa fa-check"></i><b>5.1.3</b> (Eng.) Grouping and Aggregation</a></li>
+<li class="chapter" data-level="5.1.4" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-transforming-text"><i class="fa fa-check"></i><b>5.1.4</b> (Eng.) Transforming text</a></li>
+<li class="chapter" data-level="5.1.5" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-re-scaling-numerical-values"><i class="fa fa-check"></i><b>5.1.5</b> (Eng.) Re-Scaling Numerical Values</a></li>
+<li class="chapter" data-level="5.1.6" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-discretizations"><i class="fa fa-check"></i><b>5.1.6</b> (Eng.) Discretizations</a></li>
+<li class="chapter" data-level="5.1.7" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-information-content"><i class="fa fa-check"></i><b>5.1.7</b> (Eng.) Information Content</a></li>
+<li class="chapter" data-level="5.1.8" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-reformatting-type-conversion-casting-or-coercion"><i class="fa fa-check"></i><b>5.1.8</b> (Eng.) Reformatting, Type Conversion, Casting or Coercion</a></li>
+<li class="chapter" data-level="5.1.9" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-changing-numerical-values"><i class="fa fa-check"></i><b>5.1.9</b> (Eng.) Changing numerical Values</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-changing-category-names"><i class="fa fa-check"></i><b>5.2</b> (Eng.) Changing Category Names</a></li>
+<li class="chapter" data-level="5.3" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#eng.-imputation"><i class="fa fa-check"></i><b>5.3</b> (Eng.) Imputation</a></li>
+<li class="chapter" data-level="5.4" data-path="manipuleren-van-data.html"><a href="manipuleren-van-data.html#onbehandeld"><i class="fa fa-check"></i><b>5.4</b> Onbehandeld</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html"><i class="fa fa-check"></i><b>6</b> Trainen en testen</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#leren-leven-met-de-onzekerheid"><i class="fa fa-check"></i><b>6.1</b> Leren leven met de onzekerheid</a></li>
+<li class="chapter" data-level="6.2" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#meten-van-de-prestatie-van-een-model"><i class="fa fa-check"></i><b>6.2</b> Meten van de prestatie van een model</a></li>
+<li class="chapter" data-level="6.3" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#training--validatie--en-test-set"><i class="fa fa-check"></i><b>6.3</b> Training-, validatie- en test-set</a></li>
+<li class="chapter" data-level="6.4" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#cross-validatie"><i class="fa fa-check"></i><b>6.4</b> Cross-validatie</a></li>
+<li class="chapter" data-level="6.5" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#werkstroom-deep-learning"><i class="fa fa-check"></i><b>6.5</b> Werkstroom deep learning</a></li>
+<li class="chapter" data-level="6.6" data-path="trainen-en-testen.html"><a href="trainen-en-testen.html#data-lekkage"><i class="fa fa-check"></i><b>6.6</b> Data lekkage</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bronvermelding.html"><a href="bronvermelding.html"><i class="fa fa-check"></i>Bronvermelding</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">References</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="leren-uit-data" class="section level1" number="2">
+<h1><span class="header-section-number">Hoofdstuk 2</span> Leren uit data</h1>
+<div id="het-leerproces" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Het leerproces</h2>
+
+<div class="lemma">
+<span id="lem:begel-vs-onbegeid" class="lemma"><strong>Leerdoel 2.1  </strong></span>Rapporteert op correcte wijze over de onzekerheden van een AI oplossing (<a href="inleiding-tot-de-cursus.html#leerdoelen"><em>TI_LD580</em></a>).
+</div>
+
+<div class="lemma">
+<span id="lem:explainble" class="lemma"><strong>Leerdoel 2.2  </strong></span>Past de principes toe van Explainable AI| (<a href="inleiding-tot-de-cursus.html#leerdoelen"><em>TI_LD581</em></a>).
+</div>
+<p>Machine learning (ML) is het vermogen van een algoritme om te <em>leren uit data</em>. In deze inleiding zullen we leren dat, hoewel dit een eenvoudige definitie lijkt, hier toch héél wat achter schuilt. Dus om deze definitie wat kracht bij te zetten, maken we hier meteen ons eerst kadertje voor:</p>
+
+<div class="definition">
+<span id="def:def-ml" class="definition"><strong>Stelling 2.1  </strong></span>Machine learning (ML) is het vermogen van een algoritme om te <b>leren uit data</b>.
+</div>
+<p>De term word ook ruimer geïnterpreteerd als de discipline die zich bezighoud met het creëren van zulke algoritmen. Laten we eens filosoferen over de term <em>leren</em> in deze stelling. Wat betekent het in feite om iets te leren? Prof. Abu-Mostafa, een gerenommeerde didacticus in deze discipline legt het in zijn boek <em>Learning from data</em> (<span class="citation"><a href="bronvermelding.html#ref-learningfromdata" role="doc-biblioref">Abu-Mostafa et al.</a> <a href="bronvermelding.html#ref-learningfromdata" role="doc-biblioref">2012</a></span>, p.1) ongeveer zo uit:</p>
+<p><q>Laat een foto aan een driejarige zien en vraag de kleuter of er een boom te zien is en je krijgt bijna zeker het juiste antwoord. Vraag nu aan een dertig-jarige persoon om de definitie van een boom te geven en je krijgt vermoedelijk een onduidelijk of toch onvolledig antwoord.</q></p>
+<p>Hoe komt dit? Een mens leert niet wat een boom is door de wiskundige beschrijving van een boom te memoriseren maar door het beeld te associëren met het woord en de klank en door gecorrigeerd te worden telkens wanneer we een fout maken. De foto’s en tekeningen, de geur, het geritsel van de bladeren, de juf die ‘boom’ zegt, de ouder die wijst, de vier letters op het schoolbord: dat zijn de data. Het verzamelen van al die data en classificeren ervan onder de noemer ‘boom’ gebeurt door onze hersenen en dat proces noemen we <em>leren</em>. Laten we dit schematisch voorstellen:</p>
+<div class="figure"><span id="fig:leren-uit-data"></span>
+<img src="img/leren_uit_data.png" alt="Het centraal zenuwstelsel van een mens kan leren uit data. Het concept ‘boom’ wordt hier met een ‘gedachten-wolk’ voorgesteld en komt overeen met een model van de realiteit." width="746" />
+<p class="caption">
+Figuur 2.1: Het centraal zenuwstelsel van een mens kan leren uit data. Het concept ‘boom’ wordt hier met een ‘gedachten-wolk’ voorgesteld en komt overeen met een model van de realiteit.
+</p>
+</div>
+
+<p>Het eindpunt van het leerproces is het model. In het voorbeeld van de boom is dit model het concept of mentaal ‘beeld’ van een boom dat in onze hersenen achterblijft ook wanneer we niet naar een boom kijken. Dit model is een <em>vereenvoudigde versie</em> van de werkelijkheid. Het bevat zeker niet alle wiskundige verhoudingen noch alle biologische details van één boom, laat staan van alle bomen op aarde. Toch slagen de meesten onder ons een onderscheid te maken tussen een boom en een niet-boom.</p>
+
+<div class="definition">
+<span id="def:def-model" class="definition"><strong>Stelling 2.2  </strong></span>Het eindpunt van het leerproces is een model dat een vereenvoudigde versie van de werkelijkheid kan weergeven
+</div>
+
+<div class="theorem">
+<p><span id="thm:abumostafa" class="theorem"><strong>Persoonlijkheid 2.1  (Yaser Abu-Mostafa)  </strong></span></p>
+<p><img src="img/Yaser_Abu_Mostafa.png" /></p>
+<em>Yaser Abu-Mostafa</em> is een professor Computer Science aan de California Institute of Technology. Hij is beroemd geworden voor zijn memorabele online cursussen rond ML. Zier <a href="https://en.wikipedia.org/wiki/Yaser_Abu-Mostafa">hier</a> for meer details.
+</div>
+</div>
+<div id="de-evolutie-van-het-machinaal-leren" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> De evolutie van het machinaal leren</h2>
+<p>De mens is al eeuwenlang bezig met het bouwen van automaten (zogenaamde <a href="https://en.wikipedia.org/wiki/Automaton">automata</a>). Een prachtig voorbeeld hiervan is de geautomatisserde <a href="https://en.wikipedia.org/wiki/Maillardet%27s_automaton">tekenaar-schrijver</a> die de Zwitserse mechanieker <a href="https://en.wikipedia.org/wiki/Henri_Maillardet">Henri Maillardet</a> bouwde rond 1800:</p>
+<iframe width="566" height="318" src="https://www.youtube.com/embed/C7oSFNKIlaM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Hierbij ging het meestal om voorgeprogrammeerde robotten zonder enige vorm van intelligentie. Eén van de eerste vormen van meer ‘intelligente’ robotten waren de <em>machina speculatrix</em> van <a href="https://en.wikipedia.org/wiki/William_Grey_Walter">Grey Walters</a>:</p>
+<iframe width="566" height="318[(https://en.wikipedia.org/wiki/William_Grey_Walter" src="https://www.youtube.com/embed/lLULRlmXkKo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Ondertussen weten we dat er zelf-rijdende wagens, zelf-vliegende drones en zelf-varende boten bestaan:</p>
+<iframe width="566" height="318" src="https://www.youtube.com/embed/6BqY9QvFNwA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="intelligentie" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Intelligentie</h2>
+<p>ML is een onderdeel van artificiële intelligentie (AI). Er bestaan vele definities voor deze term, maar het VLEVA (Vlaams–Europees Verbindingsagentschap) maakt een duidelijk onderscheid. Zij spreken van ML wanneer patronen in data, al dan niet rechtstreeks afkomstig van sensoren, worden omgezet naar een model, zoals eerder reeds aangehaald. AI gaat een stap verder. Hier wordt er, op basis van het model en nieuwe data, werkelijk ook actie ondernomen en keuzes gemaakt. Bij ML wordt deze fase nog aan de mens overgelaten. Dus zelf-rijdende wagens behoren duidelijk tot het domein van AI, terwijl een applicatie die op basis van een paar fluittonen een melodie kan herkennen eerder thuishoort onder ML. Andere voorbeelden van ML toepassingen zijn het voorspellen van de financiële markten, beeldherkenning, geautomatiseerde medische diagnoses, enz… Dit onderscheid blijft natuurlijk erg artificieel en in sommige gevallen zal deze classificatie niet opgaan. Maar we kunnen wel zeggen:</p>
+
+<div class="definition">
+<span id="def:def-ai" class="definition"><strong>Stelling 2.3  </strong></span>De huidige vormen van artifiële intelligentie baseren bijna uitsluitend op machinaal aangeleerde modellen Dus geen AI zonder ML.
+</div>
+<p>Maar wat betekent <em>intelligentie</em> in feite? Volgens <a href="https://en.wikipedia.org/wiki/Intelligence">Wikipedia</a> bestaat intelligentie uit meerdere capaciteiten zoals (logisch) <em>redeneren</em>, <em>begrijpen</em>, <em>zelfbewustzijn</em>, <em>aanleren</em>, <em>emotionele intelligentie</em>, <em>plannen</em>, <em>creatief zijn</em>, <em>kritisch denken</em> en <em>probleemoplossing</em>. Voorlopig ligt de focus bij ML voornamelijk op het <em>aanleren</em> al wordt ook op alle andere aspecten heel wat onderzoek verricht. We moeten voorlopig dus best nog bescheiden blijven met het gebruik van de term <em>artificiële intelligentie</em>. Het is ook heel belangrijk om te realiseren dat er vormen van intelligentie bestaan die erg verschillen van de menselijke intelligentie. Uiteraard wist je dat vele andere dieren aspecten van intelligentie kunnen bezitten. maar wist je ook dat er bij planten vormen van intelligentie werden vastgesteld en dit maakt het des te merkwaardiger gezien zij niet over een centraal zenuwstelsel beschikken.</p>
+<iframe width="566" height="318" src="https://www.youtube.com/embed/MPql1VHbYl4?t=57" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="het-model" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Het model</h2>
+<p>Laten we beginnen met het eindproduct van ML. We zagen dat het eindpunt van ML het <em>model</em> is. In tegenstelling tot wat deze term in bijvoorbeeld database management betekent, kan je het model het best beschouwen als een <em>functie</em> <span class="math inline">\(\hat{f}\)</span>, ook wel de finale hypothese genoemd (final hypothesis; <span class="citation"><a href="bronvermelding.html#ref-learningfromdata" role="doc-biblioref">Abu-Mostafa et al.</a> <a href="bronvermelding.html#ref-learningfromdata" role="doc-biblioref">2012</a></span>):</p>
+<p><span class="math display">\[\hat{f}: \mathcal{X} \to \mathcal{Y}\]</span></p>
+<p>Proberen we nu ons boom-herkenning oefening te vertalen van de menselijke wereld naar de ML wereld, dan bestaat het model uit een <em>functie</em> die een antwoord biedt op de vraag:</p>
+<p><q>Wordt op deze digitale foto een boom afgebeeld?</q></p>
+<p>Nadat de digitale afbeelding een zekere voorbereiding (eng: <em>pre-processing</em>) doorlopen heeft, zal het bestaan uit mogelijk een set van variabelen zoals voorgesteld in figuur <a href="leren-uit-data.html#fig:leren-uit-data-ml">2.2</a>.</p>
+<div class="figure"><span id="fig:leren-uit-data-ml"></span>
+<img src="img/leren_uit_data_ML.svg" alt="Als we de oefening om een boom te herkennen uit figuur 2.1 vertalen naar de machinale wereld krijgen we data van waaruit het algoritme een model heeft aangeleerd. Het model kunnen we hier voorstellen door middel van een functie \(\hat{f}\). Het hoedje op de \(f\) dient om aan te geven dat het om een geschatte waarde gaat."  />
+<p class="caption">
+Figuur 2.2: Als we de oefening om een boom te herkennen uit figuur <a href="leren-uit-data.html#fig:leren-uit-data">2.1</a> vertalen naar de machinale wereld krijgen we data van waaruit het algoritme een model heeft aangeleerd. Het model kunnen we hier voorstellen door middel van een functie <span class="math inline">\(\hat{f}\)</span>. Het hoedje op de <span class="math inline">\(f\)</span> dient om aan te geven dat het om een geschatte waarde gaat.
+</p>
+</div>
+
+<p><span class="math inline">\(\mathcal{X}\)</span> is hier de input en bestaat in dit voorbeeld uit allerhande variabelen die betrekking hebben op gedigitaliseerde afbeeldingen. Bijvoorbeeld, de variabele <code>Dominante kleur</code> stelt de meest frequente kleur-groep die op de afbeelding voorkomt.</p>
+<p><span class="math inline">\(\mathcal{Y}\)</span> is de output, de variabele die het antwoord bevat op de vraag of er al dan niet een boom wordt afgebeeld waarbij de witte en zwarte bollen overeenkomen met <code>ja</code>/<code>neen</code> of <code>true</code>/<code>false</code>.</p>
+<p>In python zal het model dus ongeveer de volgende vereenvoudigde vorm kunnen aannemen:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="leren-uit-data.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> model(x):</span>
+<span id="cb1-2"><a href="leren-uit-data.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Some code goes here</span></span>
+<span id="cb1-3"><a href="leren-uit-data.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> y</span></code></pre></div>
+<p>en het equivalent in R is als volgt:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="leren-uit-data.html#cb2-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="cf">function</span>(x_test){</span>
+<span id="cb2-2"><a href="leren-uit-data.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Some code goes here</span></span>
+<span id="cb2-3"><a href="leren-uit-data.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y_predicted)</span>
+<span id="cb2-4"><a href="leren-uit-data.html#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="doelfunctie" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Doelfunctie</h2>
+<p>Het is je misschien opgevallen dat het symbool voor het model een hoedje draagt: <span class="math inline">\(\hat{f}\)</span>. Dat is geen toeval. Dat wil in feite zeggen dat het om een <em>geschatte</em> functie gaat. Daartegenover staat de werkelijke functie <span class="math inline">\(f\)</span>, de zogenaamde <em>doelfunctie</em> (<span class="citation"><a href="bronvermelding.html#ref-learningfromdata" role="doc-biblioref">Abu-Mostafa et al.</a> <a href="bronvermelding.html#ref-learningfromdata" role="doc-biblioref">2012</a></span>). Het is belangrijk om te beseffen dat de doelfunctie <span class="math inline">\(f\)</span> in de meeste gevallen onbekend blijft! Tijdens simulaties of binnen de wetenschappelijke disciplines gebeurt het wel eens dat de <span class="math inline">\(f\)</span> gekend is, maar in de meeste gevallen waar een datawetenschapper mee te maken krijgt is dat niet het geval. Het doel is uiteraard om te proberen om met het model <span class="math inline">\(\hat{f}\)</span> de doelfunctie <span class="math inline">\(f\)</span> zo goed mogelijk te benaderen, en dat valt niet mee als <span class="math inline">\(f\)</span> onbekend is. Er zijn verscheidene opties om deze benadering tot een succes te maken. Één van deze benaderingen, diegene die we in dit hoofdstuk toepassen, noemt men het begeleid leren (eng: <em>supervised learning</em>).</p>
+
+<div class="definition">
+<span id="def:def-doelfunctie" class="definition"><strong>Stelling 2.4  </strong></span>Het doel van begeleid ML is om een model <span class="math inline">\(\hat{f}\)</span> te vinden dat de werkelijke doelfunctie <span class="math inline">\(f\)</span>, die meestal onbekend blijft, zo goed mogelijk tracht te benaderen.
+</div>
+</div>
+<div id="mnist-dataset" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> MNIST dataset</h2>
+<p><em>We gaan nu trachten de eerste ideeën rond ML te vertalen naar de praktijk. Om dit mogelijk te maken, wordt er een nieuwe probleem met bijhorende dataset voorgesteld.</em></p>
+<p>Behalve het begrip ‘boom’ zullen de meeste peuters ook één of ander schrift aangeleerd krijgen. Hoewel gedrukte letters tegenwoordig natuurlijk domineren, wordt er nog steeds het handschrift aangeleerd (figuur <a href="leren-uit-data.html#fig:alfabet">2.3</a>). Behalve mensen is het natuurlijk interessant mocht een computer ook handgeschreven teksten kunnen lezen zodat bijvoorbeeld historische werken gedigitaliseerd kunnen worden.</p>
+<div class="figure"><span id="fig:alfabet"></span>
+<img src="img/alfabet.png" alt="Het handgeschreven alfabet zoals voorgesteld met de schrijfmethode D’Haese (geen familie; bron)." width="318px" />
+<p class="caption">
+Figuur 2.3: Het handgeschreven alfabet zoals voorgesteld met de schrijfmethode D’Haese (geen familie; <a href="https://www.sincfala.be/106-museumcollectie/collectie-items/33217-didplal00035?tmpl=component">bron</a>).
+</p>
+</div>
+
+<p>Om dit mogelijk te maken kan men een model creëren dat in staat is om de handgeschreven karakters te herkennen. Het Amerikaanse <em>Modified National Institute of Standards and Technology</em> biedt een <a href="http://yann.lecun.com/exdb/mnist/">dataset</a> aan met foto’s van handgeschreven letters en cijfers in allerlei varianten. Om de zaak te vereenvoudigen gaan we ons in dit voorbeeld beperken tot de handgeschreven cijfers (figuur <a href="leren-uit-data.html#fig:mnist">2.4</a>). De cijfers (in de training set) zijn afkomstige van 250 schrijvers, zowel werknemers van de <a href="https://www.census.gov/">Census Bureau</a> als studenten van het hoger middelbaar onderwijs.</p>
+<div class="figure"><span id="fig:mnist"></span>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png" alt="Subset van de MNIST dataset met afbeeldingen van handgeschreven cijfers. Elke geschreven karakter is een afzonderlijke afbeelding van \(28\times28\) pixels. Elke afbeeldingen werd uitgeknipt uit een groter gescand document met geschreven tekst, gecentreerd en teruggebracht naar een grootte van \(28\times28\)."  />
+<p class="caption">
+Figuur 2.4: Subset van de MNIST dataset met afbeeldingen van handgeschreven cijfers. Elke geschreven karakter is een afzonderlijke afbeelding van <span class="math inline">\(28\times28\)</span> pixels. Elke afbeeldingen werd uitgeknipt uit een groter gescand document met geschreven tekst, gecentreerd en teruggebracht naar een grootte van <span class="math inline">\(28\times28\)</span>.
+</p>
+</div>
+
+
+<div class="exercise">
+<span id="exr:mnist-probleem" class="exercise"><strong>Oefening 2.1  (MNIST probleem)  </strong></span>Kijk eens goed naar de variaties voor de cijfers in Figuur 2.4. Valt je iets op? Zou er een probleem kunnen ontstaan indien je deze dataset bijvoorbeeld zou willen inzetten voor het leren herkennen van de handgeschreven notities van AP-studenten? Geef je antwoord op <a href="https://learning.ap.be/course/view.php?id=35676">Digitap</a>.
+</div>
+<p>Elke afbeelding in de MNIST dataset wordt voorgesteld als een <span class="math inline">\(28\times28\)</span>-matrix. Elke element van deze matrix stelt een grijswaarde voor van een pixel uit de afbeelding. Stel dat de afbeeldingen in de RGB kleurruimte zouden zijn opgeslagen, dan zou er voor elke pixel niet één maar drie waarden beschikbaar worden gemaakt.</p>
+<div class="figure"><span id="fig:mnist-cijfer"></span>
+<img src="img/mnist_cijfer.png" alt="Het 300ste cijfer het de MNIST training-set." width="688" />
+<p class="caption">
+Figuur 2.5: Het 300<sup>ste</sup> cijfer het de MNIST training-set.
+</p>
+</div>
+
+<p>Elke instantie van de input dataset (eng: <em>instance</em>) wordt dus voorgesteld door een <span class="math inline">\(1\times784\)</span>-vector en de ganse input dataset kan worden voorgesteld als een <span class="math inline">\(n\times784\)</span>-matrix, waarbij <span class="math inline">\(n=60\,000\)</span> de grootte van de (training-) dataset is zoals beschikbaar gemaakt door <a href="http://yann.lecun.com/exdb/mnist/">MNIST</a>.</p>
+</div>
+<div id="het-resultaat-van-mnist-analyse" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Het resultaat van MNIST analyse</h2>
+<p>We gaan later in detail onderzoeken hoe we precies de beeldherkenning kunnen uitvoeren. Nu nemen we eerst een kortere weg naar het resultaat. Kijk even terug naar figuur <a href="leren-uit-data.html#fig:leren-uit-data-ml">2.2</a> en herinner je dat het resultaat van een ML process een model was dat wiskundig als functie <span class="math inline">\(\hat{f}\)</span> kan worden voorgesteld. Schematisch zal onze analyse er nu uitzien zoals voorgesteld in figuur <a href="leren-uit-data.html#fig:leren-uit-data-mnist">2.6</a>. Merk hier wel op dat de cijfer-varianten in werkelijkheid vervat zitten in een ‘platte’ matrix is met dimensies <span class="math inline">\(60\,000\times784\)</span>, een matrix dus met méér dan 47 miljoen zwevende kommagetallen (eng: <em>floating point</em>).</p>
+<div class="figure"><span id="fig:leren-uit-data-mnist"></span>
+<img src="img/leren_uit_data_mnist.png" alt="De schematische weergave van het leerproces voor het herkennen van handgeschreven cijfers uit de MNIST dataset." width="930" />
+<p class="caption">
+Figuur 2.6: De schematische weergave van het leerproces voor het herkennen van handgeschreven cijfers uit de MNIST dataset.
+</p>
+</div>
+
+<p>Stellen we het model voor met de Python functie <code>model</code>, kan kunnen we dit aanroepen met één of meerdere afbeeldingen van handgeschreven cijfers:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="leren-uit-data.html#cb3-1" aria-hidden="true" tabindex="-1"></a>y_prd_300 <span class="op">=</span> model(x_trn[<span class="dv">299</span>:<span class="dv">300</span>])</span></code></pre></div>
+<p>Hier roepen we het model aan met de 300<sup>ste</sup> afbeelding uit de training-set (zie figuur <a href="leren-uit-data.html#fig:mnist-cijfer">2.5</a>), hier voorgesteld als <code>x_trn[299:300]</code>. Het resultaat van deze oproep wordt in variabele <code>y_prd_300</code> bewaard. In wiskundige termen schrijven we <span class="math inline">\(\hat{y}_{300}\)</span>, waarbij het hoedje aangeeft dat het niet de werkelijk <span class="math inline">\(y\)</span>-waarde is maar de geschatte of voorspelde <span class="math inline">\(y\)</span>-waarde. In theorie zou men verwachten dat de inhoud <code>y_prd_300</code> gelijk is aan <code>6</code>. Het is zeker mogelijk om <code>model</code> zo te schrijven dat dit inderdaad het geval is, maar meestal wordt er de voorkeur aan gegeven om naast de eigenlijke voorspelling ook een maat van de betrouwbaarheid van deze schatting mee te laten geven. In dit geval ziet <code>y_prd_300</code> er zo uit:</p>
+<pre><code>[[1.3147994e-08 4.3827520e-12 5.0856454e-07 1.3127689e-09 4.5237027e-07
+  5.3989115e-09 9.9999893e-01 5.3377733e-09 1.6693608e-07 3.1370115e-09]]</code></pre>
+<p>Dit is iets heel anders dan <code>6</code>, wat is hier gaande? In feite bestaat het model uit de kans dat de aangeleverde afbeelding overeenkomt met één van de 10 mogelijke uitkomsten, namelijk de cijfers 0 tot en met 9:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Cijfer</th>
+<th><span class="math inline">\(p(instantie=cijfer|beeld)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1.3147994e-08</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>4.3827520e-12</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>5.0856454e-07</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>1.3127689e-09</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>4.5237027e-07</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>5.3989115e-09</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>9.9999893e-01</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>5.3377733e-09</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1.6693608e-07</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>3.1370115e-09</td>
+</tr>
+</tbody>
+</table>
+<p>We zien nu ogenblikkelijk dat <span class="math inline">\(p(\hat{y}_{300}=6|x_{300}) = 99.99\%\)</span>. Dus in plaats dat het model ons het cijfer <code>6</code> teruggeeft, geeft het een schatting van de <em>kansverdeling</em> over alle mogelijke uitkomsten <span class="math inline">\(P(cijfer|beeld)\)</span>. Het is dan aan de datawetenschapper om, in samenspraak met anderen binnen het team, de drempelwaarde (eng: <em>threshold</em>) te bepalen tussen wat voldoende zeker is en wat niet. Stel dat we in dit geval de drempelwaarde <span class="math inline">\(h_\tau=0.99=99\%\)</span> aannemen, dan vertaalt dit inderdaad naar het (in dit geval correcte) antwoord <span class="math inline">\(\hat{y}_{300}=\hat{f}(x_{300}, h_\tau=0.99)=6\)</span>.</p>
+</div>
+<div id="het-mnist-model" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Het MNIST model</h2>
+<p>We weten nog steeds niet hoe het model voor het herkennen van de MNIST cijfers eruit ziet, laat staan hoe het tot stand is gekomen. Laten we eerst eens proberen na te gaan hoe het model er van binnen uitziet. In dit geval bestaat het model uit een complex netwerk van <em>gewichten</em> <span class="math inline">\(\mathbf{\theta}\)</span> die in lagen verdeeld zijn (zie figuur <a href="leren-uit-data.html#fig:mnist-model">2.7</a>).</p>
+<div class="figure"><span id="fig:mnist-model"></span>
+<img src="img/mnist_model.png" alt="Schematische voorstelling van het MNIST model. Elke grijswaarde (uiterst links) in een afbeelding is verbonden met allerlei noden van de eerste laag in het netwerk (groot blauw raster links) en elke node uit de eerste laag is verbonden met de noden uit de tweede laag (kleiner blauw raster rechts). De oranje balk uiterst rechts stelt het antwoord voor, de kansverdeling over alle mogelijke uitkomsten, zoals uitgelegd in vorige paragraaf." width="1110" />
+<p class="caption">
+Figuur 2.7: Schematische voorstelling van het MNIST model. Elke grijswaarde (uiterst links) in een afbeelding is verbonden met allerlei noden van de eerste laag in het netwerk (groot blauw raster links) en elke node uit de eerste laag is verbonden met de noden uit de tweede laag (kleiner blauw raster rechts). De oranje balk uiterst rechts stelt het antwoord voor, de kansverdeling over alle mogelijke uitkomsten, zoals uitgelegd in <a href="leren-uit-data.html#het-resultaat-van-mnist-analyse">vorige paragraaf</a>.
+</p>
+</div>
+
+<p>We kunnen de gewichten uit het model opvragen:</p>
+<pre><code>&lt;tf.Variable &#39;dense_4/kernel:0&#39; shape=(784, 128) dtype=float32, numpy=
+array([[ 0.08104221, -0.03245814,  0.05782456, ...,  0.01628028,
+         0.01527335, -0.0621725 ],
+       [-0.02486849, -0.05942973, -0.05000503, ...,  0.05511766,
+         0.01111819, -0.01273195],
+       ...,
+       [-0.03103521,  0.04082336, -0.03615728, ..., -0.07942228,
+         0.05170608, -0.04771789],
+       [-0.08011643, -0.02025594,  0.07396395, ..., -0.04995897,
+         0.04946151,  0.0736245 ]], dtype=float32)&gt;
+
+[[2]]
+&lt;tf.Variable &#39;dense_4/bias:0&#39; shape=(128,) dtype=float32, numpy=
+array([ 0.1288752 ,  0.12100432, -0.00982326,  0.1232934 ,  0.02084712,
+        0.01321915, -0.01993161,  0.0420486 , -0.08715703,  0.06092769,
+       ...,
+        0.11226735, -0.06676487, -0.03609373, -0.05284352, -0.07687864,
+        0.16832131,  0.08192852, -0.07676063,  0.03645244, -0.04636759,
+        0.05661207,  0.13083224,  0.02666049], dtype=float32)&gt;</code></pre>
+<p>In het totaal bestaat deze specifieke versie van het MNIST model dus uit <span class="math inline">\(784\times128 + 128 = 100\,480\)</span> gewichten. Deze gewichten worden op een nog nader te begrijpen manier gebruikt om <span class="math inline">\(\hat{y}\)</span> te berekenen uit <span class="math inline">\(x\)</span>. Het model zou er dus ongeveer als volgt kunnen uitzien in Python:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="leren-uit-data.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> model(x, tau <span class="op">=</span> <span class="fl">0.99</span>):</span>
+<span id="cb6-2"><a href="leren-uit-data.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  weights_0 <span class="op">=</span> array([[ <span class="fl">0.08104221</span>, <span class="op">-</span><span class="fl">0.03245814</span>, ..., <span class="fl">0.04946151</span>,  <span class="fl">0.0736245</span> ]]</span>
+<span id="cb6-3"><a href="leren-uit-data.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  weights_1 <span class="op">=</span> array([ <span class="fl">0.1288752</span>, <span class="fl">0.12100432</span>, ...,  <span class="fl">0.13083224</span>,  <span class="fl">0.02666049</span>]</span>
+<span id="cb6-4"><a href="leren-uit-data.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-5"><a href="leren-uit-data.html#cb6-5" aria-hidden="true" tabindex="-1"></a>  y_dist <span class="op">=</span> predict(x, weights_0, weights_1)</span>
+<span id="cb6-6"><a href="leren-uit-data.html#cb6-6" aria-hidden="true" tabindex="-1"></a>  y_hat_prob <span class="op">=</span> <span class="bu">max</span>(y_dist)</span>
+<span id="cb6-7"><a href="leren-uit-data.html#cb6-7" aria-hidden="true" tabindex="-1"></a>  y_hat <span class="op">=</span> y_dist.index(y_hat_prob)</span>
+<span id="cb6-8"><a href="leren-uit-data.html#cb6-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-9"><a href="leren-uit-data.html#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(y_hat_prob <span class="op">&lt;</span> tau):</span>
+<span id="cb6-10"><a href="leren-uit-data.html#cb6-10" aria-hidden="true" tabindex="-1"></a>    y_hat <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb6-11"><a href="leren-uit-data.html#cb6-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-12"><a href="leren-uit-data.html#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> y_hat</span></code></pre></div>
+<p>In ons voorbeeld zou, indien <code>x</code> overeenkomt met <span class="math inline">\(x_{300}\)</span> uit <a href="leren-uit-data.html#fig:mnist-cijfer">2.5</a>, <code>y_dist</code> overeenkomen met <span class="math inline">\(P(\hat{y}_{300}|x_{300})\)</span>, <code>y_hat_prob</code> met <span class="math inline">\(99.999893\%\)</span> en <code>y_hat</code> met <span class="math inline">\(6\)</span>. Indien de berekende distributie 10 waarden zou bevatten die allen kleiner zijn dan <span class="math inline">\(h_\tau\)</span> (<code>tau</code> in de code hierboven), zou dit model aangeven dat er te weinig zekerheid is over welk cijfer de afbeelding moet voorstellen door de waarde <code>None</code> terug te geven.</p>
+
+<div class="definition">
+<span id="def:onzeker-model" class="definition"><strong>Stelling 2.5  </strong></span>Het is volstrekt normaal dat een ML model in sommige situaties <em>geen voorspelling</em> kan maken.
+</div>
+</div>
+<div id="het-leerproces-voor-begeleid-ml" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Het leerproces voor begeleid ML</h2>
+<p>Zoals gezegd gaan we nog niet volledig in detail onderzoeken <em>hoe</em> een ML model tot stand komt, maar laten we toch al trachten het ML proces te schematisch reconstrueren, specifiek voor wanneer het gaat om begeleid leren. Wat weten we tot nu toe? We weten dat we vertrekken met training data <span class="math inline">\(\left(\mathcal{X}_{trn},\mathcal{Y}_{trn}\right)\)</span> en eindigen met een model <span class="math inline">\(\hat{f}\)</span>. We weten ook al dat het model een functie is die test data <span class="math inline">\(\mathcal{X}_{tst}\)</span> als invoer heeft en een voorspelling (eng: <em>prediction</em>) <span class="math inline">\(\hat{y}\)</span> als uitvoer (zie Figuur <a href="leren-uit-data.html#fig:proces-1">2.8</a>).</p>
+<div class="figure"><span id="fig:proces-1"></span>
+<img src="img/proces_1.svg" alt="Eerste overzicht van het leerproces voor begeleid ML. Ronde vormen staan voor acties of functies, rechthoekige vormen geven objecten weer. Met andere woorden, het proces voor ML kan gecodeerd worden als \(\hat{f}=\ell(\mathcal{X}, \mathcal{Y})\). \(trn\) staat voor training, \(tst\) voor test. leren: eng. learning, training. voorspellen: eng. to predict, inference."  />
+<p class="caption">
+Figuur 2.8: Eerste overzicht van het leerproces voor begeleid ML. Ronde vormen staan voor acties of functies, rechthoekige vormen geven objecten weer. Met andere woorden, het proces voor ML kan gecodeerd worden als <span class="math inline">\(\hat{f}=\ell(\mathcal{X}, \mathcal{Y})\)</span>. <span class="math inline">\(trn\)</span> staat voor training, <span class="math inline">\(tst\)</span> voor test. <em>leren</em>: eng. <em>learning</em>, <em>training</em>. <em>voorspellen</em>: eng. <em>to predict</em>, <em>inference</em>.
+</p>
+</div>
+
+</div>
+<div id="de-onderdelen-van-een-model" class="section level2" number="2.10">
+<h2><span class="header-section-number">2.10</span> De onderdelen van een model</h2>
+<p>Het <em>model</em> is dus een functie met daarin de gewichten <span class="math inline">\(\mathbf{\theta}\)</span> alsook de nodige logica om de invoer op de juiste manier te bewerken met de gewichten. Dit laatste wordt in tekstboeken vaak over het hoofd gezien omdat het in de praktijk vaak neerkomt op een eenvoudige matrix vermenigvuldiging. Hier wordt ervoor gekozen om dit een beetje explicieter te maken. In het MNIST model uit vorige paragraaf zien we nog een derde element, het argument <span class="math inline">\(h_\tau\)</span> (<code>tau</code> in code). Dit is een <em>hyperparameter</em>. Hyperparameters die gekoppeld zijn aan een model dienen vaak, net als bij <span class="math inline">\(h_\tau\)</span>, om een grenswaarde te bepalen tussen wat een goede voorspelling is en wat niet. We zullen in volgende paragraaf zien dat er ook hyperparameters gekoppeld kunnen worden aan het leeralgoritme, waar ze gewoonlijk een heel andere rol gaan spelen.</p>
+
+<div class="definition">
+<p><span id="def:ml-output" class="definition"><strong>Stelling 2.6  </strong></span>Het model dat het resultaat is van begeleid machinaal leren bestaat uit minstens 2 onderdelen:</p>
+<ul>
+<li>de gewichten <span class="math inline">\(\mathbf{\theta}\)</span></li>
+<li>de modellogica</li>
+</ul>
+<p>maar is vaak pas bruikbaar mits het definiëren van nog een derde onderdeel:</p>
+<ul>
+<li>de hyperparameters <span class="math inline">\(\mathbf{h}_f\)</span>
+</div></li>
+</ul>
+</div>
+<div id="hyperparameters" class="section level2" number="2.11">
+<h2><span class="header-section-number">2.11</span> Hyperparameters</h2>
+<p>Hyperparameters worden zo genoemd om ze duidelijk te onderscheiden van gewichten, die in de literatuur ook vaak <em>parameters</em> worden genoemd. Het onderscheid is belangrijk omdat hyperparameters het proces zelf beïnvloeden (e.g. waar moet je de lijn trekken, hoeveel getallen na de komma moet genereren, …) terwijl conventionele parameters het onderwerp zijn van de wiskundige bewerking waarmee invoer wordt omgezet naar een voorspelling.</p>
+
+<div class="definition">
+<span id="def:def-hyperparams" class="definition"><strong>Stelling 2.7  </strong></span>Hyperparameters geven aan <em>hoe</em> een proces moet verlopen. Parameters dienen als invoer voor een functie.
+</div>
+<p>De manier waarop parameters tot stand komen worden bepaald door het leeralgoritme (zie volgende §). Hyperparameters, daarentegen worden door de datawetenschapper gekozen ofwel in een afzonderlijk proces automatisch geoptimaliseerd. De keuze voor de waarde van een hyperparameter zoals <span class="math inline">\(h_\tau\)</span> kan gemaakt worden door de datawetenschapper op basis van ervaring ofwel omdat het door de omgeving wordt opgelegd. Laten we twee voorbeelden bekijken die aangeven hoe de omgeving een drempelwaarde kan opleggen.</p>
+
+<div class="example">
+<p><span id="exm:drempel-kat-hond" class="example"><strong>Voorbeeld 2.1  </strong></span>Stel, er wordt de datawetenschapper gevraagd om een algoritme te ontwikkelen om afbeeldingen van katten en honden (en telkens exact één kat of één hond) te onderscheiden, gewoon voor het plezier. Stel dat het algoritme slechts één waarde uitvoert, namelijk de probabiliteit <span class="math inline">\(p_{kat}\)</span> dat de afbeelding een kat laat zien. De probabiliteit dat het een hond is (<span class="math inline">\(p_{niet kat}\)</span>), kan hieruit berekend worden met de formule <span class="math inline">\(p_{niet kat}=1-p_{kat}\)</span>. Een logische drempelwaarde op deze probabiliteiten is <span class="math inline">\(0.5\)</span>. Vanaf dat <span class="math inline">\(p_{kat}\)</span> zakt onder deze waarde, gaan we ervan uit dat het om een hond gaat.</p>
+<img src="img/drempel-kat-hond.svg" />
+</div>
+
+<div class="example">
+<p><span id="exm:drempel-gezond-ziek" class="example"><strong>Voorbeeld 2.2  </strong></span>De datawetenschapper wordt nu gevraagd om een algoritme te ontwikkelen om op basis van tal van bloedwaarden van een patiënt te bepalen of deze ziek is of niet. Het algoritme voert weer slechts één waarde uit, ditmaal de kans om ziek te zijn <span class="math inline">\(p_{ziek}\)</span>. De drempelwaarde mag nu niet meer zo maar op <span class="math inline">\(0.5\)</span> worden geplaatst. Waarom niet? ML algoritmen maken fouten maar niet alle fouten zijn even erg. Het foutief aanduiden van een gezonde persoon als ‘ziek’ is niet zo erg als het foutief aanduiden van een zieke patiënt als gezond. Maar hoe weet de datawetenschapper dan welke drempelwaarde er gekozen moet worden? Nu komt het: in dit geval mag de datawetenschapper in geen geval een drempelwaarde zelf bepalen. De arsten die de opdracht geven dragen de verantwoordelijkheid om de ideale drempelwaarde te bepalen</p>
+<img src="img/drempel-gezond-ziek.svg" />
+</div>
+
+<div class="definition">
+<span id="def:def-determine-hyperparams" class="definition"><strong>Stelling 2.8  </strong></span>Hyperparameters <em>moeten</em> vaak door andere mensen dan de datawetenschapper worden bepaald (ook als ze dat niet willen).
+</div>
+</div>
+<div id="het-leeralgoritme" class="section level2" number="2.12">
+<h2><span class="header-section-number">2.12</span> Het leeralgoritme</h2>
+<p>Om van de training data naar het model te gaan heb je een <em>leeralgoritme</em> <span class="math inline">\(\ell\)</span> nodig. Voorbeelden hiervan zijn support vector machines (SVM), neuraal netwerken (NN), naïef Bayes algoritmen (NB), enzovoort… Er zijn wel honderden algoritmen waaruit een datawetenschapper kan kiezen, en voor elk algoritme zijn er gewoonlijk oneindig veel mogelijke instellingen<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> (lett.). We begrijpen uit vorige paragraaf dat parameters en hyperparameters verschillend zijn maar puur wiskundig beschouwd, dienen ze allebei gewoon als invoer voor de ene of ander functie. Noteren we de hyperparameters bij het leeralgoritme nu als <span class="math inline">\(\mathbf{h}_\ell\)</span>, dan krijgen we het volgende:</p>
+<p><span class="math display">\[\hat{f}=\ell\left(\{\mathcal{X}, \mathcal{Y}\}, \mathbf{h}_\ell\right)\]</span></p>
+<p>Hier staat: het ML model wordt, in het geval van begeleid ML, gevormd door een leeralgoritme dat zowel data als invoer heeft (<span class="math inline">\(\{\mathcal{X}, \mathcal{Y}\}\)</span>) als hyperparameters die het leerproces kunnen beïnvloeden. Wat is dan de rol van de hyperparameters die op het leeralgoritme inwerken? Zonder nu al te veel in gaan op het intern mechanisme van de leeralgoritmen, is één van de veel voorkomende functies van <span class="math inline">\(\mathbf{h}_\ell\)</span> om te bepalen hoe snel het leeralgoritme te werk moet gaan.</p>
+<p>Ik wil hier nog even benadrukken dat het resultaat van het leeralgoritme moet bestaan uit een set van parameters én een functie-logica. Deze functie-logica ligt voor een bepaald leeralgoritme vast. Bijvoorbeeld, voor een logistische regressie, bestaat deze logica uit een logit-transformatie en een matrix vermenigvuldiging. Deze logica plus de parameters <span class="math inline">\(\mathbf{\theta}\)</span> vormen samen het model. De hyperparameters die op het model inwerken worden, zoals uitgelegd in vorige §, meestal <em>achteraf</em> bepaald door de datawetenschapper of opgelegd door de omgeving.</p>
+</div>
+<div id="model-complexiteit" class="section level2" number="2.13">
+<h2><span class="header-section-number">2.13</span> Model complexiteit</h2>
+<p>Merk op dat een ML model niet zo complex hoeft te zijn als dit MNIST model. Het kan best dat een model bestaat uit slecht een handvol parameters. Laten we een voorbeeld in beschouwing nemen.</p>
+
+<div class="example">
+<p><span id="exm:iris-simple-model" class="example"><strong>Voorbeeld 2.3  </strong></span>Een zeer bekende oefen-dataset is de <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">iris dataset</a> waarin afmetingen van de kelkbladen en kroonbladen van drie soorten irissen werden opgenomen.</p>
+<p><img src="img/iris.png" />
+<small>Bron: <span class="citation"><a href="bronvermelding.html#ref-iris-setosa" role="doc-biblioref">Szczecinkowaty</a> <a href="bronvermelding.html#ref-iris-setosa" role="doc-biblioref">2007</a></span>, <span class="citation"><a href="bronvermelding.html#ref-iris-versicolor" role="doc-biblioref">Mayfield</a> <a href="bronvermelding.html#ref-iris-versicolor" role="doc-biblioref">2005</a></span>, <span class="citation"><a href="bronvermelding.html#ref-iris-virginica" role="doc-biblioref">Mayfield</a> <a href="bronvermelding.html#ref-iris-virginica" role="doc-biblioref">2007</a></span>.</small></p>
+<p>Stel dat het doel is om de drie sterk gelijkende bloemensoorten te onderscheiden op basis van slechts 2 variabelen, namelijk de lengte van het kroonblad <span class="math inline">\(x_p\)</span> en de lengte van het kelkblad <span class="math inline">\(x_s\)</span>. Veronderstel verder dat het model reeds getraind werd. Het model zou bijvoorbeeld kunnen afhangen van slechts 3 parameters die op <span class="math inline">\(x_s\)</span> en <span class="math inline">\(x_p\)</span> inwerken, bijvoorbeeld: <span class="math inline">\(\theta_1 = 2.5\)</span>, <span class="math inline">\(\theta_2 = 1.2\)</span> en <span class="math inline">\(\theta_3=0.3\)</span>. De <em>logica</em> van het model zou er dan bijvoorbeeld als volgt kunnen uitzien:</p>
+<span class="math display">\[species=\begin{cases}\text{setosa als }x_p&lt;\theta_1\\\text{versicolor als }x_s&gt;\theta_2p+\theta_3\\\text{virginica anders}\end{cases}\]</span>
+</div>
+<p>In dit geval kan de model-logica als volgt gecodeerd worden (Python):</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="leren-uit-data.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> model(x):</span>
+<span id="cb7-2"><a href="leren-uit-data.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> x.p <span class="op">&lt;</span> <span class="fl">2.5</span>:</span>
+<span id="cb7-3"><a href="leren-uit-data.html#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;setosa&quot;</span></span>
+<span id="cb7-4"><a href="leren-uit-data.html#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="leren-uit-data.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> x.s <span class="op">&gt;</span> <span class="fl">1.2</span> <span class="op">*</span> x.p <span class="op">+</span> <span class="fl">.3</span>:</span>
+<span id="cb7-6"><a href="leren-uit-data.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;versicolor&quot;</span></span>
+<span id="cb7-7"><a href="leren-uit-data.html#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="leren-uit-data.html#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">&quot;virginica&quot;</span></span></code></pre></div>
+<p>Deze versie van het iris-model met slechts 3 gewichten (parameters!) is wel erg eenvoudig maar er staan ML modellen in productie die niet veel complexer zijn en toch hun werk doen. Complexiteit is trouwens geen goede maatstaf voor de ‘kwaliteit’ van een model. Soms eisen de vragende partij of andere belanghebbenden in het AI project nadrukkelijk een zo eenvoudig mogelijk model zodat het begrijpbaar en transparant blijft. Aan de andere kant bestaan er ook modellen die nog véél complexer zijn dan het MNIST model met honderden miljarden gewichten (<span class="math inline">\(J &gt; 10^{11}\)</span>; <span class="citation"><a href="bronvermelding.html#ref-shazeer2017" role="doc-biblioref">Shazeer et al.</a> <a href="bronvermelding.html#ref-shazeer2017" role="doc-biblioref">2017</a></span>)!</p>
+
+<div class="definition">
+<span id="def:model-complexiteit" class="definition"><strong>Stelling 2.9  </strong></span>Model complexiteit is geen goede maatstaf voor de ‘kwaliteit’ van een model.
+</div>
+</div>
+<div id="comprimeren-door-middel-van-een-ml-model" class="section level2" number="2.14">
+<h2><span class="header-section-number">2.14</span> Comprimeren door middel van een ML model</h2>
+<p>Uit de vorige paragraaf leren we dat modellen zeer eenvoudig of zeer complex kunnen zijn. Meestal bevat het model inclusief de gewichten weliswaar véél minder informatie dan de oorspronkelijk data waarop getraind werd. In deze gevallen kan je het model beschouwen als een vereenvoudigde voorstelling van de werkelijkheid of nog als een geavanceerde ‘zip-functie,’ hetzij eentje die niet volmaakt is (eng: <em>lossless</em>). Het zou ons te ver leiden om de compressie-factor (eng: <em>compression ratio</em>) te berekenen op basis van de <a href="https://nl.wikipedia.org/wiki/Informatietheorie">Informatietheorie</a>, maar misschien kunnen we een grove schatting maken van de compressie-factor voor ons MNIST-model (zie Voorbeeld <a href="leren-uit-data.html#exm:mnist-compression">2.4</a>).</p>
+
+<div class="example">
+<p><span id="exm:mnist-compression" class="example"><strong>Voorbeeld 2.4  </strong></span>
+De training set bestaat uit 60 000 afbeeldingen van 28 × 28 pixels. Met de grijswaarden in enkelprecisievariant (eng: <em>single precision</em>) van de zwevendekomma getallen komt de grootte van de training set op:</p>
+<p><span class="math display">\[60\,000\times28\times28\times32\approx1.5\cdot10^9 bits\]</span></p>
+<p>Daartegenover bestond het MNIST-model uit <span class="math inline">\(100\,480\)</span> gewichten:</p>
+<p><span class="math display">\[100\,480\times32\approx3.2\cdot10^6 bits\]</span></p>
+<p>Dit brengt ons op een compressie-factor van:</p>
+<span class="math display">\[\frac{1.5\cdot10^9 bits}{3.2\cdot10^6 bits} &gt; 450\]</span>
+</div>
+
+<div class="exercise">
+<span id="exr:iris-compression" class="exercise"><strong>Oefening 2.2  (Iris compressie)  </strong></span>Probeer nu zelf ook eens de compressiefactor in te schatten voor het iris-model uit Voorbeeld <a href="leren-uit-data.html#exm:iris-simple-model">2.3</a>. Zei opties meerkeuzevraag op <a href="https://learning.ap.be/course/view.php?id=35676">Digitap</a>.
+</div>
+</div>
+<div id="leren-versus-ontwerp" class="section level2" number="2.15">
+<h2><span class="header-section-number">2.15</span> Leren versus ontwerp</h2>
+<p>We hebben al heel wat woorden vuil gemaakt om te begrijpen wat ML eigenlijk inhoud. Laten we nu even stilstaan bij wat ML <em>niet</em> is. Om te beginnen is ML niet ontwerpen. Wat is het verschil? Ook hier is het gemakkelijkste om het verschil aan te tonen aan de hand van twee voorbeelden.</p>
+
+<div class="example">
+<p><span id="exm:verkoopautomaat-ontwerp" class="example"><strong>Voorbeeld 2.5  (Ontwerp-benadering verkoopsautomaat probleem)  </strong></span>De probleemstelling is als volgt:</p>
+<p>Maak een verkoopautomaat die op basis van de massa en de diameter de 4 verschillende Indiase muntstukken (0.5, 1, 2 en 5 Rs) zo goed mogelijk kan onderscheiden.</p>
+<p><em>Oplossing via ontwerp</em>:</p>
+<p>Zoek naar de specificaties die gebruikt worden tijdens het ontwerpen van de munstukken. Op de <a href="http://www.tadopika.net/en/14currency/worldcoins.htm">webpagina van Takashi Shimazaki</a> vind je een samenvatting:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Waarde (Rs)</th>
+<th>Massa (<span class="math inline">\(g\)</span>)</th>
+<th>Diameter (<span class="math inline">\(mm\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.5</td>
+<td>3.79</td>
+<td>22.0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>4.85</td>
+<td>25.0</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>5.62</td>
+<td>27.0</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>6.00</td>
+<td>23.0</td>
+</tr>
+</tbody>
+</table>
+<p>We veronderstellen verder een standaardafwijking op de metingen van <span class="math inline">\(0.09g\)</span> en <span class="math inline">\(0.1 mm\)</span> en een fouttolerantie van maximaal 0.1%. Op basis van deze gegevens stellen we een grafiek op en beslissen we ‘met de hand’ waar de grenswaarden worden gedefiniëerd:</p>
+<img src="img/verkoopautomaat-ontwerp.png" title="fig:" alt="verkoopautomaat-ontwerp" />
+</div>
+
+<div class="example">
+<p><span id="exm:verkoopautomaat-ml" class="example"><strong>Voorbeeld 2.6  (ML-benadering van het verkoopsautomaat probleem)  </strong></span><em>Oplossing via ML</em>: zoek naar <em>data</em> met werkelijke metingen van de massa’s en diameters van de verscheidene Indiase munstukken. Bij gebrek aan zulke data zit er niets anders op dan een random steekproef te nemen van de munstukken en ze zelf te meten (of door iemand betrouwbaar te laten meten). Hier is het resultaat van de metingen:</p>
+<div class="figure">
+<img src="img/verkoopautomaat-ml.png" alt="" />
+<p class="caption">verkoopautomaat-ml</p>
+</div>
+De kleuren stellen het resultaat voor van een clusteralgoritme (k-means), dit is trouwens een type algoritme dat onbegeleid tewerk gaat en verschilt dus fundamenteel van het begeleid ML dat we tot hiertoe bespraken. Uit deze data lijkt het of de spreiding veel groter is dan aangenomen in vorig Voorbeeld. Daardoor maakt het model hier vermodelijk een aantal fouten in de classificatie. Het model ‘weet’ hier ook niet welke <em>cluster</em> overeenkomt met bijvoorbeeld 2 roepie. De enige input, naast de diameters en de massa’s van de muntstukken is dat er 4 clusters in het totaal moeten zijn. De data in dit voorbeeld werden gesimuleerd, zie hieronder voor meer detail.
+</div>
+<p>De grafiek voor <strong>ontwerp benadering</strong> kan je genereren met de onderstaande R code:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="leren-uit-data.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotrix)</span>
+<span id="cb8-2"><a href="leren-uit-data.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="leren-uit-data.html#cb8-3" aria-hidden="true" tabindex="-1"></a>coins <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">&quot;</span></span>
+<span id="cb8-4"><a href="leren-uit-data.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="st">  Waarde</span><span class="sc">\t</span><span class="st">Massa</span><span class="sc">\t</span><span class="st">Diameter</span></span>
+<span id="cb8-5"><a href="leren-uit-data.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="st">  0.5</span><span class="sc">\t</span><span class="st">3.79</span><span class="sc">\t</span><span class="st">22.0</span></span>
+<span id="cb8-6"><a href="leren-uit-data.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="st">  1</span><span class="sc">\t</span><span class="st">4.85</span><span class="sc">\t</span><span class="st">25.0</span></span>
+<span id="cb8-7"><a href="leren-uit-data.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="st">  2</span><span class="sc">\t</span><span class="st">5.62</span><span class="sc">\t</span><span class="st">27.0</span></span>
+<span id="cb8-8"><a href="leren-uit-data.html#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="st">  5</span><span class="sc">\t</span><span class="st">6.00</span><span class="sc">\t</span><span class="st">23.0&quot;</span>)</span>
+<span id="cb8-9"><a href="leren-uit-data.html#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="leren-uit-data.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>,</span>
+<span id="cb8-11"><a href="leren-uit-data.html#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">28</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">7</span>),</span>
+<span id="cb8-12"><a href="leren-uit-data.html#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Diameter&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Massa&quot;</span>)</span>
+<span id="cb8-13"><a href="leren-uit-data.html#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="leren-uit-data.html#cb8-14" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> .<span class="dv">001</span></span>
+<span id="cb8-15"><a href="leren-uit-data.html#cb8-15" aria-hidden="true" tabindex="-1"></a>dummy <span class="ot">&lt;-</span> coins[, <span class="fu">draw.ellipse</span>(Diameter, Massa,</span>
+<span id="cb8-16"><a href="leren-uit-data.html#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha, <span class="dv">0</span>, <span class="fl">0.1</span>), <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha, <span class="dv">0</span>, <span class="fl">0.09</span>))]</span>
+<span id="cb8-17"><a href="leren-uit-data.html#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="fu">c</span>(<span class="dv">25</span>, <span class="fl">22.5</span>, <span class="fl">25.2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="fl">4.7</span>, <span class="dv">6</span>),</span>
+<span id="cb8-18"><a href="leren-uit-data.html#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">21</span>, <span class="fl">26.5</span>, <span class="dv">28</span>), <span class="fu">c</span>(<span class="fl">5.5</span>, <span class="dv">7</span>, <span class="dv">3</span>), <span class="at">lty =</span> <span class="dv">3</span>)</span>
+<span id="cb8-19"><a href="leren-uit-data.html#cb8-19" aria-hidden="true" tabindex="-1"></a>dummy <span class="ot">&lt;-</span> coins[, <span class="fu">text</span>(Diameter, Massa, Waarde)]</span></code></pre></div>
+<p>Hieronder vind je de code terug voor de ML-benadering uit Voorbeeld <a href="leren-uit-data.html#exm:verkoopautomaat-ml">2.6</a>. Merk op dat ik hier, omdat er niet direct data voorhanden was, de data zelf heb gesimuleerd.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="leren-uit-data.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb9-2"><a href="leren-uit-data.html#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="leren-uit-data.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb9-4"><a href="leren-uit-data.html#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="leren-uit-data.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generating data</span></span>
+<span id="cb9-6"><a href="leren-uit-data.html#cb9-6" aria-hidden="true" tabindex="-1"></a>copula <span class="ot">&lt;-</span> <span class="cf">function</span>(lab, n, rho, mu1, mu2, sd1, sd2){</span>
+<span id="cb9-7"><a href="leren-uit-data.html#cb9-7" aria-hidden="true" tabindex="-1"></a>  mu <span class="ot">&lt;-</span> <span class="fu">c</span>(mu1,mu2)</span>
+<span id="cb9-8"><a href="leren-uit-data.html#cb9-8" aria-hidden="true" tabindex="-1"></a>  sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(sd1 <span class="sc">^</span> <span class="dv">2</span>, sd1 <span class="sc">*</span> sd2 <span class="sc">*</span> rho, sd1 <span class="sc">*</span> sd2 <span class="sc">*</span> rho, sd2 <span class="sc">^</span> <span class="dv">2</span>),<span class="dv">2</span>)</span>
+<span id="cb9-9"><a href="leren-uit-data.html#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mvrnorm</span>(n, mu, sigma) <span class="sc">%&gt;%</span> as.data.table <span class="sc">%&gt;%</span></span>
+<span id="cb9-10"><a href="leren-uit-data.html#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">&quot;Diameter&quot;</span>, <span class="st">&quot;Mass&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-11"><a href="leren-uit-data.html#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cbind</span>(<span class="at">Label =</span> lab)</span>
+<span id="cb9-12"><a href="leren-uit-data.html#cb9-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-13"><a href="leren-uit-data.html#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="leren-uit-data.html#cb9-14" aria-hidden="true" tabindex="-1"></a>coins_meas <span class="ot">&lt;-</span></span>
+<span id="cb9-15"><a href="leren-uit-data.html#cb9-15" aria-hidden="true" tabindex="-1"></a>        coins[<span class="dv">1</span>, <span class="fu">copula</span>(<span class="st">&quot;0.5&quot;</span>, <span class="dv">500</span>, .<span class="dv">3</span>, Diameter, Massa, .<span class="dv">8</span>, .<span class="dv">5</span>)] <span class="sc">%&gt;%</span></span>
+<span id="cb9-16"><a href="leren-uit-data.html#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(coins[<span class="dv">2</span>, <span class="fu">copula</span>(<span class="st">&quot;0.5&quot;</span>, <span class="dv">500</span>, .<span class="dv">3</span>, Diameter, Massa, .<span class="dv">8</span>, .<span class="dv">5</span>)]) <span class="sc">%&gt;%</span></span>
+<span id="cb9-17"><a href="leren-uit-data.html#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(coins[<span class="dv">3</span>, <span class="fu">copula</span>(<span class="st">&quot;0.5&quot;</span>, <span class="dv">500</span>, .<span class="dv">3</span>, Diameter, Massa, .<span class="dv">8</span>, .<span class="dv">5</span>)]) <span class="sc">%&gt;%</span></span>
+<span id="cb9-18"><a href="leren-uit-data.html#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(coins[<span class="dv">4</span>, <span class="fu">copula</span>(<span class="st">&quot;0.5&quot;</span>, <span class="dv">500</span>, .<span class="dv">3</span>, Diameter, Massa, .<span class="dv">8</span>, .<span class="dv">5</span>)])</span>
+<span id="cb9-19"><a href="leren-uit-data.html#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="leren-uit-data.html#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Analyzing data</span></span>
+<span id="cb9-21"><a href="leren-uit-data.html#cb9-21" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(coins_meas, <span class="at">centers =</span> <span class="dv">4</span>, <span class="at">iter.max =</span> <span class="dv">1000</span>)</span>
+<span id="cb9-22"><a href="leren-uit-data.html#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="leren-uit-data.html#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(coins_meas<span class="sc">$</span>Diameter, coins_meas<span class="sc">$</span>Mass,</span>
+<span id="cb9-24"><a href="leren-uit-data.html#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Diameter&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Massa&quot;</span>,</span>
+<span id="cb9-25"><a href="leren-uit-data.html#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> model<span class="sc">$</span>cluster, <span class="at">cex =</span> .<span class="dv">6</span>)</span>
+<span id="cb9-26"><a href="leren-uit-data.html#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="leren-uit-data.html#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(model<span class="sc">$</span>centers[,<span class="st">&quot;Diameter&quot;</span>], model<span class="sc">$</span>centers[,<span class="st">&quot;Mass&quot;</span>],</span>
+<span id="cb9-28"><a href="leren-uit-data.html#cb9-28" aria-hidden="true" tabindex="-1"></a>  LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span></code></pre></div>
+</div>
+<div id="leren-versus-onthouden-en-inferentie" class="section level2" number="2.16">
+<h2><span class="header-section-number">2.16</span> Leren versus onthouden en inferentie</h2>
+<p>De moeilijkste te onderscheiden begrippen in de wereld van ML zijn <em>leren</em> versus <em>inferentie</em>. Dit probleem komt trouwens deels overeen met het onderscheid tussen respectievelijk <em>ML</em> en <em>regressie</em>. Zich de moeite getroosten om een model te ontwikkelen heeft alleen maar nut indien het ook achteraf gebruikt zal worden om voorspellingen mee te doen. Met andere woorden om dingen te ontdekken die men (t.t.z. de computer) nog niet wist. Laten we onderstaand voorbeeld onderzoeken om te begrijpen wat het precies betekent om niets nieuw te leren.</p>
+
+<div class="example">
+<p><span id="exm:cars-regressie" class="example"><strong>Voorbeeld 2.7  (MT cars relatie)  </strong></span>De Motor Trend Car Road Tests dataset bevat 10 standaard eigenschappen voor de motoren van 32 automerken zoals verbruik, cilinderinhoud en dergelijke. Deze data zijn net als iris data een waarde geworden in de wereld van de statistiek. De data werd oorspronkelijk verzameld uit het Motor Trend US magazine van 1974 (zie <span class="citation"><a href="bronvermelding.html#ref-henderson1981" role="doc-biblioref">Henderson and Velleman</a> <a href="bronvermelding.html#ref-henderson1981" role="doc-biblioref">1981</a></span>). Geef <code>?mtcars</code> in R om meer te weten te komen.</p>
+<p>Stel nu dat er een theorie bestaat die de cilinderinhoud <span class="math inline">\(c\)</span> in verband brengt met de massa <span class="math inline">\(w\)</span> van de wagen door middel van een variant van de zogenaamde hill-functie:</p>
+<p><span class="math display">\[c=\theta_1+\frac{\theta_2-(w-\theta_3)^2}{\theta_4^2+(w-\theta_3)^2}\]</span></p>
+<p>De onderzoeker zal trachten deze vraag te beantwoorden. Hij voert een niet-lineare regressie analyse uit. Hierbij zal een zogenaamd <em>optimalisatie-algoritme</em> de 4 parameters wijzigen totdat de functie die zo ontstaat zo goed mogelijk overeenkomt met de aangeleverde dataset. De onderstaande clip brengt dit proces tot leven:</p>
+<div class="figure">
+<img src="img/regressie.gif" alt="" />
+<p class="caption">cars-regressie</p>
+</div>
+<p>Naarmate dat de optimalisatie vordert (zie <span class="citation"><a href="bronvermelding.html#ref-nelder1965" role="doc-biblioref">Nelder</a> <a href="bronvermelding.html#ref-nelder1965" role="doc-biblioref">1965</a></span>), verkleint de afwijking tussen voorspelde curve met de datapunten, zoals te zien is aan de zogenaamde <em>Root mean squared Error</em> (RMSE). Op het einde van de optimlisatie, bij een RMSE van 52.527, komt het algoritme tot stilstand met de volgende parameter-waarden:</p>
+<span class="math display">\[\theta_1=78, \theta_2=517.47, \theta_3=1.87, \theta_4=2.10\]</span>
+</div>
+<p>Wat het Voorbeeld <a href="leren-uit-data.html#exm:cars-regressie">2.7</a> laat zien is gebaseerd op een vooraf bepaalde model-logica. Van dit model mogen wel de parameters maar niet de complexiteit noch de formule gewijzigd worden. Er kan inderdaad een ideale parameter-set gevonden kan worden die bij deze 32 datapunten past. Maar wat als dezelfde opdrachtgever nu tegen de onderzoeker zegt dat die zich vergist had. Het zou beter zijn om te de puntenwolk te beschrijven door middel van een polynoom van de vijfde graad. De onderzoeker zet zich eraan en schrijft de volgende R code:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="leren-uit-data.html#cb10-1" aria-hidden="true" tabindex="-1"></a>rmse <span class="ot">&lt;-</span> <span class="cf">function</span>(y, x){</span>
+<span id="cb10-2"><a href="leren-uit-data.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>(<span class="fu">mean</span>((y <span class="sc">-</span> x) <span class="sc">^</span> <span class="dv">2</span>))</span>
+<span id="cb10-3"><a href="leren-uit-data.html#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-4"><a href="leren-uit-data.html#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="leren-uit-data.html#cb10-5" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(disp <span class="sc">~</span> <span class="fu">poly</span>(wt, <span class="dv">5</span>), <span class="at">data =</span> mtcars)</span>
+<span id="cb10-6"><a href="leren-uit-data.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rmse</span>(model<span class="sc">$</span>fitted.values, mtcars<span class="sc">$</span>disp)</span></code></pre></div>
+<p>Het resultaat is nu een RMSE van 52.492, beter dan het vorige resultaat, alleen ziet de resulterende curve er nu een beetje vreemder uit:</p>
+<p><img src="img/regressie2.png" width="318px" /></p>
+<p>Het probleem is natuurlijk dat hoe hoger de graad van de polynoom, hoe beter de fit zal zijn (is een wiskundige zekerheid) maar ook hoe ‘lelijker’ de curve zal worden:</p>
+<p><img src="img/regressie3.png" width="318px" /></p>
+<p>Wat hier aan het gebeuren is noemt met <em>overfit</em>. Een polynoom met zulke hoge graad is veel te complex voor het onderliggend patroon. We voelen dit ergens wel aan. Voordat ML populair was, zou een onderzoeker ‘op het gevoel’ afgaan om de graad van de polynoom te bepalen. In ML wordt de complexiteit niet op voorhand opgegeven en zoekt het leeralgoritme zelf uit hoe complex het model mag worden alvorens er overfit optreedt.</p>
+<p>Kunnen we dat overfitten ook formaliseren of zelfs bewijzen? Het antwoord is ja en ja. Het eerste (het formaliseren) zou ons te ver leiden, maar voor de geïnteresseerden raad ik aan om de term <a href="https://en.wikipedia.org/wiki/Vapnik%E2%80%93Chervonenkis_dimension"><em>VC dimension</em></a> op te zoeken, genoemd naar twee grondleggers van de ML theorie: Vladimir Vapnik en Alexey Chervonenkis en het boek (of online lezingen) van Yaser Abu-Mostafa (zie (thm: abumostafa)) te bekijken (<span class="citation"><a href="bronvermelding.html#ref-learningfromdata" role="doc-biblioref">Abu-Mostafa et al.</a> <a href="bronvermelding.html#ref-learningfromdata" role="doc-biblioref">2012</a></span>). Het tweede aspect (het bewijzen) is eenvoudiger. We moeten gewoon op zoek gaan naar nieuwe data:</p>
+<p><img src="img/regressie4.png" width="318px" /></p>
+<p>We zien nu het gevolg van overfitting. Wanneer we het model blootstellen aan nieuwe data zien we dat het eenvoudige model (polynoom van graad 5) veel beter presteert dan het complexere model (polynoom van graad 7). En dat is het hem nu net allemaal om te doen! Leren om voorspellingen te maken, niet leren om de training dataset nauwkeurig te beschrijven, want dat is gewoon onthouden of hoogstens comprimeren zoals we <a href="#comprimeren-door-middel-van-een-ml">eerder zagen</a>. Daarom is ML veel interessanter dan regressieanalyse. Je kan stellen dat regressie (zoals de naam het eigenlijk al aangeeft) gaat over ‘achterom kijken,’ terwijl ML gaat over ‘naar de toekomst’ kijken.</p>
+</div>
+<div id="onbegeleid-ml" class="section level2" number="2.17">
+<h2><span class="header-section-number">2.17</span> Onbegeleid ML</h2>
+<p>Tot hier toe werd er voornamelijk gesproken rond begeleid ML (eng: <em>supervised machine learning</em>). Er zijn nog minstens twee andere vormen die binnen sommige disciplines erg populair zijn. In Voorbeeld <a href="leren-uit-data.html#exm:verkoopautomaat-ml">2.6</a> werd wel gesproken van clusters, en dat is een voorbeeld van onbegeleid ML (eng: <em>unsupervised machine learning</em> of <em>self-organization</em>). Het verschil tussen begeleid en onbegeleid is het gebruik van de uitkomsten (<span class="math inline">\(y\)</span>) als invoer voor het leeralgoritme.</p>
+
+<div class="definition">
+<p><span id="def:def-vergelijk-begeleid" class="definition"><strong>Stelling 2.10  </strong></span>Bij <strong>begeleid ML</strong> wordt het leeralgoritme getraind op invoer data (<span class="math inline">\(\mathbf{x}\)</span>; de onafhankelijke variabelen) die paarsgewijs gekoppeld zijn met uitvoer data (<span class="math inline">\(\mathbf{y}\)</span>; de afhankelijke variabele of uitkomst). Het algoritme leert de verbanden tussen <span class="math inline">\(\mathbf{x}\)</span> en <span class="math inline">\(\mathbf{y}\)</span>.</p>
+Bij <strong>onbegeleid</strong> ML is er geen sprake van een uitkomst en leert het algoritme gewoon patronen te herkennen in de invoer data.
+</div>
+<div class="figure"><span id="fig:begeleid-vs-onbegeleid"></span>
+<img src="img/begeleid-vs-onbegeleid.svg" alt="Vergelijking tussen het proces van begeleid L en het proces van onbegeleid ‘leren.’"  />
+<p class="caption">
+Figuur 2.9: Vergelijking tussen het proces van begeleid L en het proces van onbegeleid ‘leren.’
+</p>
+</div>
+
+<p>Welke van beide moet je nu gebruiken? Heel simpel: als je een betrouwbare uitkomst in je bezit hebt, dan kies je best begeleid ML, omdat deze altijd beter zal presteren. Heb je geen uitkomsten of twijfel je aan de authenticiteit of accuraatheid, dan kan je (tijdelijk) overstappen op onbegeleid leren.</p>
+<p>Binnen onbegeleid leren, zijn er twee families die veel gebruikt worden. Eentje is de principale componenten analyse (PCA; eng: <em>principal component analysis</em>), de ander is cluster analyse (eng: <em>cluster analysis</em>). In beide gevallen is het resultaat een categorisatie van de instanties (zoals bijvoorbeeld een clustering) of een set van associaties (zoals bijvoorbeeld aanbevelingen, eng: <em>customer recommendations</em>).</p>
+
+<div class="definition">
+<span id="def:onbegeleid-leren-def" class="definition"><strong>Stelling 2.11  </strong></span>Een onbegeleid ML algoritme vertelt je of twee instanties bij elkaar horen (grote kans op associatie, zelfde cluster, …) of niet.
+</div>
+<p>Laten we de discussie van onbegeleid ML afsluiten met een voorbeeld:</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Voorbeeld 2.8  </strong></span>Stel, een klant wil een geautomatiseerd systeem ontwikkelen om de scherpte meten van microtoommessen. De klant hoopt dit te kunnen doen a.d.h.v. microscopische opnamen van de snede van het mes, waarvan hieronder een voorbeeld:</p>
+<p><img src="img/Microtome_knife_5.0_5.0_0097.JPG" /></p>
+Het doel is om de oppervlakte te bepalen van de fellere horizontale lijn (de messnede), maar om dit te kunnen doen moet er een duidelijk onderscheid worden gemaakt tussen fellere pixels en donkere pixels. M.a.w., elke pixel moet gecategoriseerd worden als ‘messnede’ of ‘achtergrond.’ Een begeleid ML aanpak zou inhouden dat een mens heel wat afbeeldingen manueel beoordeeld en dat er een classificatie algoritme gevoed zou worden met deze uitkomst data. Alleen is dat hier niet erg praktisch en bovendien erg onbetrouwbaar. Vandaar de keuze voor onbegeleid leren.
+</div>
+<p>Elke pixel in bovenstaande afbeelding bevat een R, een G en een B waarde. Het doel is om de afbeelding om te zetten naar een grijswaarde afbeelding, maar dan wel met de optimale gewichten voor de afzonderlijke R, G en B kleur-kanalen zodat er een maximaal contrast ontstaat. We zien immers dat de snede van het mes groen-achtig en niet wit is en we kunnen dus vermoeden dat de drie kleuren een verschillend gewicht gaan krijgen bij het zoeken naar het hoogste mogelijk contrast. Hieronder wordt de code getoond (imports en een aantal helperfuncties weggelaten; zie broncode voor details):</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="leren-uit-data.html#cb11-1" aria-hidden="true" tabindex="-1"></a>predict_pca <span class="ot">&lt;-</span> <span class="cf">function</span>(x, n) {</span>
+<span id="cb11-2"><a href="leren-uit-data.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  x<span class="sc">$</span>x[, <span class="dv">1</span><span class="sc">:</span>n] <span class="sc">%*%</span> <span class="fu">t</span>(x<span class="sc">$</span>rotation[, <span class="dv">1</span><span class="sc">:</span>n]) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="leren-uit-data.html#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale</span>(<span class="at">scale =</span> <span class="cn">FALSE</span>, <span class="at">center =</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">*</span> x<span class="sc">$</span>center) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="leren-uit-data.html#cb11-4" aria-hidden="true" tabindex="-1"></a>    as.data.table</span>
+<span id="cb11-5"><a href="leren-uit-data.html#cb11-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-6"><a href="leren-uit-data.html#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="leren-uit-data.html#cb11-7" aria-hidden="true" tabindex="-1"></a>contrast <span class="ot">&lt;-</span> <span class="cf">function</span>(img) {</span>
+<span id="cb11-8"><a href="leren-uit-data.html#cb11-8" aria-hidden="true" tabindex="-1"></a>  img <span class="sc">%&gt;%</span></span>
+<span id="cb11-9"><a href="leren-uit-data.html#cb11-9" aria-hidden="true" tabindex="-1"></a>    img_to_dt <span class="sc">%&gt;%</span></span>
+<span id="cb11-10"><a href="leren-uit-data.html#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prcomp</span>( <span class="sc">~</span> R <span class="sc">+</span> G <span class="sc">+</span> B, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb11-11"><a href="leren-uit-data.html#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">predict_pca</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-12"><a href="leren-uit-data.html#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dt_to_img</span>(<span class="fu">dim</span>(img)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-13"><a href="leren-uit-data.html#cb11-13" aria-hidden="true" tabindex="-1"></a>    grayscale <span class="sc">%&gt;%</span></span>
+<span id="cb11-14"><a href="leren-uit-data.html#cb11-14" aria-hidden="true" tabindex="-1"></a>    normalize</span>
+<span id="cb11-15"><a href="leren-uit-data.html#cb11-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-16"><a href="leren-uit-data.html#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="leren-uit-data.html#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>))</span>
+<span id="cb11-18"><a href="leren-uit-data.html#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="leren-uit-data.html#cb11-19" aria-hidden="true" tabindex="-1"></a>img <span class="ot">&lt;-</span> <span class="st">&quot;img/Microtome_knife_5.0_5.0_0097.JPG&quot;</span> <span class="sc">%&gt;%</span></span>
+<span id="cb11-20"><a href="leren-uit-data.html#cb11-20" aria-hidden="true" tabindex="-1"></a>  load.image <span class="sc">%&gt;%</span></span>
+<span id="cb11-21"><a href="leren-uit-data.html#cb11-21" aria-hidden="true" tabindex="-1"></a>  contrast <span class="sc">%&gt;%</span></span>
+<span id="cb11-22"><a href="leren-uit-data.html#cb11-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">axes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="img/gen-demo-pca-1.png" width="672" /></p>
+<p>De code leest als volgt: Laad de afbeelding <code>Microtome_knife_5.0_5.0_0097.JPG</code> en in de <code>contrast</code> functie: zet je het beeld eerst om naar een <code>data.table</code> met de helper-functie <code>img_to_dt</code> (niet getoond). Start daarna de principale componenten analyse op met de ingebakken <code>stats::prcomp</code> functie. Geef hierbij mee dat de drie kleur-kanalen moeten gebruikt wordt om het grootste contrast te vinden. Neem het resultaat van de analyse en neem de eerste component (de combinatie van R, G, en B-waarden die het meeste variantie verklaart) en voer daarmee de omgekeerde bewerking uit met de <code>predict-pca</code> functie. Het resultaat is dat er een iets beter drempel-waarde (eng: <em>threshold</em>) gevonden kan woorden waarme de messnede geïdentificeerd kan worden:</p>
+<div class="figure">
+<img src="img/demo-pca.png" alt="" />
+<p class="caption">Demo PCA results</p>
+</div>
+<p>Het probleem met onbegeleid ML is dat je nooit zeker weet dat je echt iets geleerd hebt. Bijvoorbeeld, indien een onbegeleid model een nieuwe instantie onderbrengt in een welbepaalde cluster, hoe weet je dan of het juist is of fout? Daarom is die term “onbegeleid leren” mogelijk nogal verwarrend en is het vaak veiliger om gewoon te spreken van clustering (bijv. k-means) of eigen-decompositie (bijv PCA.).</p>
+</div>
+<div id="conditionering" class="section level2" number="2.18">
+<h2><span class="header-section-number">2.18</span> Conditionering</h2>
+<p>Er is nog een derde soort ML, namelijk de conditionering (eng: <em>reinforcement learning</em>). In plaats van een afhankelijke variabele, wordt de uitkomst aangeleverd als een functie die, gegeven een bepaalde input zal teruggeven of de nieuwe situatie een verbetering is of niet. Het grootste verschil met de twee eerder besproken vormen van ML is dat er voor conditionering geen nood is aan historische data. In plaats daarvan is er een soort online- data generatie systeem voorhanden. Het is dus in zeker zin supervised, maar toch weer een beetje anders.</p>
+
+<div class="definition">
+<span id="def:reinforcement-learning" class="definition"><strong>Stelling 2.12  </strong></span>Voor conditionering (reinforcement learning) heb je geen historische data nodig. Enkel een <em>tolk</em> die in staat is een actie van een <em>agent</em> te beoordelen.
+</div>
+<p>Conditionering kent toepassingen in erg veel verschillende disciplines waaronder de statistiek, maar ook de speltheorie, <a href="https://nl.wikipedia.org/wiki/Meet-_en_regeltechniek">meet- en regeltechniek</a>, <a href="https://nl.wikipedia.org/wiki/Operationeel_onderzoek">operationeel onderzoek</a>, de <a href="https://nl.wikipedia.org/wiki/Informatietheorie">informatietheorie</a>, enzovoort…. Het werkt zo. Een <em>software-agent</em> (eng: <em>agent</em>) krijgt de keuze uit een aantal <em>acties</em> (eng: <em>actions</em>) die het kan uitvoeren op een <em>omgeving</em> (eng: <em>environment</em>). De omgeving vertaalt de gekozen actie naar enerzijds een toestand-wijziging (eng: <em>state change</em>) en anderzijds een beloning (eng: <em>reward</em>).</p>
+<div class="figure"><span id="fig:conditionering"></span>
+<img src="img/conditionering.svg" alt="Overzicht proces voor conditionering."  />
+<p class="caption">
+Figuur 2.10: Overzicht proces voor conditionering.
+</p>
+</div>
+
+<p>We komen later meer uitgebreid terug op conditionering, maar nu houden we het bij een minimalistische implementatie van een soort conditionering, genaamd <em>Q-learning</em>, dit maal in Python. Het voorbeeld is afkomstig van de blog <a href="http://firsttimeprogrammer.blogspot.com/2016/09/getting-ai-smarter-with-q-learning.html">“The Beginner Programmer” van Mic</a> en hetgeen op zijn beurt gebaseerd is op een Q-learning handleiding op de <a href="http://mnemstudio.org/path-finding-q-learning-tutorial.htm">Mnemosyne_Studio blog</a> van John McCullock.</p>
+
+<div class="example">
+<span id="exm:escape-room-ex" class="example"><strong>Voorbeeld 2.9  </strong></span>Gegeven onderstaande plattegrond van een huis met vijf kamers, vind het korst mogelijke pad naar buiten als je je in kamer 2 bevindt.
+</div>
+<div class="figure"><span id="fig:escape-room"></span>
+<img src="img/modeling_environment_clip_image002a.gif" alt="De plattegrond. (bron)"  />
+<p class="caption">
+Figuur 2.11: De plattegrond. (<a href="http://mnemstudio.org/path-finding-q-learning-tutorial.htm">bron</a>)
+</p>
+</div>
+
+<p>De belonging kan voorgesteld worden als een matrix:</p>
+<div class="figure"><span id="fig:escape-room-matrix"></span>
+<img src="img/r_matrix1.gif" alt="De beloning-matrix ( bron)"  />
+<p class="caption">
+Figuur 2.12: De beloning-matrix ( <a href="http://mnemstudio.org/path-finding-q-learning-tutorial.htm">bron</a>)
+</p>
+</div>
+
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="leren-uit-data.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-2"><a href="leren-uit-data.html#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="leren-uit-data.html#cb12-3" aria-hidden="true" tabindex="-1"></a>reward <span class="op">=</span> np.matrix(</span>
+<span id="cb12-4"><a href="leren-uit-data.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  [[<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb12-5"><a href="leren-uit-data.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  [ <span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">100</span>],</span>
+<span id="cb12-6"><a href="leren-uit-data.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  [ <span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb12-7"><a href="leren-uit-data.html#cb12-7" aria-hidden="true" tabindex="-1"></a>  [ <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb12-8"><a href="leren-uit-data.html#cb12-8" aria-hidden="true" tabindex="-1"></a>  [ <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">100</span>],</span>
+<span id="cb12-9"><a href="leren-uit-data.html#cb12-9" aria-hidden="true" tabindex="-1"></a>  [ <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">100</span>]])</span></code></pre></div>
+<p>We maken nu een matrix die het geheugen voorstelt van de tolk. Hierin zal de tolk zijn eerdere ervaringen in opslaan. Dit geheugen stelt de toestand (eng: <em>state</em>) voor waarin de agent zich bevindt. Zoals je ziet weet de agent initieel helemaal niets.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="leren-uit-data.html#cb13-1" aria-hidden="true" tabindex="-1"></a>memory <span class="op">=</span> np.matrix(np.zeros([<span class="dv">6</span>, <span class="dv">6</span>]))</span></code></pre></div>
+<p>In andere situaties kan het aantal toestanden waarin een agent zich kan bevinden helemaal niet gedefinieerd zijn en dan moet de matrix dynamisch worden opgesteld. Het opvullen van de toestand-matrix gebeurt volgens de onderstaande <em>transitie regel</em> (eng: <em>transition rule</em>):</p>
+<p><span class="math display">\[
+Q(toestand, actie)=R(toestand, actie)+h_\gamma\cdot max(Q(volgende\,toestand,\,alle\,acties))
+\]</span></p>
+<p>We hebben nu een functie die, gegeven een bepaalde toestand, de set van mogelijke volgende toestanden teruggeeft (<code>available_actions</code>) en een tweede die gegeven de mogelijke toestanden er een willekeurige toestand uitkiest (<code>sample_next_action</code>).</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="leren-uit-data.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> available_actions(state):</span>
+<span id="cb14-2"><a href="leren-uit-data.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  current_state_row <span class="op">=</span> reward[state,]</span>
+<span id="cb14-3"><a href="leren-uit-data.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  av_act <span class="op">=</span> np.where(current_state_row <span class="op">&gt;=</span> <span class="dv">0</span>)[<span class="dv">1</span>]</span>
+<span id="cb14-4"><a href="leren-uit-data.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> av_act</span>
+<span id="cb14-5"><a href="leren-uit-data.html#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="leren-uit-data.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sample_next_action(available_actions_range):</span>
+<span id="cb14-7"><a href="leren-uit-data.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  next_action <span class="op">=</span> <span class="bu">int</span>(np.random.choice(available_act,<span class="dv">1</span>))</span>
+<span id="cb14-8"><a href="leren-uit-data.html#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> next_action</span></code></pre></div>
+<p>Ten slotte hebben we een <code>update</code>-functie, de instap-functie a.h.w. van het leeralgoritme, die het geheugen (de toestand-matrix) vernieuwd:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="leren-uit-data.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update(current_state, action, gamma):</span>
+<span id="cb15-2"><a href="leren-uit-data.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  max_index <span class="op">=</span> np.where(memory[action,] <span class="op">==</span> np.<span class="bu">max</span>(memory[action,]))[<span class="dv">1</span>]</span>
+<span id="cb15-3"><a href="leren-uit-data.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="leren-uit-data.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> max_index.shape[<span class="dv">0</span>] <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb15-5"><a href="leren-uit-data.html#cb15-5" aria-hidden="true" tabindex="-1"></a>      max_index <span class="op">=</span> <span class="bu">int</span>(np.random.choice(max_index, size <span class="op">=</span> <span class="dv">1</span>))</span>
+<span id="cb15-6"><a href="leren-uit-data.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb15-7"><a href="leren-uit-data.html#cb15-7" aria-hidden="true" tabindex="-1"></a>      max_index <span class="op">=</span> <span class="bu">int</span>(max_index)</span>
+<span id="cb15-8"><a href="leren-uit-data.html#cb15-8" aria-hidden="true" tabindex="-1"></a>  max_value <span class="op">=</span> memory[action, max_index]</span>
+<span id="cb15-9"><a href="leren-uit-data.html#cb15-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-10"><a href="leren-uit-data.html#cb15-10" aria-hidden="true" tabindex="-1"></a>  memory[current_state, action] <span class="op">=</span> reward[current_state, action] <span class="op">+\</span></span>
+<span id="cb15-11"><a href="leren-uit-data.html#cb15-11" aria-hidden="true" tabindex="-1"></a>    gamma <span class="op">*</span> max_value</span></code></pre></div>
+<p>We initialiseren nu het spel met de leersnelheid <span class="math inline">\(h_\gamma\)</span> en de initiële kamer (2) en de doel-ruimte (buiten, ruimte 5) en voeren de eerste update uit:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="leren-uit-data.html#cb16-1" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">0.8</span></span>
+<span id="cb16-2"><a href="leren-uit-data.html#cb16-2" aria-hidden="true" tabindex="-1"></a>initial_state <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb16-3"><a href="leren-uit-data.html#cb16-3" aria-hidden="true" tabindex="-1"></a>end_state <span class="op">=</span> <span class="dv">5</span></span></code></pre></div>
+<p>Nu begint het trainen (10 000 iteraties):</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="leren-uit-data.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
+<span id="cb17-2"><a href="leren-uit-data.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  current_state <span class="op">=</span> np.random.randint(<span class="dv">0</span>, <span class="bu">int</span>(memory.shape[<span class="dv">0</span>]))</span>
+<span id="cb17-3"><a href="leren-uit-data.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  available_act <span class="op">=</span> available_actions(current_state)</span>
+<span id="cb17-4"><a href="leren-uit-data.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  action <span class="op">=</span> sample_next_action(available_act)</span>
+<span id="cb17-5"><a href="leren-uit-data.html#cb17-5" aria-hidden="true" tabindex="-1"></a>  update(current_state, action, gamma)</span></code></pre></div>
+<p>De toestand-matrix er nu zo uit:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="leren-uit-data.html#cb18-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="dv">100</span> <span class="sc">*</span> py<span class="sc">$</span>memory <span class="sc">/</span> <span class="fu">max</span>(py<span class="sc">$</span>memory))</span>
+<span id="cb18-2"><a href="leren-uit-data.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(model) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">stop =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb18-3"><a href="leren-uit-data.html#cb18-3" aria-hidden="true" tabindex="-1"></a>model</span></code></pre></div>
+<p>Nu testen we het model met een begintoestand van 2 en een eindtoestand van 5:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="leren-uit-data.html#cb19-1" aria-hidden="true" tabindex="-1"></a>current_state <span class="op">=</span> initial_state</span>
+<span id="cb19-2"><a href="leren-uit-data.html#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="leren-uit-data.html#cb19-3" aria-hidden="true" tabindex="-1"></a>steps <span class="op">=</span> [current_state]</span>
+<span id="cb19-4"><a href="leren-uit-data.html#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="leren-uit-data.html#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> current_state <span class="op">!=</span> end_state:</span>
+<span id="cb19-6"><a href="leren-uit-data.html#cb19-6" aria-hidden="true" tabindex="-1"></a>  next_step_index <span class="op">=</span> np.where( <span class="op">\</span></span>
+<span id="cb19-7"><a href="leren-uit-data.html#cb19-7" aria-hidden="true" tabindex="-1"></a>    memory[current_state,] <span class="op">==</span> np.<span class="bu">max</span>(memory[current_state,]))[<span class="dv">1</span>]</span>
+<span id="cb19-8"><a href="leren-uit-data.html#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="leren-uit-data.html#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> next_step_index.shape[<span class="dv">0</span>] <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb19-10"><a href="leren-uit-data.html#cb19-10" aria-hidden="true" tabindex="-1"></a>    next_step_index <span class="op">=</span> <span class="bu">int</span>(np.random.choice(next_step_index, size <span class="op">=</span> <span class="dv">1</span>))</span>
+<span id="cb19-11"><a href="leren-uit-data.html#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb19-12"><a href="leren-uit-data.html#cb19-12" aria-hidden="true" tabindex="-1"></a>    next_step_index <span class="op">=</span> <span class="bu">int</span>(next_step_index)</span>
+<span id="cb19-13"><a href="leren-uit-data.html#cb19-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-14"><a href="leren-uit-data.html#cb19-14" aria-hidden="true" tabindex="-1"></a>  steps.append(next_step_index)</span>
+<span id="cb19-15"><a href="leren-uit-data.html#cb19-15" aria-hidden="true" tabindex="-1"></a>  current_state <span class="op">=</span> next_step_index</span></code></pre></div>
+<p>Het aangeleerd pad kan als volgt worden opgeroepen:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="leren-uit-data.html#cb20-1" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>steps <span class="sc">%&gt;%</span> <span class="fu">paste</span>(<span class="st">&quot;Ruimte &quot;</span>, ., <span class="at">collapse =</span> <span class="st">&quot; &gt; &quot;</span>)</span></code></pre></div>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Onder <em>instellingen</em> wordt hier onder andere een combinatie van hyperparameter-waarden verstaan. Omdat deze hyperparameters meestal continue variabelen zijn, maakt dit dat er letterlijk oneindig veel instellingen mogelijk zijn. Bovendien bestaan er voor elke leeralgoritme vaak talrijke varianten, elke met hun eigen voor- en nadelen.<a href="leren-uit-data.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="inleiding-tot-de-cursus.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
