@@ -359,7 +359,7 @@ Figuur 3.3: Schematische visualisaties voor een aantal veel voorkomende data typ
 </ul>
 </div>
 <div id="eng-nominal-scale-data" class="section level2" number="3.8">
-<p><i>De onderstaande secties zijn in het Engels weergegeven, vanwege het frequente gebruik van Engelstalige terminologie binnen deze onderdelen.</i>i></p>
+<p><i>De onderstaande secties zijn in het Engels weergegeven, vanwege het frequente gebruik van Engelstalige terminologie binnen deze onderdelen.</i></p>
 <h2><span class="header-section-number">3.8</span> (Eng) Nominal-Scale Data</h2>
 <p>Whenever the data consist of <strong>categories</strong>, typically, we deal with so-called nominal-scale data. Examples are department, blood type, country, …. Whenever there are only two categories, we speak of <strong>binary data</strong> (true/false, yes/no, success/failure, ….).</p>
 </div>
@@ -405,27 +405,41 @@ Figuur 3.5: Circular scale data requires special attention.
 <p><img src="img/gen-unnamed-chunk-10-1.png" width="672" /></p>
 <p>Het gaat om de kwartaalcijfers van 1960 to 1980. Deze dataset wordt vaak in educatieve werken rond tijdsreeks-analyses gebruikt om het effect van een multiplicatieve seizoensafhankelijke trend (eng: <em>seasonality</em>) weer te geven. <em>Multiplicatief</em> betekent hier gewoon dat het seizoenseffect afhangt van de grootte van de waarde. We voelen meteen aan dat deze tijdsreeksen van een heel andere soort data zijn dan de eerder aangehaalde data. Dat heeft te maken met het feit dat een punt op dit lijndiagram niet onafhankelijk is van een ander punt op dezelfde lijn. We spreken van <em>autocorrelatie</em>. In het algemeen, wanneer men onderzoek doet naar de evolutie van gegevens in de loop van de tijd, spreekt van van <em>trend analyse</em>.</p>
 <p>Hetzelfde kunnen we nu doen voor ruimte. Onderstaande figuur laat zien hoe we bijvoorbeeld aantallen kunnen uitdrukken over een ruimtelijke dimensie (met toestemming van <span class="citation"><a href="bronvermelding.html#ref-Hermans" role="doc-biblioref">Hermans</a> <a href="bronvermelding.html#ref-Hermans" role="doc-biblioref">2019</a></span>).</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># From https://github.com/mhermans/thematic-maps-r</span></span>
-<span id="cb22-2"><a href="data.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Thanks to Maarten Hermans</span></span>
-<span id="cb22-3"><a href="data.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;BelgiumMaps.StatBel&quot;, repos = &quot;http://www.datatailor.be/rcube&quot;, type = &quot;source&quot;)</span></span>
-<span id="cb22-4"><a href="data.html#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="data.html#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BelgiumMaps.StatBel)</span>
-<span id="cb22-6"><a href="data.html#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb22-7"><a href="data.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb22-8"><a href="data.html#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="data.html#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(BE_ADMIN_MUNTY)</span>
-<span id="cb22-10"><a href="data.html#cb22-10" aria-hidden="true" tabindex="-1"></a>munip_map <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(BE_ADMIN_MUNTY)</span>
-<span id="cb22-11"><a href="data.html#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-12"><a href="data.html#cb22-12" aria-hidden="true" tabindex="-1"></a>src <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
-<span id="cb22-13"><a href="data.html#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;https://raw.githubusercontent.com/mhermans/&quot;</span>,</span>
-<span id="cb22-14"><a href="data.html#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;thematic-maps-r/master/data/muni_typology.csv&quot;</span>)</span>
-<span id="cb22-15"><a href="data.html#cb22-15" aria-hidden="true" tabindex="-1"></a>munip_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(src)</span>
-<span id="cb22-16"><a href="data.html#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-17"><a href="data.html#cb22-17" aria-hidden="true" tabindex="-1"></a>munip <span class="ot">&lt;-</span> <span class="fu">merge</span>(munip_map, munip_data,</span>
-<span id="cb22-18"><a href="data.html#cb22-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">by.x =</span> <span class="st">&quot;CD_MUNTY_REFNIS&quot;</span>,</span>
-<span id="cb22-19"><a href="data.html#cb22-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">by.y =</span> <span class="st">&quot;gemeente_nis_code&quot;</span>)</span>
-<span id="cb22-20"><a href="data.html#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-21"><a href="data.html#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="fu">qtm</span>(munip, <span class="at">fill =</span> <span class="st">&quot;hoofdcluster_lbl&quot;</span>, <span class="at">fill.title =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb_python"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb_python-1"><a href="data.html#cb_python-1" aria-hidden="true" tabindex="-1"></a><span class="co"># From https://github.com/mhermans/thematic-maps-r</span></span>
+<span id="cb_python-2"><a href="data.html#cb_python-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Adapted to Python by OpenAI Assistant</span></span>
+<span id="cb_python-3"><a href="data.html#cb_python-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb_python-4"><a href="data.html#cb_python-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb_python-5"><a href="data.html#cb_python-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb_python-6"><a href="data.html#cb_python-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb_python-7"><a href="data.html#cb_python-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb_python-8"><a href="data.html#cb_python-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Belgian municipality GeoJSON</span></span>
+<span id="cb_python-9"><a href="data.html#cb_python-9" aria-hidden="true" tabindex="-1"></a>shapefile_url <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/mhermans/thematic-maps-r/master/data/BE_ADMIN_MUNTY.geojson&quot;</span></span>
+<span id="cb_python-10"><a href="data.html#cb_python-10" aria-hidden="true" tabindex="-1"></a>munip_map <span class="op">=</span> gpd.read_file(shapefile_url)</span>
+<span id="cb_python-11"><a href="data.html#cb_python-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb_python-12"><a href="data.html#cb_python-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Load CSV with typology</span></span>
+<span id="cb_python-13"><a href="data.html#cb_python-13" aria-hidden="true" tabindex="-1"></a>csv_url <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/mhermans/thematic-maps-r/master/data/muni_typology.csv&quot;</span></span>
+<span id="cb_python-14"><a href="data.html#cb_python-14" aria-hidden="true" tabindex="-1"></a>munip_data <span class="op">=</span> pd.read_csv(csv_url)</span>
+<span id="cb_python-15"><a href="data.html#cb_python-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb_python-16"><a href="data.html#cb_python-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge datasets on NIS code</span></span>
+<span id="cb_python-17"><a href="data.html#cb_python-17" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> munip_map.merge(munip_data, left_on<span class="op">=</span><span class="st">&quot;CD_MUNTY_REFNIS&quot;</span>, right_on<span class="op">=</span><span class="st">&quot;gemeente_nis_code&quot;</span>)</span>
+<span id="cb_python-18"><a href="data.html#cb_python-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb_python-19"><a href="data.html#cb_python-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert CRS for web compatibility</span></span>
+<span id="cb_python-20"><a href="data.html#cb_python-20" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> merged.to_crs(epsg<span class="op">=</span><span class="mi">4326</span>)</span>
+<span id="cb_python-21"><a href="data.html#cb_python-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb_python-22"><a href="data.html#cb_python-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create interactive map with Plotly</span></span>
+<span id="cb_python-23"><a href="data.html#cb_python-23" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.choropleth(</span>
+<span id="cb_python-24"><a href="data.html#cb_python-24" aria-hidden="true" tabindex="-1"></a>    merged,</span>
+<span id="cb_python-25"><a href="data.html#cb_python-25" aria-hidden="true" tabindex="-1"></a>    geojson<span class="op">=</span>merged.geometry,</span>
+<span id="cb_python-26"><a href="data.html#cb_python-26" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span>merged.index,</span>
+<span id="cb_python-27"><a href="data.html#cb_python-27" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">&quot;hoofdcluster_lbl&quot;</span>,</span>
+<span id="cb_python-28"><a href="data.html#cb_python-28" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">&quot;TX_MUNTY_DESCR_NL&quot;</span>,</span>
+<span id="cb_python-29"><a href="data.html#cb_python-29" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">&quot;Gemeentetypologie België&quot;</span></span>
+<span id="cb_python-30"><a href="data.html#cb_python-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb_python-31"><a href="data.html#cb_python-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb_python-32"><a href="data.html#cb_python-32" aria-hidden="true" tabindex="-1"></a>fig.update_geos(fitbounds<span class="op">=</span><span class="st">&quot;locations&quot;</span>, visible<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb_python-33"><a href="data.html#cb_python-33" aria-hidden="true" tabindex="-1"></a>fig.update_layout(margin<span class="op">=</span>{<span class="st">&quot;r&quot;</span>:<span class="dv">0</span>,<span class="st">&quot;t&quot;</span>:<span class="dv">40</span>,<span class="st">&quot;l&quot;</span>:<span class="dv">0</span>,<span class="st">&quot;b&quot;</span>:<span class="dv">0</span>})</span>
+<span id="cb_python-34"><a href="data.html#cb_python-34" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div>
+
 <p><img src="img/ruimte.png" width="672" /></p>
 <p>Ook bij ruimtelijke variabelen merken we een autocorrelatie op, waarbij de waarde op één plaats niet onafhankelijk is van de waarde op een naburige plaats.</p>
 </div>
