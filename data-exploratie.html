@@ -331,9 +331,8 @@ Gegeven de doelstelling van het onderzoek is het goed om je af te vragen of er w
 <div class="example">
 <span id="exm:terrorism" class="example"><strong>Voorbeeld 4.1  </strong></span><strong>Vraag</strong>: Sommige mensen zeggen dat er steeds méér terrorisme is in de wereld. Andere zeggen dat er altijd al terrorisme heeft bestaan. Wie heeft er gelijk?
 </div>
-<p><strong>Antwoord</strong>: Via de <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">bovenstaande link</a> naar de standaard datasets vinden we twee datasets met het woordje “terrorism” in de titel. Ééntje heeft 206 rijen (<code>nkill.byCountryYr</code>), laten we die eens van naderbij bekijken:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-exploratie.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Ecdat)</span>
-<span id="cb24-2"><a href="data-exploratie.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span></code></pre></div>
+<p><strong>Antwoord</strong>: Via de <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">bovenstaande link</a> naar de standaard datasets vinden we twee datasets met het woordje “terrorism” in de titel. Ééntje heeft 206 rijen (<code>nkill.byCountryYr</code>), laten we die eens van naderbij bekijken. Zorg ervoor dat je de dataset (CSV) hebt gedownload, die zal je straks nodig hebben om in je Python code te importeren:</p>
+
 
 <div class="sourceCode" id="cb1">
 <pre class="sourceCode python"><code class="sourceCode python">
@@ -352,8 +351,8 @@ print(df.info())
 </div>
 
   
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-exploratie.html#cb25-1" aria-hidden="true" tabindex="-1"></a>?terrorism</span></code></pre></div>
-<p>Zorg er eerst voor dat je deze pakketten installeert (eenmalig) via <code>install.packages</code> of via de Packages-tab in RStudio. Als alles goed verlopen is, krijg je de documentatie te zien:</p>
+
+<p>Zorg er eerst voor dat je deze bibliotheken (libraries) installeert (eenmalig) via in de terminal van je VS Code. Als alles goed verlopen is, krijg je de eerste rijen van de dataset te zien. Je hebt bovendien gemerkt dat er 'DOC' staat naast 'CSV' op de website waar je de dataset hebt gedownload. Als je op 'DOC' klikt, krijg je de documentatie te zien zoals hieronder:</p>
 <p><img src="img/terrorism-help.png" width="925" /></p>
 <p>We onderzoeken nu de documentatie en vinden dat de databank wel erg relevant en professioneel lijkt, maar niet zo up-to-date (1970 - 2015). Toch beslissen we om door te gaan met deze dataset. We lezen dat er eigenlijk drie datasets zijn, telkens met hun eigen structuur:</p>
 <p><code>terrorism</code>: Jaartal × {verscheidene aantallen per type aanslag, locatie (wereld versus VS) en type slachtoffers}</p>
