@@ -334,6 +334,24 @@ Gegeven de doelstelling van het onderzoek is het goed om je af te vragen of er w
 <p><strong>Antwoord</strong>: Via de <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">bovenstaande link</a> naar de standaard datasets vinden we twee datasets met het woordje “terrorism” in de titel. Ééntje heeft 206 rijen (<code>nkill.byCountryYr</code>), laten we die eens van naderbij bekijken:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-exploratie.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Ecdat)</span>
 <span id="cb24-2"><a href="data-exploratie.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span></code></pre></div>
+
+<div class="sourceCode" id="cb1">
+<pre class="sourceCode python"><code class="sourceCode python">
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# CSV-bestand inlezen
+df = pd.read_csv("nkill_byCountryYr.csv")
+
+# Eerste rijen bekijken
+print(df.head())
+
+# Informatie over de kolommen
+print(df.info())
+</code></pre>
+</div>
+
+  
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-exploratie.html#cb25-1" aria-hidden="true" tabindex="-1"></a>?terrorism</span></code></pre></div>
 <p>Zorg er eerst voor dat je deze pakketten installeert (eenmalig) via <code>install.packages</code> of via de Packages-tab in RStudio. Als alles goed verlopen is, krijg je de documentatie te zien:</p>
 <p><img src="img/terrorism-help.png" width="925" /></p>
