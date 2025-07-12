@@ -441,17 +441,29 @@ print(dat["year"].duplicated().any())
 
 <pre><code>False</code></pre>
 <p>De incidenten zijn ook natuurlijke getallen, maar van een andere soort dan het jaartal. De incidenten zijn namelijk ook aantallen en dit heeft heel wat statistische consequenties. Het betekent onder meer dat we voor deze variabele een histogram kunnen genereren:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-exploratie.html#cb35-1" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>incidents <span class="sc">%&gt;%</span></span>
-<span id="cb35-2"><a href="data-exploratie.html#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(<span class="at">main =</span> <span class="st">&quot;Verdeling aantal aanslagen&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;# aanslagen per jaar&quot;</span>,</span>
-<span id="cb35-3"><a href="data-exploratie.html#cb35-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Frequentie&quot;</span>)</span></code></pre></div>
-<p><img src="img/gen-unnamed-chunk-19-1.png" width="318px" /></p>
+<div class="sourceCode" id="cb31">
+<pre class="sourceCode python"><code class="sourceCode python">
+import matplotlib.pyplot as plt
+
+# Histogram van het aantal incidenten per jaar
+plt.hist(dat["incidents"], bins=10, color="lightgrey", edgecolor="black")
+plt.title("Verdeling aantal aanslagen")
+plt.xlabel("# aanslagen per jaar")
+plt.ylabel("Frequentie")
+plt.show()
+</code></pre>
+</div><p><img src="img/gen-unnamed-chunk-19-1.png" width="318px" /></p>
 <p>Hierin zien we dat er in het totaal meer dan 30 jaren zijn met minder dan 5000 aanslagen per jaar wereldwijd en dat er 3 jaren zijn met meer dan 10 000 aanslagen.</p>
 <p>Dit was de K van DIPKEVER, we zetten onze tocht voort. Over ethiek: voor velen is dit natuurlijk een gevoelig onderwerp maar het weergeven van de aantallen aanslagen kan moeilijk als aanstootgevend worden gezien. Bovendien worden hier nog geen voorspellingen gemaakt, dus dat lijkt in orde. Er ontbreken geen data (dus voorradig). Het consortium rond de Studie van Terrorisme en Responsen op Terrorisme (START) is verantwoordelijk voor de data en gezien hun staat van dienst en academische publicaties waaronder sommige in gerenommeerde tijdschriften, lijken ze op het eerste gezicht betrouwbaar (cfr. Echtheid). Tenslotte zijn de data ongetwijfeld relevant en daarmee slagen ze voor de volledige DIPKEVER test. Het onderlinge correleren van beide variabelen biedt hier geen meerwaarde.</p>
 <p>De exploratiefase is voorbij. Het volstaat ons nu om een grafiek op stellen waarbij het aantal aanslagen in de tijd wordt gevolgd:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-exploratie.html#cb36-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat[<span class="fu">order</span>(year)]</span>
-<span id="cb36-2"><a href="data-exploratie.html#cb36-2" aria-hidden="true" tabindex="-1"></a>void <span class="ot">&lt;-</span> dat[, <span class="fu">plot</span>(incidents <span class="sc">~</span> year, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
-<span id="cb36-3"><a href="data-exploratie.html#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Verloop aantal aanslagen wereldwijd&quot;</span>,</span>
-<span id="cb36-4"><a href="data-exploratie.html#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Kalenderjaar&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Aantal aanslagen per jaar&quot;</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb36">
+<pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1">dat = dat.sort_values("year")</span>
+<span id="cb36-2">plt.plot(dat["year"], dat["incidents"], linestyle="--", color="black")</span>
+<span id="cb36-3">plt.title("Verloop aantal aanslagen wereldwijd")</span>
+<span id="cb36-4">plt.xlabel("Kalenderjaar")</span>
+<span id="cb36-5">plt.ylabel("Aantal aanslagen per jaar")</span>
+<span id="cb36-6">plt.show()</span></code></pre>
+</div>
 <p><img src="img/gen-unnamed-chunk-20-1.png" width="672" /></p>
 <p><strong>Conclusie</strong>: Ja, het aantal gerapporteerde terroristische aanslagen lijkt volgens de START (<span class="citation"><a href="bronvermelding.html#ref-pape2014" role="doc-biblioref">Pape et al.</a> <a href="bronvermelding.html#ref-pape2014" role="doc-biblioref">2014</a></span>) toegenomen te zijn in de periode 2010 - 2015 ten opzichte van de periode 1970 - 2010.</p>
 </div>
