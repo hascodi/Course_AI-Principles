@@ -483,9 +483,10 @@ plt.show()
 <div class="sourceCode" id="cb37">
 <pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1">import pandas as pd</span>
 <span id="cb37-2"></span>
-<span id="cb37-3">rhDNase = pd.read_csv("rhDNase.csv", parse_dates=["entry.dt", "end.dt"])</span>
-<span id="cb37-4"></span>
-<span id="cb37-5">print(rhDNase.info())</span></code></pre>
+<span id="cb37-3"># Lees de dataset in en converteer de kolommen 'entry.dt' en 'end.dt' automatisch naar datumformaat</span>
+<span id="cb37-4">rhDNase = pd.read_csv("rhDNase.csv", parse_dates=["entry.dt", "end.dt"])</span>
+<span id="cb37-5"></span>
+<span id="cb37-6">print(rhDNase.info())</span></code></pre>
 </div>
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 767 entries, 0 to 766
@@ -503,34 +504,35 @@ Data columns (total 8 columns):
 dtypes: datetime64 , float64(3), int64(3)
 memory usage: 48.1 KB
 </code></pre>
-  
-  
-  
-  
-  
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-exploratie.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survival)</span>
-<span id="cb37-2"><a href="data-exploratie.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="data-exploratie.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(rhDNase)</span>
-<span id="cb37-4"><a href="data-exploratie.html#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-5"><a href="data-exploratie.html#cb37-5" aria-hidden="true" tabindex="-1"></a>rhDNase <span class="sc">%&gt;%</span> str</span></code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    767 obs. of  8 variables:
-##  $ id      : int  1 2 3 4 5 6 7 8 9 10 ...
-##  $ inst    : int  1 1 1 1 1 1 1 1 2 2 ...
-##  $ trt     : int  1 1 0 1 0 1 0 0 1 0 ...
-##  $ entry.dt: Date, format: &quot;1992-03-20&quot; &quot;1992-03-24&quot; ...
-##  $ end.dt  : Date, format: &quot;1992-09-04&quot; &quot;1992-09-09&quot; ...
-##  $ fev     : num  28.8 64 67.2 57.6 57.6 25.6 86.4 32 86.4 28.8 ...
-##  $ ivstart : num  NA NA 65 NA NA NA NA 90 NA 8 ...
-##  $ ivstop  : num  NA NA 75 NA NA NA NA 104 NA 22 ...</code></pre>
 <p>We gaan nu één voor één de variabelen af:</p>
 <ul>
 <li><p><code>id</code>: <em>subject id</em>. Is de identiteit en het heeft geen nut om hier een verdeling van de trekken.</p></li>
 <li><p><code>inst</code>: <em>enrolling institution</em>. Dit is een <code>integer</code>, dus dat lijkt niet te kloppen, want we verwachten een organisatie hier. We behandelen het dan ook als categorische (nominale) variabele (<code>factor</code> in R) en maken een staafdiagram (eng: <em>bar plot</em>). Er is geen betekenisvolle sortering mogelijk bij categorische variabelen, maar het is een goed gewoonte om te toch even van frequent naar minder frequent te sorteren om een zicht te krijgen op de curve die zo ontstaat.</p>
+
+
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-exploratie.html#cb39-1" aria-hidden="true" tabindex="-1"></a>rhDNase <span class="ot">&lt;-</span> rhDNase <span class="sc">%&gt;%</span> as.data.table</span>
 <span id="cb39-2"><a href="data-exploratie.html#cb39-2" aria-hidden="true" tabindex="-1"></a>rhDNase[, inst <span class="sc">:</span><span class="er">=</span> inst <span class="sc">%&gt;%</span> factor]</span>
 <span id="cb39-3"><a href="data-exploratie.html#cb39-3" aria-hidden="true" tabindex="-1"></a>rhDNase<span class="sc">$</span>inst <span class="sc">%&gt;%</span> table <span class="sc">%&gt;%</span> sort <span class="sc">%&gt;%</span> rev <span class="sc">%&gt;%</span> </span>
 <span id="cb39-4"><a href="data-exploratie.html#cb39-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">barplot</span>(<span class="at">xlab =</span> <span class="st">&quot;Enrolling institution&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;# of instances&quot;</span>,</span>
 <span id="cb39-5"><a href="data-exploratie.html#cb39-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Distribution of the institutions&quot;</span>, <span class="at">cex.names =</span> .<span class="dv">6</span>, <span class="at">las =</span> <span class="dv">2</span>)</span></code></pre></div>
+
+  
+<div class="sourceCode" id="cb39">
+<pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1">import matplotlib.pyplot as plt</span>
+<span id="cb39-2"></span>
+<span id="cb39-3"># Bereken frequenties van de categorische variabele 'inst' en sorteer van meest naar minst voorkomend</span>
+<span id="cb39-4">inst_counts = rhDNase["inst"].value_counts().sort_values(ascending=False)</span>
+<span id="cb39-5"></span>
+<span id="cb39-6"># Maak een barplot van de distributie van de instellingen</span>
+<span id="cb39-7">plt.figure(figsize=(10, 5))</span>
+<span id="cb39-8">inst_counts.plot(kind="bar")</span>
+<span id="cb39-9">plt.xlabel("Enrolling institution")</span>
+<span id="cb39-10">plt.ylabel("# of instances")</span>
+<span id="cb39-11">plt.title("Distribution of the institutions")</span>
+<span id="cb39-12">plt.xticks(rotation=90, fontsize=8)</span>
+<span id="cb39-13">plt.tight_layout()</span>
+<span id="cb39-14">plt.show()</span></code></pre>
+</div>
 <p><img src="img/gen-unnamed-chunk-23-1.png" width="672" /></p>
 <p>Er zijn wel een aantal dominantere instituten maar die dominantie lijkt niet te extreem er blijft een goede verdeling tussen de verschillende instituten van grofweg 10-15 instanties per instituut.</p></li>
 <li><p><code>trt</code> <em>treatment arm: 0=placebo, 1= rhDNase</em> Een arm betekent hier een vertakking van de beslissingsboom die gebruikt wordt om patiënten in een bepaalde categorie te plaatsen. Zulke een binaire kan je evengoed met een staafdiagram voorstellen, maar hier heb je duidelijk een controle experiment (de placebo-arm) en volstaat het om de verhouding behandeld/placebo mee te geven omdat alle informatie van de verdeling hierin vervat zit:</p>
