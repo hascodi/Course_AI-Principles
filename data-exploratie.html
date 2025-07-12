@@ -372,10 +372,10 @@ print(df.info())
 import pandas as pd
 
 # Laad de volledige dataset
-terrorism = pd.read_csv("terrorism.csv")
+df = pd.read_csv("nkill_byCountryYr.csv")
 
 # Selecteer enkel de kolommen 'year' en 'incidents'
-dat = terrorism[["year", "incidents"]]
+dat = df[["year", "incidents"]]
 
 # Toon de eerste rijen van de subset
 print(dat.head())
@@ -386,6 +386,21 @@ print(dat.head())
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-exploratie.html#cb27-1" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">apply</span>(<span class="dv">2</span>, class)</span></code></pre></div>
 <pre><code>##      year incidents 
 ## &quot;numeric&quot; &quot;numeric&quot;</code></pre>
+
+<div class="sourceCode" id="cb27">
+<pre class="sourceCode python"><code class="sourceCode python">
+# Toon het datatype van elke kolom
+print(dat.dtypes)
+</code></pre>
+</div>
+
+<pre><code>year         float64
+incidents    float64
+dtype: object
+</code></pre>
+  
+  
+  
 <p><code>numeric</code> datatype in R stellen de reële getallen voor, niet natuurlijke getallen. Dat is geen ramp, natuurlijk, omdat <span class="math inline">\(\mathbb{N}\subset\mathbb{R}\)</span> maar kan soms problemen geven, laten we dit rechtzetten:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-exploratie.html#cb29-1" aria-hidden="true" tabindex="-1"></a>dat[, year <span class="sc">:</span><span class="er">=</span> year <span class="sc">%&gt;%</span> as.integer]</span>
 <span id="cb29-2"><a href="data-exploratie.html#cb29-2" aria-hidden="true" tabindex="-1"></a>dat[, incidents <span class="sc">:</span><span class="er">=</span> incidents <span class="sc">%&gt;%</span> as.integer]</span>
