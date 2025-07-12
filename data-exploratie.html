@@ -383,10 +383,6 @@ print(dat.head())
 </div>
 <p>We overlopen de DIPKEVER criteria. De data zijn duidelijk en informatief. Ze lijken de privacy van niemand te schenden omdat het om geaggregeerde gegevens gaat, wereldwijd en telkens samengevat voor een heel kalenderjaar.</p>
 <p>Kwaliteit. We beginnen met de controle dat het jaartal en de incidenten als natuurlijke getallen worden behandeld.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-exploratie.html#cb27-1" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">apply</span>(<span class="dv">2</span>, class)</span></code></pre></div>
-<pre><code>##      year incidents 
-## &quot;numeric&quot; &quot;numeric&quot;</code></pre>
-
 <div class="sourceCode" id="cb27">
 <pre class="sourceCode python"><code class="sourceCode python">
 # Toon het datatype van elke kolom
@@ -398,16 +394,24 @@ print(dat.dtypes)
 incidents    float64
 dtype: object
 </code></pre>
-  
-  
-  
-<p><code>numeric</code> datatype in R stellen de reële getallen voor, niet natuurlijke getallen. Dat is geen ramp, natuurlijk, omdat <span class="math inline">\(\mathbb{N}\subset\mathbb{R}\)</span> maar kan soms problemen geven, laten we dit rechtzetten:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-exploratie.html#cb29-1" aria-hidden="true" tabindex="-1"></a>dat[, year <span class="sc">:</span><span class="er">=</span> year <span class="sc">%&gt;%</span> as.integer]</span>
-<span id="cb29-2"><a href="data-exploratie.html#cb29-2" aria-hidden="true" tabindex="-1"></a>dat[, incidents <span class="sc">:</span><span class="er">=</span> incidents <span class="sc">%&gt;%</span> as.integer]</span>
-<span id="cb29-3"><a href="data-exploratie.html#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="data-exploratie.html#cb29-4" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">apply</span>(<span class="dv">2</span>, class)</span></code></pre></div>
-<pre><code>##      year incidents 
-## &quot;integer&quot; &quot;integer&quot;</code></pre>
+
+<p><code>float64</code> datatype in Python stellen de reële getallen voor, niet natuurlijke getallen. Dat is geen ramp, natuurlijk, omdat <span class="math inline">\(\mathbb{N}\subset\mathbb{R}\)</span> maar kan soms problemen geven, laten we dit rechtzetten:</p>
+<div class="sourceCode" id="cb28">
+<pre class="sourceCode python"><code class="sourceCode python">
+# Zet 'year' en 'incidents' om naar integers
+dat["year"] = dat["year"].astype(int)
+dat["incidents"] = dat["incidents"].astype(int)
+
+# Controleer het datatype van elke kolom
+print(dat.dtypes.apply(lambda dt: "integer" if "int" in str(dt) else str(dt)))
+</code></pre>
+</div>
+
+<pre><code>year         integer
+incidents    integer
+dtype: object
+</code></pre>
+
 <p>Nu controleren we of het jaartal inderdaad loopt van 1970 tot en met 2015:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-exploratie.html#cb31-1" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>year <span class="sc">%&gt;%</span> summary</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
