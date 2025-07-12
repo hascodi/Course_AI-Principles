@@ -331,8 +331,7 @@ Gegeven de doelstelling van het onderzoek is het goed om je af te vragen of er w
 <div class="example">
 <span id="exm:terrorism" class="example"><strong>Voorbeeld 4.1  </strong></span><strong>Vraag</strong>: Sommige mensen zeggen dat er steeds méér terrorisme is in de wereld. Andere zeggen dat er altijd al terrorisme heeft bestaan. Wie heeft er gelijk?
 </div>
-<p><strong>Antwoord</strong>: Via de <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">bovenstaande link</a> naar de standaard datasets vinden we twee datasets met het woordje “terrorism” in de titel. Ééntje heeft 206 rijen (<code>nkill.byCountryYr</code>), laten we die eens van naderbij bekijken. Zorg ervoor dat je de dataset (CSV) hebt gedownload, die zal je straks nodig hebben om in je Python code te importeren:</p>
-
+<p><strong>Antwoord</strong>: Via <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">deze link</a> naar de standaard datasets vinden we twee datasets met het woordje “terrorism” in de titel. Ééntje heeft 206 rijen (<code>nkill.byCountryYr</code>), laten we die eens van naderbij bekijken. Zorg ervoor dat je de dataset (CSV) hebt gedownload, die zal je straks nodig hebben om in je Python code te importeren:</p>
 
 <div class="sourceCode" id="cb1">
 <pre class="sourceCode python"><code class="sourceCode python">
@@ -349,9 +348,6 @@ print(df.head())
 print(df.info())
 </code></pre>
 </div>
-
-  
-
 <p>Zorg er eerst voor dat je deze bibliotheken (libraries) installeert (eenmalig) via in de terminal van je VS Code. Als alles goed verlopen is, krijg je de eerste rijen van de dataset te zien. Je hebt bovendien gemerkt dat er 'DOC' staat naast 'CSV' op de website waar je de dataset hebt gedownload. Als je op 'DOC' klikt, krijg je de documentatie te zien zoals hieronder:</p>
 <p><img src="img/terrorism-help.png" width="925" /></p>
 <p>We onderzoeken nu de documentatie en vinden dat de databank wel erg relevant en professioneel lijkt, maar niet zo up-to-date (1970 - 2015). Toch beslissen we om door te gaan met deze dataset. We lezen dat er eigenlijk drie datasets zijn, telkens met hun eigen structuur:</p>
@@ -483,6 +479,35 @@ plt.show()
 <span id="exm:unnamed-chunk-21" class="example"><strong>Voorbeeld 4.2  </strong></span>Laten we de dataset rhDNase van naderbij onderzoeken met als doel om uitsluitend naar de verdelingen te kijken.
 </div>
 <p>We beginnen met het laden van de dataset en het tonen van de interne structuur (<code>str</code>) van het object dat de data bevat</p>
+
+<div class="sourceCode" id="cb37">
+<pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1">import pandas as pd</span>
+<span id="cb37-2"></span>
+<span id="cb37-3">rhDNase = pd.read_csv("rhDNase.csv", parse_dates=["entry.dt", "end.dt"])</span>
+<span id="cb37-4"></span>
+<span id="cb37-5">print(rhDNase.info())</span></code></pre>
+</div>
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 767 entries, 0 to 766
+Data columns (total 8 columns):
+ #   Column    Non-Null Count  Dtype         
+---  ------    --------------  -----         
+ 0   id        767 non-null    int64         
+ 1   inst      767 non-null    int64         
+ 2   trt       767 non-null    int64         
+ 3   entry.dt  767 non-null    datetime64[ns]
+ 4   end.dt    767 non-null    datetime64[ns]
+ 5   fev       767 non-null    float64       
+ 6   ivstart   113 non-null    float64       
+ 7   ivstop    113 non-null    float64       
+dtypes: datetime64 , float64(3), int64(3)
+memory usage: 48.1 KB
+</code></pre>
+  
+  
+  
+  
+  
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-exploratie.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survival)</span>
 <span id="cb37-2"><a href="data-exploratie.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="data-exploratie.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(rhDNase)</span>
