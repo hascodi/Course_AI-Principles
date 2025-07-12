@@ -367,9 +367,20 @@ print(df.info())
 <li><code>year</code>: het jaar waarin de aanslag werd gepleegd, als natuurlijk getal, uniek voor elke rij</li>
 <li><code>incidents</code>: het aantal aanslagen voor dat jaar wereldwijd</li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-exploratie.html#cb26-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> terrorism <span class="sc">%&gt;%</span></span>
-<span id="cb26-2"><a href="data-exploratie.html#cb26-2" aria-hidden="true" tabindex="-1"></a>    as.data.table <span class="sc">%&gt;%</span></span>
-<span id="cb26-3"><a href="data-exploratie.html#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">extract</span>(, .(year, incidents))</span></code></pre></div>
+<div class="sourceCode" id="cb26">
+<pre class="sourceCode python"><code class="sourceCode python">
+import pandas as pd
+
+# Laad de volledige dataset
+terrorism = pd.read_csv("terrorism.csv")
+
+# Selecteer enkel de kolommen 'year' en 'incidents'
+dat = terrorism[["year", "incidents"]]
+
+# Toon de eerste rijen van de subset
+print(dat.head())
+</code></pre>
+</div>
 <p>We overlopen de DIPKEVER criteria. De data zijn duidelijk en informatief. Ze lijken de privacy van niemand te schenden omdat het om geaggregeerde gegevens gaat, wereldwijd en telkens samengevat voor een heel kalenderjaar.</p>
 <p>Kwaliteit. We beginnen met de controle dat het jaartal en de incidenten als natuurlijke getallen worden behandeld.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-exploratie.html#cb27-1" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">apply</span>(<span class="dv">2</span>, class)</span></code></pre></div>
