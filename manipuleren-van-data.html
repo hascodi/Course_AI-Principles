@@ -277,13 +277,27 @@ Figuur 5.1: Schematisch overzicht van het versnijden van een dataset.
 <div class="example">
 <span id="exm:vb-versnijden" class="example"><strong>Voorbeeld 5.1  (Versnijden van data)  </strong></span>De wijn kwaliteit dataset bevat mogelijk outliers in de suikerwaarden, laten we dat eens nader bekijken.
 </div>
+
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="manipuleren-van-data.html#cb51-1" aria-hidden="true" tabindex="-1"></a>rode_wijn <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv&quot;</span>)</span>
 <span id="cb51-2"><a href="manipuleren-van-data.html#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-3"><a href="manipuleren-van-data.html#cb51-3" aria-hidden="true" tabindex="-1"></a>rode_wijn[, <span class="st">`</span><span class="at">residual sugar</span><span class="st">`</span>] <span class="sc">%&gt;%</span></span>
 <span id="cb51-4"><a href="manipuleren-van-data.html#cb51-4" aria-hidden="true" tabindex="-1"></a>  density <span class="sc">%&gt;%</span></span>
 <span id="cb51-5"><a href="manipuleren-van-data.html#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span> (<span class="at">main=</span><span class="st">&quot;Residual sugar (g/L)&quot;</span>)</span></code></pre></div>
+
+
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="data-exploratie.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataset inlezen</span></span>
+<span id="cb50-2"><a href="data-exploratie.html#cb50-2" aria-hidden="true" tabindex="-1"></a>url = <span class="st">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv&quot;</span></span>
+<span id="cb50-3"><a href="data-exploratie.html#cb50-3" aria-hidden="true" tabindex="-1"></a>rode_wijn = pd.read_csv(url, sep=<span class="st">&#39;;&#39;</span>)</span>
+<span id="cb50-4"><a href="data-exploratie.html#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="data-exploratie.html#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Density plot van residual sugar</span></span>
+<span id="cb50-6"><a href="data-exploratie.html#cb50-6" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(data=rode_wijn, x=<span class="st">&quot;residual sugar&quot;</span>, bw_adjust=1, color=<span class="st">&quot;black&quot;</span>)</span>
+<span id="cb50-7"><a href="data-exploratie.html#cb50-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Residual sugar (g/L)&quot;</span>)</span>
+<span id="cb50-8"><a href="data-exploratie.html#cb50-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb50-9"><a href="data-exploratie.html#cb50-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><img src="img/gen-oef-versnijden-1-1.png" width="672" /></p>
 <p>Stel dat rode wijn met een suikergehalte boven de 10g/L wordt afgedaan als fruitsap, dan zou je er van uit mogen gaan dat er een aantal uitlopers zijn, zo halen we ze eruit:</p>
+
+
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="manipuleren-van-data.html#cb52-1" aria-hidden="true" tabindex="-1"></a>aantal_uitlopers <span class="ot">&lt;-</span> rode_wijn[<span class="st">`</span><span class="at">residual sugar</span><span class="st">`</span> <span class="sc">&gt;</span> <span class="dv">10</span>, .N]</span>
 <span id="cb52-2"><a href="manipuleren-van-data.html#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-3"><a href="manipuleren-van-data.html#cb52-3" aria-hidden="true" tabindex="-1"></a>rode_wijn_echt <span class="ot">&lt;-</span> rode_wijn[<span class="st">`</span><span class="at">residual sugar</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="dv">10</span>]</span>
@@ -293,6 +307,19 @@ Figuur 5.1: Schematisch overzicht van het versnijden van een dataset.
 <span id="cb52-7"><a href="manipuleren-van-data.html#cb52-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span> (<span class="at">main=</span><span class="st">&quot;Residual sugar (g/L)&quot;</span>,</span>
 <span id="cb52-8"><a href="manipuleren-van-data.html#cb52-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">sub =</span> <span class="fu">paste</span>(<span class="st">&quot;Excluding&quot;</span>, aantal_uitlopers,</span>
 <span id="cb52-9"><a href="manipuleren-van-data.html#cb52-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;&#39;outliers&#39; above 10g/L&quot;</span>))</span></code></pre></div>
+
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="manipuleren-van-data.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aantal outliers bepalen</span></span>
+<span id="cb52-2"><a href="manipuleren-van-data.html#cb52-2" aria-hidden="true" tabindex="-1"></a>aantal_uitlopers = rode_wijn[rode_wijn[<span class="st">&quot;residual sugar&quot;</span>] &gt; 10].shape[<span class="dv">0</span>]</span>
+<span id="cb52-3"><a href="manipuleren-van-data.html#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="manipuleren-van-data.html#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Data zonder uitlopers</span></span>
+<span id="cb52-5"><a href="manipuleren-van-data.html#cb52-5" aria-hidden="true" tabindex="-1"></a>rode_wijn_echt = rode_wijn[rode_wijn[<span class="st">&quot;residual sugar&quot;</span>] &lt; 10]</span>
+<span id="cb52-6"><a href="manipuleren-van-data.html#cb52-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-7"><a href="manipuleren-van-data.html#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Density plot</span></span>
+<span id="cb52-8"><a href="manipuleren-van-data.html#cb52-8" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(data=rode_wijn_echt, x=<span class="st">&quot;residual sugar&quot;</span>, bw_adjust=<span class="dv">1</span>, color=<span class="st">&quot;black&quot;</span>)</span>
+<span id="cb52-9"><a href="manipuleren-van-data.html#cb52-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Residual sugar (g/L)&quot;</span>)</span>
+<span id="cb52-10"><a href="manipuleren-van-data.html#cb52-10" aria-hidden="true" tabindex="-1"></a>plt.suptitle(f<span class="st">&quot;Excluding {aantal_uitlopers} &#39;outliers&#39; above 10g/L&quot;</span>, fontsize=<span class="dv">10</span>, y=<span class="fl">0.91</span>)</span>
+<span id="cb52-11"><a href="manipuleren-van-data.html#cb52-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb52-12"><a href="manipuleren-van-data.html#cb52-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>  
 <p><img src="img/gen-oef-versnijden-2-1.png" width="672" /></p>
 </div>
 <div id="booleaans-masker" class="section level3" number="5.1.2">
@@ -307,6 +334,7 @@ Figuur 5.1: Schematisch overzicht van het versnijden van een dataset.
 ## [43]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
 </div>
 <div id="eng.-grouping-and-aggregation" class="section level3" number="5.1.3">
+<p><strong><em>De onderstaande secties zijn in het Engels weergegeven, vanwege het frequente gebruik van Engelstalige terminologie binnen deze onderdelen.</em></strong></p>
 <h3><span class="header-section-number">5.1.3</span> (Eng.) Grouping and Aggregation</h3>
 <p>Upon Grouping the data table according to one or more features, the other variables need to be aggregated en this can be done using:</p>
 <ul>
