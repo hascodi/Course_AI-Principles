@@ -594,36 +594,41 @@ True     400
 Name: ivstart, dtype: int64
 </code></pre>
 <p>We kunnen zelfs zeggen dat er voor <code>ivstart</code> meer gaten zijn dan kaas. We kunnen alsnog de verdeling onderzoeken van de overblijvende waarden:</p>
-<div class="sourceCode" id="cb47">
-<pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1">
-<a href="data-exploratie.html#cb47-1" aria-hidden="true" tabindex="-1"></a>
-# Plot een histogram van de kolom 'ivstart' zonder NA's
-rhDNase["ivstart"].dropna().hist(
-    bins=10, color="lightgrey", edgecolor="black"
-)
-</span><span id="cb47-2">
-<a href="data-exploratie.html#cb47-2" aria-hidden="true" tabindex="-1"></a>
-# Voeg een verticale lijn toe bij 0
-plt.axvline(x=0, linewidth=2, color='black')
-</span><span id="cb47-3">
-<a href="data-exploratie.html#cb47-3" aria-hidden="true" tabindex="-1"></a>
-# Voeg titels en labels toe aan de plot
-plt.title("Verdeling wachttijd voor behandeling")
-plt.xlabel("wachttijd")
-plt.ylabel("# instanties")
-</span><span id="cb47-4">
-<a href="data-exploratie.html#cb47-4" aria-hidden="true" tabindex="-1"></a>
-# Toon de plot
-plt.show()
-</span></code></pre></div>
+
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="data-exploratie.html#cb47-1" aria-hidden="true" tabindex="-1"></a># Visualiseer de verdeling van de kolom 'ivstart' met een histogram</span>
+<span id="cb47-2"><a href="data-exploratie.html#cb47-2" aria-hidden="true" tabindex="-1"></a>rhDNase["ivstart"].dropna().hist(</span>
+<span id="cb47-3"><a href="data-exploratie.html#cb47-3" aria-hidden="true" tabindex="-1"></a>    bins=10, color="lightgrey", edgecolor="black"</span>
+<span id="cb47-4"><a href="data-exploratie.html#cb47-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb47-5"><a href="data-exploratie.html#cb47-5" aria-hidden="true" tabindex="-1"></a>plt.axvline(x=0, linewidth=2, color='black')</span>
+<span id="cb47-6"><a href="data-exploratie.html#cb47-6" aria-hidden="true" tabindex="-1"></a>plt.title("Verdeling wachttijd voor behandeling")</span>
+<span id="cb47-7"><a href="data-exploratie.html#cb47-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel("wachttijd")</span>
+<span id="cb47-8"><a href="data-exploratie.html#cb47-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel("# instanties")</span>
+<span id="cb47-9"><a href="data-exploratie.html#cb47-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+
+
 <p><img src="img/gen-unnamed-chunk-28-1.png" width="672" /></p>
 <p>We zien een verdeling die eerder uniform is dan wel normaal. Ook hier kunnen we nu de verdeling van de behandelingsduur in grafiek zetten:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-exploratie.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span>
-<span id="cb48-2"><a href="data-exploratie.html#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-3"><a href="data-exploratie.html#cb48-3" aria-hidden="true" tabindex="-1"></a>rhDNase[, ivstop <span class="sc">-</span> ivstart] <span class="sc">%&gt;%</span></span>
-<span id="cb48-4"><a href="data-exploratie.html#cb48-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">hist</span> (<span class="at">main =</span> <span class="st">&quot;Behandelingsduur&quot;</span>)</span>
-<span id="cb48-5"><a href="data-exploratie.html#cb48-5" aria-hidden="true" tabindex="-1"></a>rhDNase[, ivstop <span class="sc">-</span> ivstart] <span class="sc">%&gt;%</span> log <span class="sc">%&gt;%</span></span>
-<span id="cb48-6"><a href="data-exploratie.html#cb48-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">hist</span>(<span class="at">main =</span> <span class="st">&quot;ln(Behandelingsduur)&quot;</span>)</span></code></pre></div>
+
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="data-exploratie.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bereken behandelingsduur en toon histogrammen</span></span>
+<span id="cb48-2"><a href="data-exploratie.html#cb48-2" aria-hidden="true" tabindex="-1"></a>behandelingsduur = rhDNase[<span class="st">&quot;ivstop&quot;</span>] - rhDNase[<span class="st">&quot;ivstart&quot;</span>]</span>
+<span id="cb48-3"><a href="data-exploratie.html#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="data-exploratie.html#cb48-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize=(12, 5))</span>
+<span id="cb48-5"><a href="data-exploratie.html#cb48-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-6"><a href="data-exploratie.html#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Eerste histogram: behandelingsduur</span></span>
+<span id="cb48-7"><a href="data-exploratie.html#cb48-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(1, 2, 1)</span>
+<span id="cb48-8"><a href="data-exploratie.html#cb48-8" aria-hidden="true" tabindex="-1"></a>plt.hist(behandelingsduur.dropna(), bins=20, color=<span class="st">&quot;lightgrey&quot;</span>, edgecolor=<span class="st">&quot;black&quot;</span>)</span>
+<span id="cb48-9"><a href="data-exploratie.html#cb48-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Behandelingsduur&quot;</span>)</span>
+<span id="cb48-10"><a href="data-exploratie.html#cb48-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Frequentie&quot;</span>)</span>
+<span id="cb48-11"><a href="data-exploratie.html#cb48-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-12"><a href="data-exploratie.html#cb48-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Tweede histogram: ln(behandelingsduur)</span></span>
+<span id="cb48-13"><a href="data-exploratie.html#cb48-13" aria-hidden="true" tabindex="-1"></a>plt.subplot(1, 2, 2)</span>
+<span id="cb48-14"><a href="data-exploratie.html#cb48-14" aria-hidden="true" tabindex="-1"></a>plt.hist(np.log(behandelingsduur[behandelingsduur &gt; 0]), bins=20, color=<span class="st">&quot;lightgrey&quot;</span>, edgecolor=<span class="st">&quot;black&quot;</span>)</span>
+<span id="cb48-15"><a href="data-exploratie.html#cb48-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;ln(Behandelingsduur)&quot;</span>)</span>
+<span id="cb48-16"><a href="data-exploratie.html#cb48-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-17"><a href="data-exploratie.html#cb48-17" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb48-18"><a href="data-exploratie.html#cb48-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+
+  
 <p><img src="img/gen-unnamed-chunk-29-1.png" width="672" /></p>
 <p>De eerste grafiek laat zien dat de behandelingsduur nogal <a href="https://nl.wikipedia.org/wiki/Scheefheid">rechtsscheef</a> verdeeld is. De transformatie door middel van de natuurlijke logaritme (<span class="math inline">\(ln(x)=\,^elog(x)\)</span>) veranderd de verdeling in iets wat normaler lijkt. We zeggen dat de behandelingsduur <em>lognormaal</em> verdeeld lijkt te zijn. Laten we de theoretische curve erbij zetten om de afwijkingen tussen werkelijk en theoretisch te visualiseren:</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-exploratie.html#cb49-1" aria-hidden="true" tabindex="-1"></a>bduur_log <span class="ot">&lt;-</span> rhDNase[,  <span class="fu">log</span>(ivstop <span class="sc">-</span> ivstart)]</span>
