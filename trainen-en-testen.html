@@ -322,12 +322,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div></li>
 </ul>
 <p>Voor tijdsreeksen en geografische data wordt er zelden van randomisatie gebruik gemaakt. Dat heeft te maken van de autocorrelatie (zie § <a href="data.html#tijd-en-ruimte">Tijd en ruimte</a>). In plaats daarvan worden hier ofwel een bepaald gebied of bepaalde tijdspanne als test-set uitgekozen. Bijvoorbeeld, voor een tijdsreeks:</p>
+
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="trainen-en-testen.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
 <span id="cb68-2"><a href="trainen-en-testen.html#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb68-3"><a href="trainen-en-testen.html#cb68-3" aria-hidden="true" tabindex="-1"></a>USAccDeaths <span class="sc">%&gt;%</span> ets <span class="sc">%&gt;%</span> <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">48</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb68-4"><a href="trainen-en-testen.html#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">ylab =</span> <span class="st">&quot;Monthly totals of accidental deaths in USA&quot;</span>)</span>
 <span id="cb68-5"><a href="trainen-en-testen.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">1979</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:usadeaths"></span>
+
+
+<!-- De tijdsreeks wordt opgesplitst: voorspellingen vanaf 1979 -->
+<div class="sourceCode" id="cb68">
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="trainen-en-testen.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
+<span id="cb68-2"><a href="trainen-en-testen.html#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-3"><a href="trainen-en-testen.html#cb68-3" aria-hidden="true" tabindex="-1"></a>USAccDeaths <span class="sc">%&gt;%</span> ets <span class="sc">%&gt;%</span> <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">48</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb68-4"><a href="trainen-en-testen.html#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">ylab =</span> <span class="st">&quot;Monthly totals of accidental deaths in USA&quot;</span>)</span>
+<span id="cb68-5"><a href="trainen-en-testen.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">1979</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre>
+</div>
+
+<pre><code>## ETS(A,N,A)-voorspelling met 80% en 95% betrouwbaarheidsintervallen
+## Maandelijkse slachtoffers in de VS (tot 1979 als trainingsdata)
+## De verticale stippellijn duidt het begin van de testperiode aan</code></pre>
+
+<div class="figure"><span id="fig:usadeaths"></span>
+<img src="images/usadeaths.png" alt="Forecasts from ETS(A,N,A)" />
+<p class="caption">Figuur: Voorspellingen van het ETS-model voor maandelijkse accidentele overlijdens in de VS. De stippellijn markeert het begin van de testperiode (1979).</p>
+</div>
+
 <img src="img/gen-usadeaths-1.png" alt="Voorspelling van aantal Amerikaanse slachtoffers na 1979 (stippellijn). De grillige gekleurde lijn links van de stippellijn geeft het werkelijke aantal weer. De tegenhanger rechts van de stippellijn geeft de best mogelijke voorspelling weer na 1979. Het donkergrijze gebied geeft de 80%-predictie-interval weer en het lichtgrijze gebied de 90%-predictie interval. Dit type voorspelling-algoritmes (eng: forecasting algorythms) onderscheidt eerst de ruis (eng: error) van de trend en de periodiciteit (eng: seasonality), vandaar de naam ETS. (ANA) staat voor respectievelijk aan additieve ruis, geen trend (N van ‘No’) en een additieve periodiciteit." width="672" />
 <p class="caption">
 Figuur 6.1: Voorspelling van aantal Amerikaanse slachtoffers na 1979 (stippellijn). De grillige gekleurde lijn links van de stippellijn geeft het werkelijke aantal weer. De tegenhanger rechts van de stippellijn geeft de best mogelijke voorspelling weer na 1979. Het donkergrijze gebied geeft de 80%-predictie-interval weer en het lichtgrijze gebied de 90%-predictie interval. Dit type voorspelling-algoritmes (eng: <em>forecasting algorythms</em>) onderscheidt eerst de ruis (eng: <em>error</em>) van de trend en de periodiciteit (eng: <em>seasonality</em>), vandaar de naam ETS. (ANA) staat voor respectievelijk aan additieve ruis, geen trend (N van ‘No’) en een additieve periodiciteit.
