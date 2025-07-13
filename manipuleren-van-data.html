@@ -306,12 +306,17 @@ Figuur 5.1: Schematisch overzicht van het versnijden van een dataset.
 <p>Een booleaans masker is gewoon een vector of lijst van booleaanse waarden die gebruikt kunnen worden om uit data frames en data tables die rijen te selecteren die overeenkomen met <code>TRUE</code> in het masker.</p>
 <p><img src="img/masker.svg" /><!-- --></p>
 <p>In het Voorbeeld <a href="manipuleren-van-data.html#exm:vb-versnijden">5.1</a> werd er reeds van een masker gebruik gemaakt:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="manipuleren-van-data.html#cb53-1" aria-hidden="true" tabindex="-1"></a>rode_wijn[,<span class="st">`</span><span class="at">residual sugar</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="dv">10</span>] <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">50</span>)</span></code></pre></div>
-<pre><code>##  [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-## [15]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-## [29]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-## [43]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
-</div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="manipuleren-van-data.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Controleer of elke waarde van 'residual sugar' kleiner is dan 10 en toon de eerste 50 resultaten</span></span>
+<span id="cb53-2"><a href="manipuleren-van-data.html#cb53-2" aria-hidden="true" tabindex="-1"></a>(rode_wijn[<span class="st">&quot;residual sugar&quot;</span>] &lt; 10).head(<span class="dv">50</span>).tolist()</span></code></pre></div>
+
+<pre><code>
+[True, True, True, True, True, True, True, True, True, True, 
+ True, True, True, True, True, True, True, True, True, True, 
+ True, True, True, True, True, True, True, True, True, True, 
+ True, True, True, True, False, True, True, True, True, True, 
+ True, True, True, True, True, True, True, True, True, True]
+</code></pre>
+
 <div id="eng.-grouping-and-aggregation" class="section level3" number="5.1.3">
 <p><strong><em>De onderstaande secties zijn in het Engels weergegeven, vanwege het frequente gebruik van Engelstalige terminologie binnen deze onderdelen.</em></strong></p>
 <h3><span class="header-section-number">5.1.3</span> (Eng.) Grouping and Aggregation</h3>
