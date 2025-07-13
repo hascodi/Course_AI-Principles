@@ -331,23 +331,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="figure"><span id="fig:usadeaths"></span>
 
 
-<!-- De tijdsreeks wordt opgesplitst: voorspellingen vanaf 1979 -->
-<div class="sourceCode" id="cb68">
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="trainen-en-testen.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
-<span id="cb68-2"><a href="trainen-en-testen.html#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-3"><a href="trainen-en-testen.html#cb68-3" aria-hidden="true" tabindex="-1"></a>USAccDeaths <span class="sc">%&gt;%</span> ets <span class="sc">%&gt;%</span> <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">48</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb68-4"><a href="trainen-en-testen.html#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">ylab =</span> <span class="st">&quot;Monthly totals of accidental deaths in USA&quot;</span>)</span>
-<span id="cb68-5"><a href="trainen-en-testen.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">1979</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre>
-</div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true"></a><span class="im">from</span> statsmodels.tsa.holtwinters <span class="im">import</span> ExponentialSmoothing</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true"></a></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true"></a><span class="co"># Laad de dataset (zit standaard in statsmodels)</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true"></a>data <span class="op">=</span> sm.datasets.get_rdataset(<span class="st">"USAccDeaths"</span>, package<span class="op">=</span><span class="st">"datasets"</span>).data</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true"></a></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true"></a><span class="co"># Zet om naar tijdreeks met maandfrequentie</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true"></a>dates <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">"1973-01"</span>, periods<span class="op">=</span><span class="bu">len</span>(data), freq<span class="op">=</span><span class="st">"M"</span>)</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true"></a>ts <span class="op">=</span> pd.Series(data[<span class="st">'value'</span>].values, index<span class="op">=</span>dates)</span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true"></a></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true"></a><span class="co"># Pas ETS toe (additieve trend en seizoen)</span></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true"></a>model <span class="op">=</span> ExponentialSmoothing(ts, trend<span class="op">=</span><span class="st">"add"</span>, seasonal<span class="op">=</span><span class="st">"add"</span>, seasonal_periods<span class="op">=</span><span class="dv">12</span>).fit()</span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true"></a>forecast <span class="op">=</span> model.forecast(<span class="dv">48</span>)</span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true"></a></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true"></a><span class="co"># Plot oorspronkelijke data en forecast</span></span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true"></a>ts.plot(label<span class="op">=</span><span class="st">"Observed"</span>)</span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true"></a>forecast.plot(label<span class="op">=</span><span class="st">"Forecast"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true"></a>plt.axvline(pd.to_datetime(<span class="st">"1979-01-01"</span>), color<span class="op">=</span><span class="st">"black"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true"></a>plt.ylabel(<span class="st">"Monthly totals of accidental deaths in USA"</span>)</span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true"></a>plt.title(<span class="st">"ETS Forecast on USAccDeaths"</span>)</span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true"></a>plt.legend()</span>
+<span id="cb54-25"><a href="#cb54-25" aria-hidden="true"></a>plt.tight_layout()</span>
+<span id="cb54-26"><a href="#cb54-26" aria-hidden="true"></a>plt.show()</span></code></pre></div>
 
-<pre><code>## ETS(A,N,A)-voorspelling met 80% en 95% betrouwbaarheidsintervallen
-## Maandelijkse slachtoffers in de VS (tot 1979 als trainingsdata)
-## De verticale stippellijn duidt het begin van de testperiode aan</code></pre>
 
-<div class="figure"><span id="fig:usadeaths"></span>
-<img src="images/usadeaths.png" alt="Forecasts from ETS(A,N,A)" />
-<p class="caption">Figuur: Voorspellingen van het ETS-model voor maandelijkse accidentele overlijdens in de VS. De stippellijn markeert het begin van de testperiode (1979).</p>
-</div>
+
 
 <img src="img/gen-usadeaths-1.png" alt="Voorspelling van aantal Amerikaanse slachtoffers na 1979 (stippellijn). De grillige gekleurde lijn links van de stippellijn geeft het werkelijke aantal weer. De tegenhanger rechts van de stippellijn geeft de best mogelijke voorspelling weer na 1979. Het donkergrijze gebied geeft de 80%-predictie-interval weer en het lichtgrijze gebied de 90%-predictie interval. Dit type voorspelling-algoritmes (eng: forecasting algorythms) onderscheidt eerst de ruis (eng: error) van de trend en de periodiciteit (eng: seasonality), vandaar de naam ETS. (ANA) staat voor respectievelijk aan additieve ruis, geen trend (N van ‘No’) en een additieve periodiciteit." width="672" />
 <p class="caption">
