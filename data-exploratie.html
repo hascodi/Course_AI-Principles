@@ -631,17 +631,23 @@ Name: ivstart, dtype: int64
   
 <p><img src="img/gen-unnamed-chunk-29-1.png" width="672" /></p>
 <p>De eerste grafiek laat zien dat de behandelingsduur nogal <a href="https://nl.wikipedia.org/wiki/Scheefheid">rechtsscheef</a> verdeeld is. De transformatie door middel van de natuurlijke logaritme (<span class="math inline">\(ln(x)=\,^elog(x)\)</span>) veranderd de verdeling in iets wat normaler lijkt. We zeggen dat de behandelingsduur <em>lognormaal</em> verdeeld lijkt te zijn. Laten we de theoretische curve erbij zetten om de afwijkingen tussen werkelijk en theoretisch te visualiseren:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-exploratie.html#cb49-1" aria-hidden="true" tabindex="-1"></a>bduur_log <span class="ot">&lt;-</span> rhDNase[,  <span class="fu">log</span>(ivstop <span class="sc">-</span> ivstart)]</span>
-<span id="cb49-2"><a href="data-exploratie.html#cb49-2" aria-hidden="true" tabindex="-1"></a>bduur_log <span class="ot">&lt;-</span> bduur_log[<span class="sc">!</span><span class="fu">is.na</span>(bduur_log) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.infinite</span>(bduur_log)]</span>
-<span id="cb49-3"><a href="data-exploratie.html#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-4"><a href="data-exploratie.html#cb49-4" aria-hidden="true" tabindex="-1"></a>bduur_log <span class="sc">%&gt;%</span> <span class="fu">hist</span>(<span class="at">main =</span> <span class="st">&quot;ln(Behandelingsduur)&quot;</span>, <span class="at">freq =</span> <span class="cn">FALSE</span>, <span class="at">n =</span> <span class="dv">20</span>)</span>
-<span id="cb49-5"><a href="data-exploratie.html#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-6"><a href="data-exploratie.html#cb49-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">60</span> <span class="sc">/</span> <span class="dv">10</span>)</span>
-<span id="cb49-7"><a href="data-exploratie.html#cb49-7" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> <span class="fu">dnorm</span>(</span>
-<span id="cb49-8"><a href="data-exploratie.html#cb49-8" aria-hidden="true" tabindex="-1"></a> <span class="at">mean =</span> bduur_log <span class="sc">%&gt;%</span> mean,</span>
-<span id="cb49-9"><a href="data-exploratie.html#cb49-9" aria-hidden="true" tabindex="-1"></a> <span class="at">sd =</span> bduur_log <span class="sc">%&gt;%</span> sd)</span>
-<span id="cb49-10"><a href="data-exploratie.html#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-11"><a href="data-exploratie.html#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, y , <span class="at">col =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div>
+
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="data-exploratie.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voeg theoretische normaalverdeling toe aan histogram van ln(behandelingsduur)</span></span>
+<span id="cb49-2"><a href="data-exploratie.html#cb49-2" aria-hidden="true" tabindex="-1"></a>bduur_log = np.log(rhDNase["ivstop"] - rhDNase["ivstart"])</span>
+<span id="cb49-3"><a href="data-exploratie.html#cb49-3" aria-hidden="true" tabindex="-1"></a>bduur_log = bduur_log[~bduur_log.isna() &amp; ~np.isinf(bduur_log)]</span>
+<span id="cb49-4"><a href="data-exploratie.html#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="data-exploratie.html#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot histogram met densiteit</span></span>
+<span id="cb49-6"><a href="data-exploratie.html#cb49-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(bduur_log, kde=False, stat=<span class="st">&quot;density&quot;</span>, color=<span class="st">&quot;lightgrey&quot;</span>, bins=20)</span>
+<span id="cb49-7"><a href="data-exploratie.html#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-8"><a href="data-exploratie.html#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Voeg theoretische normaalverdeling toe</span></span>
+<span id="cb49-9"><a href="data-exploratie.html#cb49-9" aria-hidden="true" tabindex="-1"></a>x = np.linspace(1, 6, 100)</span>
+<span id="cb49-10"><a href="data-exploratie.html#cb49-10" aria-hidden="true" tabindex="-1"></a>y = norm.pdf(x, loc=bduur_log.mean(), scale=bduur_log.std())</span>
+<span id="cb49-11"><a href="data-exploratie.html#cb49-11" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, color=<span class="st">&quot;black&quot;</span>, linewidth=3)</span>
+<span id="cb49-12"><a href="data-exploratie.html#cb49-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-13"><a href="data-exploratie.html#cb49-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;ln(Behandelingsduur)&quot;</span>)</span>
+<span id="cb49-14"><a href="data-exploratie.html#cb49-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb49-15"><a href="data-exploratie.html#cb49-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+
 <p><img src="img/gen-unnamed-chunk-30-1.png" width="672" /></p></li>
 </ul>
 <p>We kunnen verdelingen ook met andere grafiek-types in beeld brengen. De meest populaire zijn de <a href="https://nl.wikipedia.org/wiki/Boxplot">boxplot</a>, de {dot plot}(<a href="https://en.wikipedia.org/wiki/Dot_plot_(statistics)" class="uri">https://en.wikipedia.org/wiki/Dot_plot_(statistics)</a>), de <a href="https://www.r-statistics.com/2011/03/beeswarm-boxplot-and-plotting-it-with-r/#:~:text=A%20bee%20swarm%20plot%20is,controlling%20the%20characters%20and%20colors.">beeswarm plot</a> en de <a href="https://en.wikipedia.org/wiki/Violin_plot">violin plot</a>.</p>
@@ -661,7 +667,7 @@ Opgelet: de variabele <code>bduur_log</code> wordt voor deze oefening verwacht i
 </blockquote>
 </div>
 <div id="correlatie-tussen-twee-variabelen" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> Correlatie tussen twee variabelen</h2>
+<h2><span class="header-section-number">4.5</span> Correlatie tussen twee variabelen (extra lectuur) (voorbeeld in R)</h2>
 <p>Om correlatie te begrijpen simuleren we een <a href="https://en.wikipedia.org/wiki/Joint_probability_distribution">bivariate verdeling</a> met verschillende covariantie-matrices (zie figuur <a href="data-exploratie.html#fig:correl-demo">4.1</a>).</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-exploratie.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
 <span id="cb50-2"><a href="data-exploratie.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(latex2exp)</span>
